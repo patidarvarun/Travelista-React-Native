@@ -5,6 +5,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 15,
   },
+  scrollContainer: {
+    paddingTop: 60,
+  },
   backContainer: {
     // backgroundColor: 'grey',
     position: 'relative',

@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontSize: 28,
     fontWeight: '700',
-    paddingTop: 60,
+    // paddingTop: 60,
     lineHeight: 34,
     fontFamily: 'Inter',
   },

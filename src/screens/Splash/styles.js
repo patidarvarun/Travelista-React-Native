@@ -2,21 +2,25 @@ import {StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
+  imgContainer: {
+    flex: 1,
+  },
   background: {
     width: '100%',
     height: '100%',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    // flexDirection: 'column',
+    // justifyContent: 'space-between',
+    // alignItems: 'center',
   },
   container: {
-    padding: 46,
-    paddingTop: 0,
+    // flex:1,
+    // padding: 10,
+    // paddingTop: 80,
   },
   logo: {
     width: 143,
     height: 143,
-    marginTop: 150,
+    marginTop: 202,
     alignSelf: 'center',
   },
   subtitle: {
@@ -24,21 +28,22 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '700',
     textAlign: 'center',
-  },
-  subtitle1: {
-    color: colors.white,
-    fontSize: 28,
-    fontWeight: '700',
-    textAlign: 'center',
-    marginTop: 10,
+    lineHeight: 34,
+    fontFamily: 'Inter',
   },
   container1: {
-    paddingTop: 30,
+    marginTop: 120,
+    // flex: 1,
+    // justifyContent: 'center',
+    // alignItems: 'center',
   },
   buttonContent: {
-    display: 'flex',
-    width: '90%',
-    marginBottom:30
+    position: 'absolute',
+    justifyContent: 'space-around',
+    paddingHorizontal: 16,
+    // display: 'flex',
+    width: '100%',
+    bottom: 30,
   },
 });
 

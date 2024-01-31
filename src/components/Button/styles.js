@@ -14,7 +14,9 @@ const styles = StyleSheet.create({
   text: {
     color: colors.black,
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: '700',
+    textAlign: 'center',
+    fontFamily: 'Inter',
   },
   disabledBg: {
     backgroundColor: '#BEF4D9',

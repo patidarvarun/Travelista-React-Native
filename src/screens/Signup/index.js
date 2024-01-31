@@ -44,7 +44,7 @@ const Signup = ({navigation}) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <View>
         <Pressable
           hitSlop={8}
           style={styles.backContainer}
@@ -54,16 +54,21 @@ const Signup = ({navigation}) => {
             style={styles.backIcon}
           />
         </Pressable>
+      </View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.scrollContainer}>
         <Title>Sign up</Title>
-
         <View style={styles.inputContainer}>
           <Input
             children="First Name"
             onChangeText={val => onChange(val, 'first_name')}
+            isHalfWidth
           />
           <Input
             children="Last Name"
             onChangeText={val => onChange(val, 'last_name')}
+            isHalfWidth
           />
         </View>
 
