@@ -46,9 +46,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#7A9085',
   },
-  googleButton: {
-    backgroundColor: '#DDE3E0',
-  },
+
   nextButton: {
     marginTop: 80,
   },

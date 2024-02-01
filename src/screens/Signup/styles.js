@@ -32,14 +32,6 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontWeight: '600',
   },
-
-  googleButton: {
-    backgroundColor: '#DDE3E0',
-  },
-  // googleImage: {
-  //   height: 20,
-  //   width: 20,
-  // },
   nextButton: {
     marginVertical: 80,
   },

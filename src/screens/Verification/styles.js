@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   nextButton: {
-    marginTop: 80,
+    marginTop: 60,
   },
 });
 export default styles;

@@ -5,6 +5,7 @@ import Title from '../../components/Title';
 import Input from '../../components/Input';
 import {useEffect, useState} from 'react';
 import Button from '../../components/Button';
+import GoogleButton from '../../components/GoogleButton';
 const Signup = ({navigation}) => {
   const [values, setValues] = useState({});
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
@@ -97,14 +98,7 @@ const Signup = ({navigation}) => {
           <View style={styles.separatorLine}></View>
         </View>
 
-        <Button style={styles.googleButton}>
-          {/* <Image
-            source={require('../../../assets/google_logo.png')}
-            style={styles.googleImage}
-          /> */}
-          Continue With Google
-        </Button>
-
+        <GoogleButton>Continue With Google</GoogleButton>
         <Button
           style={styles.nextButton}
           type={'green'}

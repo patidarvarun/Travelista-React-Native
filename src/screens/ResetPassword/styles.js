@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 15,
+    // height:"auto"
   },
   backContainer: {
     // backgroundColor: 'grey',
@@ -25,7 +26,9 @@ const styles = StyleSheet.create({
     // marginBottom: 16,
   },
   nextButton: {
-    marginBottom: 20,
+    marginBottom: 50,
+    // display:"flex",
+    // top:30
   },
 });
 

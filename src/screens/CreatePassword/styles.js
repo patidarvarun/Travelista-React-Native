@@ -35,7 +35,9 @@ const styles = StyleSheet.create({
   link: {
     color: '#22BE6F',
   },
-  nextButton: {marginVertical: 250},
+  nextButton: {
+    marginTop: 250,
+  },
 });
 
 export default styles;

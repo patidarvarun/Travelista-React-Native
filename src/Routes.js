@@ -26,19 +26,19 @@ const HomeTabs = () => {
           let iconName;
 
           if (route.name === 'Home') {
-            iconName = require('../assets/home.png');
+            iconName = require('../assets/HomeImage/home.png');
             iconText = 'Home';
           } else if (route.name === 'AddTrip') {
-            iconName = require('../assets/add-circle.png');
+            iconName = require('../assets/HomeImage/add-circle.png');
             iconText = 'AddTrip';
           } else if (route.name === 'Search') {
-            iconName = require('../assets/search.png');
+            iconName = require('../assets/HomeImage/search.png');
             iconText = 'Search';
           } else if (route.name === 'Explore') {
-            iconName = require('../assets/scanning.png');
+            iconName = require('../assets/HomeImage/scanning.png');
             iconText = 'Explore';
           } else if (route.name === 'Advice') {
-            iconName = require('../assets/webcam.png');
+            iconName = require('../assets/HomeImage/webcam.png');
             iconText = 'Advice';
           }
 

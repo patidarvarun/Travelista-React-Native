@@ -50,14 +50,14 @@ const ResetPassword = ({navigation}) => {
             onChangeText={text => setEmail(text)}
           />
         </View>
-        <Button
-          type={'green'}
-          disabled={isContinueDisabled}
-          style={styles.nextButton}
-          onPress={() => navigation.navigate('Verification')}>
-          Reset
-        </Button>
       </ScrollView>
+      <Button
+        type={'green'}
+        disabled={isContinueDisabled}
+        style={styles.nextButton}
+        onPress={() => navigation.navigate('Verification')}>
+        Reset
+      </Button>
     </SafeAreaView>
   );
 };

@@ -79,7 +79,6 @@ const CreatePassword = ({navigation}) => {
             </Text>
           </View>
         </View>
-
         <Button style={styles.nextButton} type={'green'} onPress={onsubmit}>
           Continue
         </Button>
