@@ -1,10 +1,14 @@
 import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
+  darkModeContainer: {
+    backgroundColor: 'black',
+    
+  },
   container: {
-    // flex: 1,
+    flex: 1,
   },
   titleContainer: {
-    padding: 20,
+    padding: 10,
     marginVertical: 12,
   },
   titleRow: {

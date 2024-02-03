@@ -5,21 +5,39 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 15,
   },
-  scrollContainer: {
-    paddingTop: 60,
-  },
-  backContainer: {
+  backContainerStyle: {
+    marginVertical: 20,
+    // marginHorizontal: 20,
     // backgroundColor: 'grey',
     position: 'relative',
-    marginTop: 55,
-    left: 12,
-    width: 40,
-    padding: 10,
-    borderRadius: 20,
+    width: 35,
+    height: 35,
+    // borderRadius: 20,
   },
-  backIcon: {width: 20, height: 20},
+  backContainer: {
+    // marginVertical: 5,
+    // marginHorizontal: 5,
+    backgroundColor: '#F9FAFA',
+    // position: 'relative',
+    // marginTop: ,
+    // left: 12,
+    width: 30,
+    height: 30,
+    // padding: 10,
+    margin: 2,
+    borderRadius: 20,
+    // justifyContent: 'center'
+  },
+  backIcon: {width: 20, height: 20, marginVertical: 5, marginHorizontal: 5},
+  scrollContainer: {
+    // paddingTop: 60,
+    paddingVertical: 20,
+  },
+
   inputContainer: {
-    paddingTop: 48,
+    // paddingTop: 48,
+    // paddingVertical: 20,
+    marginTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -30,15 +48,17 @@ const styles = StyleSheet.create({
   },
   footerLink: {
     color: colors.black,
-    fontWeight: '600',
+
+    fontWeight: 'bold',
   },
   nextButton: {
-    marginVertical: 80,
+    marginVertical: 50,
+    // marginBottom: 20,
   },
   separatorContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginVertical: 20,
+    marginVertical: 10,
   },
   separatorLine: {
     flex: 1,
@@ -46,10 +66,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#DDE3E0',
   },
   separatorText: {
-    marginHorizontal: 20,
+    marginHorizontal: 10,
+    textAlign: 'center',
     fontWeight: '400',
     fontSize: 16,
     color: '#7A9085',
+  },
+
+  buttonContent: {
+    // position: 'absolute',
+    // justifyContent: 'space-around',
+    // paddingHorizontal: 16,
+    // display: 'flex',
+    // width: '100%',
+    // bottom: 10,
+    // paddingVertical: 40,
+    // paddingTop: 50,
+    paddingVertical: 40,
   },
 });
 export default styles;

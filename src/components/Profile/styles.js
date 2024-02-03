@@ -12,16 +12,18 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   nameStyle: {
-    fontSize: 17,
+    fontSize: 14,
     fontWeight: 'bold',
     color: 'black',
   },
   countryStyle: {
-    fontSize: 14,
-    marginBottom: 10,
+    color: 'black',
+    fontSize: 12,
+    marginBottom: 5,
   },
   timeStyle: {
-    fontSize: 12,
+    color: 'black',
+    fontSize: 10,
   },
   imageContainer: {
     flexDirection: 'row',
@@ -29,11 +31,9 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginBottom: 30,
   },
-  icon: {
-    height: 20,
-  },
+
   secondImage: {
-    marginLeft: 10,
+    marginLeft: 15,
   },
 });
 export default styles;

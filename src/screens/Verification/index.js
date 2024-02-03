@@ -32,7 +32,7 @@ const Verification = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      <View style={styles.backContainerStyle}>
         <Pressable
           hitSlop={8}
           style={styles.backContainer}
@@ -73,15 +73,15 @@ const Verification = ({navigation}) => {
         ) : (
           <Text>{''}</Text>
         )}
-
-        <Button
-          style={styles.nextButton}
-          type={'green'}
-          disabled={isContinueDisabled}
-          onPress={() => navigation.navigate('CreatePassword')}>
-          Continue
-        </Button>
       </ScrollView>
+
+      <Button
+        style={styles.nextButton}
+        type={'green'}
+        disabled={isContinueDisabled}
+        onPress={() => navigation.navigate('CreatePassword')}>
+        Continue
+      </Button>
     </SafeAreaView>
   );
 };

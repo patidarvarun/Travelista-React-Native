@@ -29,12 +29,12 @@ const Login = ({navigation}) => {
   }, [email, password]);
 
   const onsubmit = () => {
-    navigation.navigate('HomeTabs');
+    navigation.navigate('Routes');
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      <View style={styles.backContainerStyle}>
         <Pressable
           hitSlop={8}
           style={styles.backContainer}
@@ -81,27 +81,25 @@ const Login = ({navigation}) => {
 
         <GoogleButton>Login With Google</GoogleButton>
 
-        <Button
-          style={styles.nextButton}
-          type={'green'}
-          disabled={isContinueDisabled}
-          onPress={onsubmit}>
-          Login
-        </Button>
+        <View style={{paddingVertical: 40}}>
+          <Button
+            style={styles.nextButton}
+            type={'green'}
+            // disabled={isContinueDisabled}
+            onPress={onsubmit}>
+            Login
+          </Button>
 
-        <Text
-          style={[
-            styles.footerText,
-            {textAlign: 'center', marginVertical: 20},
-          ]}>
-          Don't have an Account?
-          <Text
-            style={styles.footerLink}
-            onPress={() => navigation.navigate('Signup')}>
-            {' '}
-            Sign up
+          <Text style={[styles.footerText, {textAlign: 'center'}]}>
+            Don't have an Account?
+            <Text
+              style={styles.footerLink}
+              onPress={() => navigation.navigate('Signup')}>
+              {' '}
+              Sign up
+            </Text>
           </Text>
-        </Text>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

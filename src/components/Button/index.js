@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, TouchableOpacity} from 'react-native';
+import {Pressable, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 
 const Button = ({onPress, style, type, disabled, children}) => {
@@ -10,6 +10,7 @@ const Button = ({onPress, style, type, disabled, children}) => {
     : styles.enableBg;
   return (
     <TouchableOpacity
+      activeOpacity={0.7}
       onPress={onPress}
       disabled={disabled}
       style={[styles.container, buttonStyle, style]}>

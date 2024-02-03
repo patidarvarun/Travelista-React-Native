@@ -7,6 +7,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  Appearance,
 } from 'react-native';
 import Title from '../../../components/Title';
 import styles from './styles';
@@ -15,31 +16,46 @@ import Notification from '../../../../assets/HomeImage/notification.png';
 import {HomeImage, PostData} from '../../../data';
 import TravelCard from '../../../components/TravelCard';
 import PostCard from '../../../components/PostCard';
+
 const Home = ({navigation}) => {
+  const colorScheme = Appearance.getColorScheme();
+
+  const mainContainerStyle = [
+    styles.container,
+    colorScheme === 'dark' && styles.darkModeContainer,
+  ];
+  const textStyle = {
+    color: colorScheme === 'dark' ? 'white' : 'black',
+  };
+  const iconStyle = {
+    tintColor: colorScheme === 'dark' ? 'white' : 'black',
+  };
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={mainContainerStyle}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.titleContainer}>
           <View style={styles.titleRow}>
-            <Title>Travelista</Title>
+            <Title children="Travelista" style={textStyle} />
             <View style={styles.iconsContainer}>
               <TouchableOpacity>
-                <Image source={Sms} style={styles.icon} />
+                <Image source={Sms} style={[styles.icon, iconStyle]} />
               </TouchableOpacity>
               <TouchableOpacity>
-                <Image source={Notification} style={styles.icon} />
+                <Image source={Notification} style={[styles.icon, iconStyle]} />
               </TouchableOpacity>
             </View>
           </View>
         </View>
+
         <FlatList
           horizontal
-          style={{marginHorizontal: 18}}
+          style={{marginHorizontal: 10}}
           data={HomeImage}
           keyExtractor={item => String(item.id)}
           showsHorizontalScrollIndicator={false}
           renderItem={({item, index}) => (
             <TravelCard
+              onPress={() => navigation.navigate('StoryView', {item})}
               image={item?.url}
               title={item?.title}
               style={
@@ -51,19 +67,11 @@ const Home = ({navigation}) => {
 
         <FlatList
           accessibilityElementsHidden
-          style={{marginHorizontal: 20}}
+          style={{marginHorizontal: 10}}
           data={PostData}
           keyExtractor={item => String(item.id)}
           renderItem={({item, index}) => (
-            <PostCard
-              Item={item}
-              // profileImage={item?.profileImage}
-              // name={item?.Name}
-              // country={item?.country}
-              // postTime={item?.postTime}
-              // postDesc={item?.postDesc}
-              // postImage={item?.postImage}
-            />
+            <PostCard colorScheme={colorScheme} Item={item} />
           )}
         />
       </ScrollView>

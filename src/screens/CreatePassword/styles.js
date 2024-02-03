@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     color: '#22BE6F',
   },
   nextButton: {
-    marginTop: 250,
+    // marginTop: 250,
   },
 });
 

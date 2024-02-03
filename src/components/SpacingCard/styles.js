@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
   },
   rowContainer: {
     flexDirection: 'row',
@@ -30,20 +31,23 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   countryStyle: {
-    fontSize: 14,
-    // marginBottom: 10,
+    fontSize: 12,
+    color: 'black',
+    marginBottom: 5,
   },
   timeStyle: {
-    fontSize: 12,
+    color: 'black',
+    fontSize: 10,
   },
   spaceDesc: {
-    marginVertical: 14,
+    // marginVertical: 14,
+    marginTop: 34,
   },
 
   spaceDescStyle: {
     color: 'black',
     fontSize: 12,
-    fontWeight: '600',
+    fontWeight: '500',
     fontFamily: 'Inter',
   },
 });

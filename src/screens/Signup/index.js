@@ -45,7 +45,7 @@ const Signup = ({navigation}) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      <View style={styles.backContainerStyle}>
         <Pressable
           hitSlop={8}
           style={styles.backContainer}
@@ -56,6 +56,7 @@ const Signup = ({navigation}) => {
           />
         </Pressable>
       </View>
+
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
@@ -81,6 +82,7 @@ const Signup = ({navigation}) => {
         <Input
           children="Phone Number"
           onChangeText={val => onChange(val, 'phone_number')}
+          keyboardType="numeric"
         />
 
         <Text style={styles.footerText}>
@@ -99,13 +101,21 @@ const Signup = ({navigation}) => {
         </View>
 
         <GoogleButton>Continue With Google</GoogleButton>
-        <Button
+        {/* <Button
           style={styles.nextButton}
           type={'green'}
           disabled={isContinueDisabled}
           onPress={onsubmit}>
           Continue
-        </Button>
+        </Button> */}
+        <View style={styles.buttonContent}>
+          <Button
+            type={'green'}
+            disabled={isContinueDisabled}
+            onPress={onsubmit}>
+            Continue
+          </Button>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );

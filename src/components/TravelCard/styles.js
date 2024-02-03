@@ -10,6 +10,10 @@ const styles = StyleSheet.create({
   //   justifyContent: 'space-between',
   // },
   homeImage: {
+    // height: 144,
+    // width: 117,
+    borderRadius: 12,
+    borderColor: 'black',
     // marginTop: 30,
   },
   title: {
