@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 15,
   },
+  darkModeContainer: {
+    backgroundColor: 'black',
+  },
   backContainerStyle: {
     position: 'relative',
     width: 35,
@@ -19,21 +22,12 @@ const styles = StyleSheet.create({
     margin: 2,
     borderRadius: 20,
   },
-  backIcon: {width: 20, height: 20},
-  // backContainer: {
-  //   position: 'relative',
-  //   marginTop: 55,
-  //   left: 12,
-  //   width: 40,
-  //   padding: 10,
-  //   borderRadius: 20,
-  // },
-  // backIcon: {width: 20, height: 20},
+  backIcon: {width: 20, height: 20, marginVertical: 5, marginHorizontal: 5},
+
   loginInput: {
     marginTop: 30,
   },
   scrollContainer: {
-    // paddingTop: 60,
     paddingVertical: 20,
   },
   footerText: {

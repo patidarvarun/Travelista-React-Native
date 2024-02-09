@@ -8,8 +8,11 @@ import {
   Modal,
 } from 'react-native';
 import Title from '../../../components/Title';
-import More from '../../../../assets/more.png';
-import Close from '../../../../assets/close.png';
+// import More from '../../../../assets/more.png';
+// import Close from '../../../../assets/close.png';
+
+import More from '../../../../assets/Icons/more.svg';
+import Close from '../../../../assets/Icons/close_black.svg';
 import styles from './styles';
 import Input from '../../../components/Input';
 import calendar from '../../../../assets/AddTripImage/calendar.png';
@@ -17,22 +20,48 @@ import Location from '../../../../assets/AddTripImage/location.png';
 import Button from '../../../components/Button';
 import {useState} from 'react';
 import {Calendar} from 'react-native-calendars';
-import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 const AddTrip = ({navigation}) => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [selected, setSelected] = useState('');
+  const [minDate, setMinDate] = useState('');
+
+  const [tripName, setTripName] = useState('');
+  const [selectedFromDate, setSelectedFromDate] = useState('');
+  const [selectedToDate, setSelectedToDate] = useState('');
+  const [location, setLocation] = useState('');
+  const [description, setDescription] = useState('');
+
   const handleBack = () => {
     navigation.goBack();
   };
-  const openCalendar = () => {
+  const openCalendarFor = dateType => {
     setShowCalendar(true);
+    const today = new Date();
+    const formattedToday = today.toISOString().split('T')[0];
+    setMinDate(formattedToday);
+
+    if (dateType === 'from') {
+      setSelectedFromDate('');
+    } else if (dateType === 'to') {
+      setSelectedToDate('');
+      setMinDate(selectedFromDate);
+    }
+  };
+
+  const onDateSelect = day => {
+    if (!selectedFromDate) {
+      setSelectedFromDate(day.dateString);
+      closeCalendar();
+    } else if (!selectedToDate && day.dateString > selectedFromDate) {
+      setSelectedToDate(day.dateString);
+      closeCalendar();
+    }
   };
   const closeCalendar = () => {
     setShowCalendar(false);
   };
   const onsubmit = () => {
-    // console.log('Hello');
     navigation.navigate('TravelType');
   };
   return (
@@ -42,10 +71,10 @@ const AddTrip = ({navigation}) => {
           <Title children="New Trip" />
           <View style={styles.iconsContainer}>
             <TouchableOpacity>
-              <Image source={More} style={styles.icon} />
+              <More style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={handleBack}>
-              <Image source={Close} style={styles.icon} />
+              <Close style={styles.icon} />
             </TouchableOpacity>
           </View>
         </View>
@@ -54,21 +83,30 @@ const AddTrip = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
         <View style={styles.inputContent}>
-          <Input children="Trip Name" placeholder="Type your Trip Name" />
+          <Input
+            children="Trip Name"
+            placeholder="Type your Trip Name"
+            value={tripName}
+            onChangeText={text => setTripName(text)}
+          />
           <View style={styles.inputContainer}>
             <Input
+              type={'true'}
               children="From"
               placeholder="Pick a Date"
               isHalfWidth
               Image1={calendar}
-              onPress={openCalendar}
+              onPress={() => openCalendarFor('from')}
+              value={selectedFromDate}
             />
             <Input
+              type={'true'}
               children="To"
               placeholder="Pick a Date"
               isHalfWidth
               Image1={calendar}
-              onPress={openCalendar}
+              onPress={() => openCalendarFor('to')}
+              value={selectedToDate}
             />
           </View>
 
@@ -77,27 +115,13 @@ const AddTrip = ({navigation}) => {
             animationType="fade"
             transparent={true}
             onRequestClose={closeCalendar}>
-            <TouchableWithoutFeedback
-              onPress={() => {
-                closeCalendar();
-                Keyboard.dismiss();
-              }}>
-              <View
-                style={
-                  {
-                    // flex: 1,
-                    // justifyContent: 'center',
-                    // alignItems: 'center',
-                  }
-                }>
+            <TouchableOpacity style={{flex: 1}} onPress={closeCalendar}>
+              <View>
                 <Calendar
-                  onDayPress={day => {
-                    setSelected(day.dateString);
-                  }}
+                  onDayPress={onDateSelect}
                   markedDates={{
                     [selected]: {
                       selected: true,
-                      // disableTouchEvent: true,
                       selectedColor: '#27D97F',
                     },
                   }}
@@ -109,17 +133,25 @@ const AddTrip = ({navigation}) => {
                     width: '75%',
                   }}
                   onClose={closeCalendar}
+                  minDate={minDate}
                 />
               </View>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
           </Modal>
 
           <Input
             children="Location"
             placeholder="choose a Location"
             Image1={Location}
+            value={location}
+            onChangeText={text => setLocation(text)}
           />
-          <Input children="Description" placeholder="Type What you want" />
+          <Input
+            children="Description"
+            placeholder="Type What you want"
+            value={description}
+            onChangeText={text => setDescription(text)}
+          />
         </View>
       </ScrollView>
       <Button

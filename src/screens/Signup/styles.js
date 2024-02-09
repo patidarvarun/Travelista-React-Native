@@ -1,42 +1,39 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     marginHorizontal: 15,
+  },
+  darkModeContainer: {
+    backgroundColor: 'black',
   },
   backContainerStyle: {
     marginVertical: 20,
-    // marginHorizontal: 20,
-    // backgroundColor: 'grey',
     position: 'relative',
     width: 35,
     height: 35,
-    // borderRadius: 20,
   },
   backContainer: {
-    // marginVertical: 5,
-    // marginHorizontal: 5,
     backgroundColor: '#F9FAFA',
-    // position: 'relative',
-    // marginTop: ,
-    // left: 12,
     width: 30,
     height: 30,
-    // padding: 10,
     margin: 2,
     borderRadius: 20,
-    // justifyContent: 'center'
   },
-  backIcon: {width: 20, height: 20, marginVertical: 5, marginHorizontal: 5},
+  backIcon: {
+    width: 20,
+    height: 20,
+    marginVertical: 5,
+    marginHorizontal: 5,
+  },
   scrollContainer: {
-    // paddingTop: 60,
+    // flex: 1,
     paddingVertical: 20,
   },
 
   inputContainer: {
-    // paddingTop: 48,
-    // paddingVertical: 20,
     marginTop: 30,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -53,7 +50,6 @@ const styles = StyleSheet.create({
   },
   nextButton: {
     marginVertical: 50,
-    // marginBottom: 20,
   },
   separatorContainer: {
     flexDirection: 'row',
@@ -74,15 +70,7 @@ const styles = StyleSheet.create({
   },
 
   buttonContent: {
-    // position: 'absolute',
-    // justifyContent: 'space-around',
-    // paddingHorizontal: 16,
-    // display: 'flex',
-    // width: '100%',
-    // bottom: 10,
-    // paddingVertical: 40,
-    // paddingTop: 50,
-    paddingVertical: 40,
+    marginBottom: 20,
   },
 });
 export default styles;

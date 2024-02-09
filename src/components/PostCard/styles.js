@@ -15,10 +15,21 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
     fontFamily: 'Inter',
   },
+
   postImage: {
     width: '100%',
     borderRadius: 12,
+    position: 'relative',
   },
+  moreIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    width: 22,
+    height: 22,
+    tintColor: 'black',
+  },
+
   commentIcon: {
     color: 'black',
   },

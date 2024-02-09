@@ -21,9 +21,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   imageStyle: {},
+  moreIcon: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    width: 22,
+    height: 22,
+    tintColor: 'black',
+  },
   columnContainer: {
     // flexDirection: 'column',
     marginLeft: 10,
+    position: 'relative',
   },
   nameStyle: {
     fontSize: 14,

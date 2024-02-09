@@ -1,39 +1,42 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
+const width = Dimensions.get('screen').width;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginHorizontal: 15,
   },
-  // scrollContainer: {
-  //   paddingTop: 60,
-
-  // },
-  // backContainer: {
-  //   backgroundColor: '#F9FAFA',
-  //   position: 'relative',
-  //   marginTop: 55,
-  //   left: 12,
-  //   width: 40,
-  //   padding: 10,
-  //   borderRadius: 20,
-  // },
-  // backIcon: {width: 20, height: 20},
+  darkModeContainer: {
+    backgroundColor: 'black',
+  },
   codeContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginVertical: 10,
-    width: '100%',
+    width: width,
+  },
+  inputStyle: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+
+    borderRadius: 8,
+    borderTopColor: 'black',
+    color: 'red',
+    marginVertical: 12,
   },
   codeInput: {
-    width: 50,
-    height: 80,
+    width: 44,
+    height: 60,
     borderRadius: 4,
     borderWidth: 1,
-    backgroundColor: '#F9FAFA',
+    backgroundColor: colors.lightGrey,
     borderColor: '#BCC7C1',
     textAlign: 'center',
     fontSize: 18,
+    marginTop: 30,
+    marginRight: 10,
+    padding: 10,
+    color: 'yellow',
   },
   footerText: {
     color: colors.black,
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
     lineHeight: 17,
     textAlign: 'center',
     fontFamily: 'Inter',
-    // marginVertical: 10,
+    marginVertical: 10,
   },
   footerLink: {
     color: colors.black,
@@ -50,8 +53,6 @@ const styles = StyleSheet.create({
   nextButton: {
     marginBottom: 20,
   },
-
-  // Changes Css
 
   scrollContainer: {
     paddingVertical: 20,

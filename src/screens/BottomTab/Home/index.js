@@ -11,8 +11,8 @@ import {
 } from 'react-native';
 import Title from '../../../components/Title';
 import styles from './styles';
-import Sms from '../../../../assets/HomeImage/sms.png';
-import Notification from '../../../../assets/HomeImage/notification.png';
+import Sms from '../../../../assets/Icons/sms.svg';
+import Notification from '../../../../assets/Icons/notification.svg';
 import {HomeImage, PostData} from '../../../data';
 import TravelCard from '../../../components/TravelCard';
 import PostCard from '../../../components/PostCard';
@@ -27,9 +27,7 @@ const Home = ({navigation}) => {
   const textStyle = {
     color: colorScheme === 'dark' ? 'white' : 'black',
   };
-  const iconStyle = {
-    tintColor: colorScheme === 'dark' ? 'white' : 'black',
-  };
+
   return (
     <SafeAreaView style={mainContainerStyle}>
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -38,10 +36,12 @@ const Home = ({navigation}) => {
             <Title children="Travelista" style={textStyle} />
             <View style={styles.iconsContainer}>
               <TouchableOpacity>
-                <Image source={Sms} style={[styles.icon, iconStyle]} />
+                <Sms fill={'white'} style={styles.icon} />
               </TouchableOpacity>
-              <TouchableOpacity>
-                <Image source={Notification} style={[styles.icon, iconStyle]} />
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => navigation.navigate('Notifications')}>
+                <Notification fill={'white'} style={styles.icon} />
               </TouchableOpacity>
             </View>
           </View>

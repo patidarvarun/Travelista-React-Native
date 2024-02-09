@@ -13,10 +13,24 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import {useEffect, useState} from 'react';
 import GoogleButton from '../../components/GoogleButton';
+import BackIcon from '../../../assets/Icons/back.svg';
+import {useTheme} from '../../Context/ThemeContext';
 const Login = ({navigation}) => {
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const theme = useTheme();
+
+  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
+  const iconStyle = {
+    tintColor: theme === 'dark' ? 'white' : 'black',
+  };
+
   const handleBack = () => {
     navigation.goBack();
   };
@@ -33,55 +47,53 @@ const Login = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.backContainerStyle}>
-        <Pressable
-          hitSlop={8}
-          style={styles.backContainer}
-          onPress={handleBack}>
-          <Image
-            source={require('../../../assets/back1.png')}
-            style={styles.backIcon}
-          />
-        </Pressable>
-      </View>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.scrollContainer}>
-        <Title>Welcome Back</Title>
-        <Title>Traveller</Title>
-
-        <View style={styles.loginInput}>
-          <Input
-            children="Email"
-            keyboardType="email-address"
-            onChangeText={text => setEmail(text)}
-          />
-          <Input
-            children="Password"
-            secureTextEntry
-            onChangeText={text => setPassword(text)}
-          />
+    <SafeAreaView style={[{flex: 1}, mainContainerStyle]}>
+      <View style={styles.container}>
+        <View style={styles.backContainerStyle}>
+          <Pressable
+            hitSlop={8}
+            style={styles.backContainer}
+            onPress={handleBack}>
+            <BackIcon style={styles.backIcon} />
+          </Pressable>
         </View>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={styles.scrollContainer}>
+          <Title style={textStyle}>Welcome Back</Title>
+          <Title>Traveller</Title>
 
-        <Text style={styles.footerText}>
-          Forget Password?{' '}
-          <Text
-            style={styles.footerLink}
-            onPress={() => navigation.navigate('ResetPassword')}>
-            Reset It
+          <View style={styles.loginInput}>
+            <Input
+              children="Email"
+              keyboardType="email-address"
+              onChangeText={text => setEmail(text)}
+            />
+            <Input
+              children="Password"
+              secureTextEntry
+              onChangeText={text => setPassword(text)}
+            />
+          </View>
+
+          <Text style={[styles.footerText, textStyle]}>
+            Forget Password?{' '}
+            <Text
+              style={[styles.footerLink, textStyle]}
+              onPress={() => navigation.navigate('ResetPassword')}>
+              Reset It
+            </Text>
           </Text>
-        </Text>
 
-        <View style={styles.separatorContainer}>
-          <View style={styles.separatorLine}></View>
-          <Text style={styles.separatorText}>or</Text>
-          <View style={styles.separatorLine}></View>
-        </View>
+          <View style={styles.separatorContainer}>
+            <View style={styles.separatorLine}></View>
+            <Text style={styles.separatorText}>or</Text>
+            <View style={styles.separatorLine}></View>
+          </View>
 
-        <GoogleButton>Login With Google</GoogleButton>
-
-        <View style={{paddingVertical: 40}}>
+          <GoogleButton>Login With Google</GoogleButton>
+        </ScrollView>
+        <View style={{marginBottom: 20}}>
           <Button
             style={styles.nextButton}
             type={'green'}
@@ -90,17 +102,17 @@ const Login = ({navigation}) => {
             Login
           </Button>
 
-          <Text style={[styles.footerText, {textAlign: 'center'}]}>
+          <Text style={[styles.footerText, textStyle, {textAlign: 'center'}]}>
             Don't have an Account?
             <Text
-              style={styles.footerLink}
+              style={[styles.footerLink, textStyle]}
               onPress={() => navigation.navigate('Signup')}>
               {' '}
               Sign up
             </Text>
           </Text>
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };

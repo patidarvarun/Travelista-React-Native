@@ -13,11 +13,23 @@ import Title from '../../components/Title';
 import Input from '../../components/Input';
 import CheckBox from '../../components/CheckBox';
 import Button from '../../components/Button';
+import BackIcon from '../../../assets/Icons/back.svg';
+import {useTheme} from '../../Context/ThemeContext';
 const CreatePassword = ({navigation}) => {
-  //   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
   const [agreed, setAgreed] = useState(false);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const theme = useTheme();
+
+  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
+  const iconStyle = {
+    tintColor: theme === 'dark' ? 'white' : 'black',
+  };
   const handleBack = () => {
     navigation.goBack();
   };
@@ -38,15 +50,12 @@ const CreatePassword = ({navigation}) => {
   };
   return (
     <SafeAreaView style={styles.container}>
-      <View>
+      <View style={styles.backContainerStyle}>
         <Pressable
           hitSlop={8}
           style={styles.backContainer}
           onPress={handleBack}>
-          <Image
-            source={require('../../../assets/back1.png')}
-            style={styles.backIcon}
-          />
+          <BackIcon style={styles.backIcon} />
         </Pressable>
       </View>
 
@@ -56,6 +65,7 @@ const CreatePassword = ({navigation}) => {
         <Title>Create Password</Title>
         <View style={styles.passwordInput}>
           <Input
+            autoFocus
             children="Password"
             secureTextEntry={true}
             onChangeText={text => setPassword(text)}

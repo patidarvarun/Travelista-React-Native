@@ -1,5 +1,6 @@
 import {View, Text, ImageBackground, SafeAreaView, Image} from 'react-native';
 import styles from './styles';
+import MoreIcon from "../../../assets/Icons/more.svg"
 const SpacingCard = ({Item}) => {
   const {spaceBack, spaceImage, spaceTime, spaceCity, spaceName, spaceDesc} =
     Item;
@@ -10,6 +11,10 @@ const SpacingCard = ({Item}) => {
           <View style={styles.spaceContainer}>
             <View style={styles.rowContainer}>
               <Image source={spaceImage} style={styles.imageStyle} />
+              <Image
+                source={MoreIcon}
+                style={styles.moreIcon}
+              />
 
               <View style={styles.columnContainer}>
                 <Text style={styles.nameStyle}>{spaceName}</Text>

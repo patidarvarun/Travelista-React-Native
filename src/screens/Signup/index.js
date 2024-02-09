@@ -1,4 +1,12 @@
-import {View, Text, SafeAreaView, Image, Alert, Pressable} from 'react-native';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  Image,
+  Alert,
+  Pressable,
+  KeyboardAvoidingView,
+} from 'react-native';
 import styles from './styles';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Title from '../../components/Title';
@@ -6,7 +14,21 @@ import Input from '../../components/Input';
 import {useEffect, useState} from 'react';
 import Button from '../../components/Button';
 import GoogleButton from '../../components/GoogleButton';
+import BackIcon from '../../../assets/Icons/back.svg';
+import {Svg} from 'react-native-svg';
+import {useTheme} from '../../Context/ThemeContext';
 const Signup = ({navigation}) => {
+  const theme = useTheme();
+
+  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
+  const iconStyle = {
+    tintColor: theme === 'dark' ? 'white' : 'black',
+  };
+
   const [values, setValues] = useState({});
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
 
@@ -44,70 +66,64 @@ const Signup = ({navigation}) => {
     }
   };
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.backContainerStyle}>
-        <Pressable
-          hitSlop={8}
-          style={styles.backContainer}
-          onPress={handleBack}>
-          <Image
-            source={require('../../../assets/back1.png')}
-            style={styles.backIcon}
-          />
-        </Pressable>
-      </View>
-
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={styles.scrollContainer}>
-        <Title>Sign up</Title>
-        <View style={styles.inputContainer}>
-          <Input
-            children="First Name"
-            onChangeText={val => onChange(val, 'first_name')}
-            isHalfWidth
-          />
-          <Input
-            children="Last Name"
-            onChangeText={val => onChange(val, 'last_name')}
-            isHalfWidth
-          />
+    <SafeAreaView style={[{flex: 1}, mainContainerStyle]}>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.backContainerStyle}>
+          <Pressable
+            hitSlop={8}
+            style={styles.backContainer}
+            onPress={handleBack}>
+            <BackIcon style={styles.backIcon} />
+          </Pressable>
         </View>
 
-        <Input
-          children="Email"
-          onChangeText={val => onChange(val, 'email')}
-          keyboardType="email-address"
-        />
-        <Input
-          children="Phone Number"
-          onChangeText={val => onChange(val, 'phone_number')}
-          keyboardType="numeric"
-        />
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={styles.scrollContainer}
+          contentContainerStyle={{flexGrow: 1}}>
+          <Title style={textStyle}>Sign up</Title>
+          <View style={styles.inputContainer}>
+            <Input
+              children="First Name"
+              onChangeText={val => onChange(val, 'first_name')}
+              isHalfWidth
+            />
+            <Input
+              children="Last Name"
+              onChangeText={val => onChange(val, 'last_name')}
+              isHalfWidth
+            />
+          </View>
 
-        <Text style={styles.footerText}>
-          Already have an account?
-          <Text
-            style={styles.footerLink}
-            onPress={() => navigation.navigate('Login')}>
-            Login
+          <Input
+            children="Email"
+            onChangeText={val => onChange(val, 'email')}
+            keyboardType="email-address"
+          />
+          <Input
+            children="Phone Number"
+            onChangeText={val => onChange(val, 'phone_number')}
+            keyboardType="numeric"
+          />
+
+          <Text style={[styles.footerText, textStyle]}>
+            Already have an account?
+            <Text
+              style={[styles.footerLink,textStyle]}
+              onPress={() => navigation.navigate('Login')}>
+              Login
+            </Text>
           </Text>
-        </Text>
 
-        <View style={styles.separatorContainer}>
-          <View style={styles.separatorLine}></View>
-          <Text style={styles.separatorText}>or</Text>
-          <View style={styles.separatorLine}></View>
-        </View>
+          <View style={styles.separatorContainer}>
+            <View style={styles.separatorLine}></View>
+            <Text style={styles.separatorText}>or</Text>
+            <View style={styles.separatorLine}></View>
+          </View>
 
-        <GoogleButton>Continue With Google</GoogleButton>
-        {/* <Button
-          style={styles.nextButton}
-          type={'green'}
-          disabled={isContinueDisabled}
-          onPress={onsubmit}>
-          Continue
-        </Button> */}
+          <GoogleButton>Continue With Google</GoogleButton>
+        </ScrollView>
+
         <View style={styles.buttonContent}>
           <Button
             type={'green'}
@@ -116,7 +132,7 @@ const Signup = ({navigation}) => {
             Continue
           </Button>
         </View>
-      </ScrollView>
+      </SafeAreaView>
     </SafeAreaView>
   );
 };

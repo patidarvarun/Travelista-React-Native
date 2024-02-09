@@ -10,12 +10,13 @@ import {
 import Input from '../../components/Input';
 import styles from './styles';
 import Title from '../../components/Title';
-import More from '../../../assets/more.png';
-import Close from '../../../assets/close.png';
+import More from '../../../assets/Icons/more.svg';
+import Close from '../../../assets/Icons/close_black.svg';
 import DownArrow from '../../../assets/AddTripImage/down.png';
 import {useState} from 'react';
 import DropDown from '../../components/DropDown';
 import Button from '../../components/Button';
+
 const TravelType = ({navigation}) => {
   const [dropdownVisible, setDropdownVisible] = useState({
     adventures: false,
@@ -49,7 +50,7 @@ const TravelType = ({navigation}) => {
       [dropdownType]: true,
     }));
 
-    // toggleDropdown(dropdownType);
+    toggleDropdown(dropdownType);
   };
   console.log(selectedOptions);
   const toggleDropdown = dropdownType => {
@@ -93,10 +94,10 @@ const TravelType = ({navigation}) => {
           <Title children="Choose" />
           <View style={styles.iconsContainer}>
             <TouchableOpacity>
-              <Image source={More} style={styles.icon} />
+              <More style={styles.icon} />
             </TouchableOpacity>
             <TouchableOpacity onPress={handleBack}>
-              <Image source={Close} style={styles.icon} />
+              <Close style={styles.icon} />
             </TouchableOpacity>
           </View>
         </View>
@@ -112,8 +113,10 @@ const TravelType = ({navigation}) => {
           renderItem={({item}) => (
             <View>
               <Input
+                type={'true'}
                 children={item.label}
                 placeholder={item.placeholder}
+                value={selectedOptions[item.key]}
                 Image1={DownArrow}
                 onPress={() => toggleDropdown(item.key)}
               />

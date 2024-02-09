@@ -21,6 +21,41 @@ const styles = StyleSheet.create({
   icon: {
     marginLeft: 16,
   },
+
+  // ######################## Modal Css #####################
+  modalContainer: {
+    backgroundColor: 'white',
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 30,
+    marginVertical: 60,
+  },
+  modalContent: {
+    marginBottom: 20,
+  },
+  modalText: {
+    textAlign: 'center',
+    fontSize: 18,
+  },
+  modalIconsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  modalIconContainer: {
+    backgroundColor: 'lightgray',
+    borderRadius: 35,
+    padding: 15,
+    marginHorizontal: 10,
+  },
+  modalIcon: {
+    width: 20,
+    height: 20,
+  },
+  CheckIcon: {
+    marginBottom: 10,
+  },
 });
 
 export default styles;

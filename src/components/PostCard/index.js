@@ -3,6 +3,10 @@ import styles from './styles';
 import Profile from '../Profile';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import SpacingCard from '../SpacingCard';
+import MoreIcon from '../../../assets/Icons/more.svg';
+import ArrowIcon from '../../../assets/Icons/arrow.svg';
+import HeartIcon from '../../../assets/Icons/heart.svg';
+import MessageIcon from '../../../assets/Icons/message.svg';
 const PostCard = ({Item, colorScheme}) => {
   const imageStyle = {
     tintColor: colorScheme === 'dark' ? 'white' : 'black',
@@ -21,34 +25,26 @@ const PostCard = ({Item, colorScheme}) => {
           </View>
           <View style={styles.imageContainer}>
             <Image source={postImage} style={styles.postImage} />
+            <MoreIcon style={styles.moreIcon} />
 
             <View style={styles.commentNav}>
               <View style={styles.navContainer}>
                 <TouchableOpacity>
-                  <Image
-                    source={require('../../../assets/PostImage/arrow.png')}
-                    style={[styles.commentIcon, imageStyle]}
-                  />
+                  <ArrowIcon style={[styles.commentIcon, imageStyle]} />
                 </TouchableOpacity>
                 <Text style={[styles.commentText, desStyle]}>2K</Text>
               </View>
 
               <View style={styles.navContainer}>
                 <TouchableOpacity>
-                  <Image
-                    source={require('../../../assets/PostImage/heart.png')}
-                    style={[styles.commentIcon, imageStyle]}
-                  />
+                  <HeartIcon style={[styles.commentIcon, imageStyle]} />
                 </TouchableOpacity>
 
                 <Text style={[styles.commentText, desStyle]}>2K</Text>
               </View>
               <View style={styles.navContainer}>
                 <TouchableOpacity>
-                  <Image
-                    source={require('../../../assets/PostImage/message.png')}
-                    style={[styles.commentIcon, imageStyle]}
-                  />
+                  <MessageIcon style={[styles.commentIcon, imageStyle]} />
                 </TouchableOpacity>
                 <Text style={[styles.commentText, desStyle]}>2K</Text>
               </View>

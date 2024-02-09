@@ -5,25 +5,36 @@ import AddTrip from './screens/BottomTab/AddTrip';
 import Search from './screens/BottomTab/Search';
 import Explore from './screens/BottomTab/Explore';
 import Advice from './screens/BottomTab/Advice';
+import HomeImage from '../assets/Icons/home.svg';
+import AddTripImage from '../assets/Icons/add_circle.svg';
+import SearchImage from '../assets/Icons/search_normal.svg';
+import ScanningImage from '../assets/Icons/scanning.svg';
+import AdviceImage from '../assets/Icons/webcam.svg';
+import {useIsFocused} from '@react-navigation/native';
+import {useTheme} from './Context/ThemeContext';
+
 const Tab = createBottomTabNavigator();
+
 const Routes = () => {
+  const theme = useTheme();
   return (
     <Tab.Navigator
       initialRouteName="Home"
       screenOptions={{
-        tabBarActiveTintColor: 'green',
         headerShown: false,
+        tabBarActiveTintColor: 'green',
         tabBarHideOnKeyboard: true,
+        tabBarStyle: {
+          backgroundColor: theme === 'dark' ? 'black' : 'white',
+          borderTopColor: theme === 'dark' ? 'black' : 'white',
+        },
       }}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
           tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../assets/HomeImage/home.png')}
-              style={{tintColor: focused ? '#22BE6F' : '#8FA198'}}
-            />
+            <HomeImage style={{tintColor: focused ? '#22BE6F' : '#8FA198'}} />
           ),
         }}
       />
@@ -32,8 +43,7 @@ const Routes = () => {
         component={AddTrip}
         options={{
           tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../assets/HomeImage/add-circle.png')}
+            <AddTripImage
               style={{tintColor: focused ? '#22BE6F' : '#8FA198'}}
             />
           ),
@@ -44,10 +54,7 @@ const Routes = () => {
         component={Search}
         options={{
           tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../assets/HomeImage/search.png')}
-              style={{tintColor: focused ? '#22BE6F' : '#8FA198'}}
-            />
+            <SearchImage style={{tintColor: focused ? '#22BE6F' : '#8FA198'}} />
           ),
         }}
       />
@@ -56,8 +63,7 @@ const Routes = () => {
         component={Explore}
         options={{
           tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../assets/HomeImage/scanning.png')}
+            <ScanningImage
               style={{tintColor: focused ? '#22BE6F' : '#8FA198'}}
             />
           ),
@@ -68,10 +74,7 @@ const Routes = () => {
         component={Advice}
         options={{
           tabBarIcon: ({focused}) => (
-            <Image
-              source={require('../assets/HomeImage/webcam.png')}
-              style={{tintColor: focused ? '#22BE6F' : '#8FA198'}}
-            />
+            <AdviceImage style={{tintColor: focused ? '#22BE6F' : '#8FA198'}} />
           ),
         }}
       />

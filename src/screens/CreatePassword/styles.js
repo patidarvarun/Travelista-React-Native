@@ -6,20 +6,36 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   scrollContainer: {
-    paddingTop: 60,
+    // flex: 1,
+    paddingVertical: 20,
+  },
+  // backContainer: {
+  //   backgroundColor: '#F9FAFA',
+  //   position: 'relative',
+  //   marginTop: 55,
+  //   left: 12,
+  //   width: 40,
+  //   padding: 10,
+  //   borderRadius: 20,
+  // },
+  // backIcon: {width: 20, height: 20},
+  backContainerStyle: {
+    marginVertical: 20,
+
+    position: 'relative',
+    width: 35,
+    height: 35,
   },
   backContainer: {
     backgroundColor: '#F9FAFA',
-    position: 'relative',
-    marginTop: 55,
-    left: 12,
-    width: 40,
-    padding: 10,
+    width: 30,
+    height: 30,
+    margin: 2,
     borderRadius: 20,
   },
-  backIcon: {width: 20, height: 20},
+  backIcon: {width: 20, height: 20, marginVertical: 5, marginHorizontal: 5},
   passwordInput: {
-    marginTop: 60,
+    marginTop: 30,
   },
   row: {
     flexDirection: 'row',
@@ -36,6 +52,7 @@ const styles = StyleSheet.create({
     color: '#22BE6F',
   },
   nextButton: {
+    // marginBottom: 20,
     // marginTop: 250,
   },
 });

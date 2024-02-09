@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 8,
     padding: 14,
-    marginVertical: 8,
+    // marginVertical: 8,
   },
   text: {
     color: colors.black,

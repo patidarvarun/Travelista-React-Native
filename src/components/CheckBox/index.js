@@ -4,6 +4,7 @@ import styles from './styles';
 const CheckBox = ({checked, onPress}) => {
   return (
     <Pressable
+      hitSlop={10}
       style={[styles.container, checked ? styles.checkedBox : {}]}
       onPress={onPress}>
       {checked ? <View style={styles.innerSquare} /> : null}

@@ -15,11 +15,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrey,
     paddingHorizontal: 12,
     borderRadius: 8,
+    borderTopColor: 'black',
     color: colors.black,
     marginVertical: 12,
   },
   textInput: {
-    // color: 'black',
+    color: 'black',
     flex: 1,
     fontSize: 12,
   },

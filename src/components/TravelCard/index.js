@@ -3,7 +3,10 @@ import styles from './styles';
 import Title from '../Title';
 const TravelCard = ({image, title, style, onPress}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={onPress}
+      activeOpacity={0.7}>
       <View styles={styles.row}>
         <Image source={image} style={[styles.homeImage, style]} />
         <Text numberOfLines={1} style={[styles.title, styles.bottomLeftTitle]}>

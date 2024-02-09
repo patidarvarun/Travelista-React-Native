@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import styles from './styles';
+import ShareIcon from '../../../assets/Icons/share.svg';
+import ArchiveIcon from '../../../assets/Icons/archive_add.svg';
 const Profile = ({Item, colorScheme}) => {
   const {profileImage, Name, country, postTime} = Item;
   const textStyle = {
@@ -27,17 +29,11 @@ const Profile = ({Item, colorScheme}) => {
         </View>
         <View style={styles.imageContainer}>
           <TouchableOpacity>
-            <Image
-              style={[styles.icon, iconStyle]}
-              source={require('../../../assets/PostImage/Icon.png')}
-            />
+            <ShareIcon />
           </TouchableOpacity>
 
           <TouchableOpacity>
-            <Image
-              source={require('../../../assets/PostImage/archive-add.png')}
-              style={[styles.secondImage, styles.icon, iconStyle]}
-            />
+            <ArchiveIcon style={[styles.secondImage, styles.icon, iconStyle]} />
           </TouchableOpacity>
         </View>
       </View>

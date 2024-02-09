@@ -1,0 +1,4 @@
+com.travelista.test.app-androidTest-0 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/generated/res/resValues/androidTest/debug
+com.travelista.test.app-mergeDebugAndroidTestResources-1 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.travelista.test.app-mergeDebugAndroidTestResources-2 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.travelista.test.app-merged_res-3 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/merged_res/debugAndroidTest

@@ -9,8 +9,9 @@ import {
 import styles from './styles';
 import ProfileImage from '../../../assets/HomeImage/storyProImage.png';
 import Profile from '../../components/Profile';
+import MoreIcon from '../../../assets/Icons/more_white.svg';
+import CloseIcon from '../../../assets/Icons/close_white.svg';
 const StoryView = ({navigation}) => {
-  //   const {item} = route?.params || {};
   const handleBack = () => {
     navigation.goBack();
   };
@@ -29,18 +30,12 @@ const StoryView = ({navigation}) => {
             <Text style={styles.timeStyle}>5 Days ago</Text>
           </View>
           <View style={styles.imageContainer}>
-            <TouchableOpacity>
-              <Image
-                style={styles.icon}
-                source={require('../../../assets/AddTripImage/more.png')}
-              />
+            <TouchableOpacity activeOpacity={0.7}>
+              <MoreIcon style={styles.icon} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={handleBack}>
-              <Image
-                source={require('../../../assets/AddTripImage/close.png')}
-                style={[styles.secondImage, styles.icon]}
-              />
+            <TouchableOpacity onPress={handleBack} activeOpacity={0.7}>
+              <CloseIcon style={[styles.secondImage, styles.icon]} />
             </TouchableOpacity>
           </View>
         </View>
