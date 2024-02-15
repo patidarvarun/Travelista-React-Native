@@ -12,12 +12,21 @@ import styles from './styles';
 import Title from '../../components/Title';
 import More from '../../../assets/Icons/more.svg';
 import Close from '../../../assets/Icons/close_black.svg';
+import MoreWhite from '../../../assets/Icons/more_white.svg';
+import CloseWhite from '../../../assets/Icons/close_white.svg';
 import DownArrow from '../../../assets/AddTripImage/down.png';
 import {useState} from 'react';
 import DropDown from '../../components/DropDown';
 import Button from '../../components/Button';
+import {useTheme} from '../../Context/ThemeContext';
+import {TravelData} from '../../data';
 
 const TravelType = ({navigation}) => {
+  const theme = useTheme();
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
   const [dropdownVisible, setDropdownVisible] = useState({
     adventures: false,
     activities: false,
@@ -52,7 +61,7 @@ const TravelType = ({navigation}) => {
 
     toggleDropdown(dropdownType);
   };
-  console.log(selectedOptions);
+
   const toggleDropdown = dropdownType => {
     setDropdownVisible(prevVisible => ({
       ...prevVisible,
@@ -60,48 +69,29 @@ const TravelType = ({navigation}) => {
     }));
   };
 
-  const data = [
-    {
-      key: 'adventures',
-      label: 'Adventures',
-      placeholder: 'Choose Adventures',
-      options: ['Cycling', 'Canoe', 'Biking', 'Skiing'],
-    },
-    {
-      key: 'activities',
-      label: 'Activities',
-      placeholder: 'Choose Activities',
-      options: ['Activity 1', 'Activity 2', 'Activity 3', 'Activity 4'],
-    },
-    {
-      key: 'typeOfTravel',
-      label: 'Type of Travel',
-      placeholder: 'Choose Type of Travel',
-      options: ['Local', 'Global'],
-    },
-    {
-      key: 'travelPrivacy',
-      label: 'Travel Privacy',
-      placeholder: 'Who can see your travel?',
-      options: ['Only me', 'Others'],
-    },
-  ];
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
         <View style={styles.titleRow}>
-          <Title children="Choose" />
+          <Title style={textStyle} children="Choose" />
           <View style={styles.iconsContainer}>
             <TouchableOpacity>
-              <More style={styles.icon} />
+              {theme === 'dark' ? (
+                <MoreWhite style={styles.icon} />
+              ) : (
+                <More style={styles.icon} />
+              )}
             </TouchableOpacity>
             <TouchableOpacity onPress={handleBack}>
-              <Close style={styles.icon} />
+              {theme === 'dark' ? (
+                <CloseWhite style={styles.icon} />
+              ) : (
+                <Close style={styles.icon} />
+              )}
             </TouchableOpacity>
           </View>
         </View>
-        <Title children="Travel Type" />
+        <Title style={textStyle} children="Travel Type" />
       </View>
 
       <ScrollView
@@ -109,7 +99,7 @@ const TravelType = ({navigation}) => {
         style={styles.scrollContainer}>
         <FlatList
           style={styles.inputContainer}
-          data={data}
+          data={TravelData}
           renderItem={({item}) => (
             <View>
               <Input

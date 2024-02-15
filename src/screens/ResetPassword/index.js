@@ -13,7 +13,14 @@ import Input from '../../components/Input';
 import Title from '../../components/Title';
 import Button from '../../components/Button';
 import BackIcon from '../../../assets/Icons/back.svg';
+import {useTheme} from '../../Context/ThemeContext';
 const ResetPassword = ({navigation}) => {
+  const theme = useTheme();
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
+
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
   const [email, setEmail] = useState('');
 
@@ -40,7 +47,7 @@ const ResetPassword = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
-        <Title>Reset Password</Title>
+        <Title style={textStyle}>Reset Password</Title>
         <View style={styles.resetInput}>
           <Input
             autoFocus

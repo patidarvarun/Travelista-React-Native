@@ -6,22 +6,16 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 15,
   },
-  darkModeContainer: {
-    backgroundColor: 'black',
-  },
   codeContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     marginVertical: 10,
-    width: width,
   },
   inputStyle: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    // flexDirection: 'row',
+    // justifyContent: 'space-between',
 
-    borderRadius: 8,
-    borderTopColor: 'black',
-    color: 'red',
+    // borderRadius: 8,
+    // borderTopColor: 'black',
+    // color: 'red',
     marginVertical: 12,
   },
   codeInput: {
@@ -29,9 +23,8 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 4,
     borderWidth: 1,
-    backgroundColor: colors.lightGrey,
     borderColor: '#BCC7C1',
-    textAlign: 'center',
+    // textAlign: 'center',
     fontSize: 18,
     marginTop: 30,
     marginRight: 10,

@@ -6,6 +6,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginVertical: 20,
   },
+  textInputStyle: {
+    fontSize: 14,
+    color: 'black',
+  },
   headerContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -18,6 +22,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
+    backgroundColor: '#f0f0f0',
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 10,
   },
   columnContainer: {
     flexDirection: 'column',
@@ -29,6 +37,11 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginBottom: 30,
   },
+  titleStyle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'black',
+  },
   timeTitle: {
     fontSize: 14,
     fontWeight: 'bold',
@@ -36,11 +49,13 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   desStyle: {
+    color: '#7A857A',
     fontSize: 12,
     flexWrap: 'wrap',
     marginRight: 50,
   },
   timeStyle: {
+    color: '#7A857A',
     fontSize: 12,
   },
 });

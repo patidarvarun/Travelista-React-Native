@@ -1,7 +1,9 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
 const {width} = Dimensions.get('window');
+const {height} = Dimensions.get('window');
 console.log('########', width);
+console.log('########', height);
 const styles = StyleSheet.create({
   container: {
     // flex: 1,
@@ -17,9 +19,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     // marginRight: 10,
     width: width * 0.4,
-    // height: 160,
+    // height:150,
   },
   bioText: {
+    color: 'black',
     fontSize: 10,
     marginBottom: 5,
   },
@@ -27,6 +30,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     // flex: 1,
     width: width * 0.6,
+    height: 150,
   },
   wrapper: {
     marginHorizontal: 5,

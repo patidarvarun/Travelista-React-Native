@@ -15,6 +15,7 @@ import {useEffect, useState} from 'react';
 import GoogleButton from '../../components/GoogleButton';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
+
 const Login = ({navigation}) => {
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
   const [email, setEmail] = useState('');
@@ -47,35 +48,36 @@ const Login = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={[{flex: 1}, mainContainerStyle]}>
-      <View style={styles.container}>
-        <View style={styles.backContainerStyle}>
-          <Pressable
-            hitSlop={8}
-            style={styles.backContainer}
-            onPress={handleBack}>
-            <BackIcon style={styles.backIcon} />
-          </Pressable>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.backContainerStyle}>
+        <Pressable
+          hitSlop={8}
+          style={styles.backContainer}
+          onPress={handleBack}>
+          <BackIcon style={styles.backIcon} />
+        </Pressable>
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.scrollContainer}>
+        <Title style={textStyle}>Welcome Back</Title>
+        <Title>Traveller</Title>
+
+        <View style={styles.loginInput}>
+          <Input
+            children="Email"
+            keyboardType="email-address"
+            onChangeText={text => setEmail(text)}
+          />
+          <Input
+            children="Password"
+            secureTextEntry
+            onChangeText={text => setPassword(text)}
+          />
         </View>
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={styles.scrollContainer}>
-          <Title style={textStyle}>Welcome Back</Title>
-          <Title>Traveller</Title>
 
-          <View style={styles.loginInput}>
-            <Input
-              children="Email"
-              keyboardType="email-address"
-              onChangeText={text => setEmail(text)}
-            />
-            <Input
-              children="Password"
-              secureTextEntry
-              onChangeText={text => setPassword(text)}
-            />
-          </View>
-
+        <View style={{marginVertical: 10}}>
           <Text style={[styles.footerText, textStyle]}>
             Forget Password?{' '}
             <Text
@@ -84,34 +86,35 @@ const Login = ({navigation}) => {
               Reset It
             </Text>
           </Text>
-
-          <View style={styles.separatorContainer}>
-            <View style={styles.separatorLine}></View>
-            <Text style={styles.separatorText}>or</Text>
-            <View style={styles.separatorLine}></View>
-          </View>
-
-          <GoogleButton>Login With Google</GoogleButton>
-        </ScrollView>
-        <View style={{marginBottom: 20}}>
-          <Button
-            style={styles.nextButton}
-            type={'green'}
-            // disabled={isContinueDisabled}
-            onPress={onsubmit}>
-            Login
-          </Button>
-
-          <Text style={[styles.footerText, textStyle, {textAlign: 'center'}]}>
-            Don't have an Account?
-            <Text
-              style={[styles.footerLink, textStyle]}
-              onPress={() => navigation.navigate('Signup')}>
-              {' '}
-              Sign up
-            </Text>
-          </Text>
         </View>
+
+        <View style={styles.separatorContainer}>
+          <View style={styles.separatorLine}></View>
+          <Text style={styles.separatorText}>or</Text>
+          <View style={styles.separatorLine}></View>
+        </View>
+
+        <GoogleButton>Login With Google</GoogleButton>
+      </ScrollView>
+
+      <View style={{marginBottom: 20}}>
+        <Button
+          style={styles.nextButton}
+          type={'green'}
+          disabled={isContinueDisabled}
+          onPress={onsubmit}>
+          Login
+        </Button>
+
+        <Text style={[styles.footerText, textStyle, {textAlign: 'center'}]}>
+          Don't have an Account?
+          <Text
+            style={[styles.footerLink, textStyle]}
+            onPress={() => navigation.navigate('Signup')}>
+            {' '}
+            Sign up
+          </Text>
+        </Text>
       </View>
     </SafeAreaView>
   );

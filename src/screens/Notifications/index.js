@@ -1,5 +1,6 @@
 import {View, Text, SafeAreaView, FlatList, Pressable} from 'react-native';
 import BackArrow from '../../../assets/Icons/down_line.svg';
+import BackArrowWhite from '../../../assets/Icons/down_line_white.svg';
 import styles from './styles';
 import React from 'react';
 import CommentICon from '../../../assets/Icons/commenticon.svg';
@@ -7,6 +8,7 @@ import TrendingIcon from '../../../assets/Icons/trending_icon.svg';
 import LikedIcon from '../../../assets/Icons/liked_icon.svg';
 import AdviceIcon from '../../../assets/Icons/advice_icon.svg';
 import NewFollowIcon from '../../../assets/Icons/newfollow_icon.svg';
+import {useTheme} from '../../Context/ThemeContext';
 
 const notifications = [
   {
@@ -92,6 +94,11 @@ const notifications = [
 ];
 
 const Notifications = ({navigation}) => {
+  const theme = useTheme();
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
   const handlePress = () => {
     navigation.goBack();
   };
@@ -100,26 +107,10 @@ const Notifications = ({navigation}) => {
     const IconComponent = item.image;
     return (
       <View style={styles.notifyContainer}>
-        <View
-          style={[
-            styles.rowContainer,
-            {
-              backgroundColor: '#f0f0f0',
-              borderRadius: 10,
-              padding: 10,
-              marginBottom: 10,
-            },
-          ]}>
+        <View style={styles.rowContainer}>
           <IconComponent />
           <View style={styles.columnContainer}>
-            <Text
-              style={{
-                fontSize: 14,
-                fontWeight: 'bold',
-                color: 'black',
-              }}>
-              {item?.title}
-            </Text>
+            <Text style={styles.titleStyle}>{item?.title}</Text>
             <Text style={styles.desStyle}>{item?.des}</Text>
           </View>
           <View style={styles.imageContainer}>
@@ -148,9 +139,9 @@ const Notifications = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
         <Pressable hitSlop={10} onPress={handlePress}>
-          <BackArrow />
+          {theme === 'dark' ? <BackArrowWhite /> : <BackArrow />}
         </Pressable>
-        <Text>Notification</Text>
+        <Text style={[styles.textInputStyle, textStyle]}>Notification</Text>
       </View>
 
       <FlatList
@@ -158,7 +149,7 @@ const Notifications = ({navigation}) => {
         data={groupedData}
         renderItem={({item}) => (
           <>
-            <Text style={styles.timeTitle}>{item.title}</Text>
+            <Text style={[styles.timeTitle, textStyle]}>{item.title}</Text>
             <FlatList
               showsVerticalScrollIndicator={false}
               data={item.data}

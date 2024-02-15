@@ -1,5 +1,9 @@
 import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
+  textStyle: {
+    fontSize: 16,
+    color: 'black',
+  },
   container: {
     flex: 1,
     marginHorizontal: 10,
@@ -9,6 +13,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 10,
+  },
+  inputStyle: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginRight: 20,
   },
   inputContainer: {
     // flex: 1,

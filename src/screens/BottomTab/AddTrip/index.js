@@ -8,11 +8,11 @@ import {
   Modal,
 } from 'react-native';
 import Title from '../../../components/Title';
-// import More from '../../../../assets/more.png';
-// import Close from '../../../../assets/close.png';
 
 import More from '../../../../assets/Icons/more.svg';
+import MoreWhite from '../../../../assets/Icons/more_white.svg';
 import Close from '../../../../assets/Icons/close_black.svg';
+import CloseWhite from '../../../../assets/Icons/close_white.svg';
 import styles from './styles';
 import Input from '../../../components/Input';
 import calendar from '../../../../assets/AddTripImage/calendar.png';
@@ -20,12 +20,17 @@ import Location from '../../../../assets/AddTripImage/location.png';
 import Button from '../../../components/Button';
 import {useState} from 'react';
 import {Calendar} from 'react-native-calendars';
+import {useTheme} from '../../../Context/ThemeContext';
 
 const AddTrip = ({navigation}) => {
+  const theme = useTheme();
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
   const [showCalendar, setShowCalendar] = useState(false);
   const [selected, setSelected] = useState('');
   const [minDate, setMinDate] = useState('');
-
   const [tripName, setTripName] = useState('');
   const [selectedFromDate, setSelectedFromDate] = useState('');
   const [selectedToDate, setSelectedToDate] = useState('');
@@ -68,13 +73,21 @@ const AddTrip = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
         <View style={styles.titleRow}>
-          <Title children="New Trip" />
+          <Title children="New Trip" style={textStyle} />
           <View style={styles.iconsContainer}>
-            <TouchableOpacity>
-              <More style={styles.icon} />
+            <TouchableOpacity activeOpacity={0.7}>
+              {theme === 'dark' ? (
+                <MoreWhite style={styles.icon} />
+              ) : (
+                <More style={styles.icon} />
+              )}
             </TouchableOpacity>
-            <TouchableOpacity onPress={handleBack}>
-              <Close style={styles.icon} />
+            <TouchableOpacity activeOpacity={0.7} onPress={handleBack}>
+              {theme === 'dark' ? (
+                <CloseWhite style={styles.icon} />
+              ) : (
+                <Close style={styles.icon} />
+              )}
             </TouchableOpacity>
           </View>
         </View>
@@ -157,7 +170,7 @@ const AddTrip = ({navigation}) => {
       <Button
         type={'green'}
         onPress={onsubmit}
-        style={{marginBottom: 30, marginHorizontal: 10}}>
+        style={{marginHorizontal: 10, marginBottom: 0}}>
         Next
       </Button>
     </SafeAreaView>

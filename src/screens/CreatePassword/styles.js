@@ -5,20 +5,11 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 15,
   },
+
   scrollContainer: {
-    // flex: 1,
     paddingVertical: 20,
   },
-  // backContainer: {
-  //   backgroundColor: '#F9FAFA',
-  //   position: 'relative',
-  //   marginTop: 55,
-  //   left: 12,
-  //   width: 40,
-  //   padding: 10,
-  //   borderRadius: 20,
-  // },
-  // backIcon: {width: 20, height: 20},
+
   backContainerStyle: {
     marginVertical: 20,
 
@@ -52,8 +43,8 @@ const styles = StyleSheet.create({
     color: '#22BE6F',
   },
   nextButton: {
-    // marginBottom: 20,
-    // marginTop: 250,
+    // marginVertical: 40,
+    marginBottom: 20,
   },
 });
 

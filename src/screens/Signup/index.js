@@ -20,13 +20,8 @@ import {useTheme} from '../../Context/ThemeContext';
 const Signup = ({navigation}) => {
   const theme = useTheme();
 
-  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
-
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
-  };
-  const iconStyle = {
-    tintColor: theme === 'dark' ? 'white' : 'black',
   };
 
   const [values, setValues] = useState({});
@@ -66,73 +61,69 @@ const Signup = ({navigation}) => {
     }
   };
   return (
-    <SafeAreaView style={[{flex: 1}, mainContainerStyle]}>
-      <SafeAreaView style={styles.container}>
-        <View style={styles.backContainerStyle}>
-          <Pressable
-            hitSlop={8}
-            style={styles.backContainer}
-            onPress={handleBack}>
-            <BackIcon style={styles.backIcon} />
-          </Pressable>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.backContainerStyle}>
+        <Pressable
+          hitSlop={8}
+          style={styles.backContainer}
+          onPress={handleBack}>
+          <BackIcon style={styles.backIcon} />
+        </Pressable>
+      </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.scrollContainer}
+        contentContainerStyle={{flexGrow: 1}}>
+        <Title style={textStyle}>Sign up</Title>
+        <View style={styles.inputContainer}>
+          <Input
+            children="First Name"
+            onChangeText={val => onChange(val, 'first_name')}
+            isHalfWidth
+          />
+          <Input
+            children="Last Name"
+            onChangeText={val => onChange(val, 'last_name')}
+            isHalfWidth
+          />
         </View>
 
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={styles.scrollContainer}
-          contentContainerStyle={{flexGrow: 1}}>
-          <Title style={textStyle}>Sign up</Title>
-          <View style={styles.inputContainer}>
-            <Input
-              children="First Name"
-              onChangeText={val => onChange(val, 'first_name')}
-              isHalfWidth
-            />
-            <Input
-              children="Last Name"
-              onChangeText={val => onChange(val, 'last_name')}
-              isHalfWidth
-            />
-          </View>
+        <Input
+          children="Email"
+          onChangeText={val => onChange(val, 'email')}
+          keyboardType="email-address"
+        />
+        <Input
+          children="Phone Number"
+          onChangeText={val => onChange(val, 'phone_number')}
+          keyboardType="numeric"
+        />
 
-          <Input
-            children="Email"
-            onChangeText={val => onChange(val, 'email')}
-            keyboardType="email-address"
-          />
-          <Input
-            children="Phone Number"
-            onChangeText={val => onChange(val, 'phone_number')}
-            keyboardType="numeric"
-          />
-
+        <View style={{marginVertical: 10}}>
           <Text style={[styles.footerText, textStyle]}>
             Already have an account?
             <Text
-              style={[styles.footerLink,textStyle]}
+              style={[styles.footerLink, textStyle]}
               onPress={() => navigation.navigate('Login')}>
               Login
             </Text>
           </Text>
-
-          <View style={styles.separatorContainer}>
-            <View style={styles.separatorLine}></View>
-            <Text style={styles.separatorText}>or</Text>
-            <View style={styles.separatorLine}></View>
-          </View>
-
-          <GoogleButton>Continue With Google</GoogleButton>
-        </ScrollView>
-
-        <View style={styles.buttonContent}>
-          <Button
-            type={'green'}
-            disabled={isContinueDisabled}
-            onPress={onsubmit}>
-            Continue
-          </Button>
         </View>
-      </SafeAreaView>
+
+        <View style={styles.separatorContainer}>
+          <View style={styles.separatorLine}></View>
+          <Text style={styles.separatorText}>or</Text>
+          <View style={styles.separatorLine}></View>
+        </View>
+
+        <GoogleButton>Continue With Google</GoogleButton>
+      </ScrollView>
+      <View style={styles.buttonContent}>
+        <Button type={'green'} disabled={isContinueDisabled} onPress={onsubmit}>
+          Continue
+        </Button>
+      </View>
     </SafeAreaView>
   );
 };

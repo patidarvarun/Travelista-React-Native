@@ -23,14 +23,13 @@ import profileImage1 from '../assets/PostImage/profile.png';
 import postImage1 from '../assets/PostImage/Image.png';
 import postImage2 from '../assets/PostImage/Image2.png';
 import spaceImage1 from '../assets/SpacingImage/profile1.png';
-import BackImage from '../assets/SpacingImage/imageBack.png';
+import BackImage from '../assets/SpacingImage/imageBack1.png';
 export const PostData = [
   {
     id: 1,
     profileImage: profileImage1,
     Name: 'John Doe',
     country: 'London, United KingDom',
-
     postTime: '18 hours ago',
     postDesc:
       'Embarking on a journey of discovery, where every path leads to a new adventure. The world is a canvas, and each destination adds a vibrant stroke to the tapestry of memories. Travel far, wander wide, and let the stories unfold in every corner of the globe.',
@@ -59,5 +58,32 @@ export const PostData = [
     spaceTime: '12 Days ago',
     spaceImage: spaceImage1,
     spaceBack: BackImage,
+  },
+];
+
+export const TravelData = [
+  {
+    key: 'adventures',
+    label: 'Adventures',
+    placeholder: 'Choose Adventures',
+    options: ['Cycling', 'Canoe', 'Biking', 'Skiing'],
+  },
+  {
+    key: 'activities',
+    label: 'Activities',
+    placeholder: 'Choose Activities',
+    options: ['Activity 1', 'Activity 2', 'Activity 3', 'Activity 4'],
+  },
+  {
+    key: 'typeOfTravel',
+    label: 'Type of Travel',
+    placeholder: 'Choose Type of Travel',
+    options: ['Local', 'Global'],
+  },
+  {
+    key: 'travelPrivacy',
+    label: 'Travel Privacy',
+    placeholder: 'Who can see your travel?',
+    options: ['Only me', 'Others'],
   },
 ];

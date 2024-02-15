@@ -24,16 +24,10 @@ const Input = ({
 }) => {
   const theme = useTheme();
 
-  const mainContainerStyle = {
-    // borderColor: theme === 'dark' ? 'white' : 'black',
-    // backgroundColor: theme === 'dark' ? 'white' : '#EEF1F0',
-  };
+  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
 
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
-  };
-  const iconStyle = {
-    tintColor: theme === 'dark' ? 'white' : 'black',
   };
 
   return (

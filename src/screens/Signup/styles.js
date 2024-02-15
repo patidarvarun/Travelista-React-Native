@@ -3,7 +3,7 @@ import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     marginHorizontal: 15,
   },
   darkModeContainer: {
@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   scrollContainer: {
-    // flex: 1,
     paddingVertical: 20,
   },
 

@@ -1,5 +1,6 @@
 import {View, Text, TextInput} from 'react-native';
 import styles from './styles';
+import {useTheme} from '../../Context/ThemeContext';
 const DetailInput = ({
   label,
   value,
@@ -8,30 +9,25 @@ const DetailInput = ({
   isHalfWidth,
   style,
 }) => {
+  const theme = useTheme();
+
+  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
+
   return (
     <View style={[isHalfWidth && styles.halfWidthContainer, styles.container]}>
-      <Text>{label}</Text>
+      <Text style={textStyle}>{label}</Text>
       <TextInput
-        style={{
-          flex: 1,
-          color: 'black',
-          fontSize: 14,
-          fontWeight: '700',
-          padding: -30,
-          borderColor: 'gray',
-        }}
+        style={[styles.textInput, textStyle]}
         value={value}
         onChangeText={onChangeText}
         editable={editable}
         multiline={true}
       />
-      <View
-        style={{
-          borderBottomColor: 'black',
-          borderBottomWidth: 1,
-          width: '100%',
-        }}
-      />
+      <View style={[styles.lineStyle, mainContainerStyle]} />
     </View>
   );
 };

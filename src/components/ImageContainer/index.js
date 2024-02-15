@@ -3,6 +3,7 @@ import styles from './styles';
 import Swiper from 'react-native-swiper';
 import CoverImage from '../../../assets/Icons/Cover.svg';
 import CoverImage1 from '../../../assets/Icons/Cover1.svg';
+import {useTheme} from '../../Context/ThemeContext';
 const ImageContainer = () => {
   return (
     <SafeAreaView style={styles.container}>

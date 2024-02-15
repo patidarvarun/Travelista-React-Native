@@ -29,10 +29,6 @@ const styles = StyleSheet.create({
     height: 22,
     tintColor: 'black',
   },
-
-  commentIcon: {
-    color: 'black',
-  },
   commentNav: {
     flexDirection: 'row',
     alignItems: 'center',

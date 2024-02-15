@@ -4,6 +4,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  darkModeContainer: {
+    backgroundColor: 'black',
+  },
   titleContainer: {
     padding: 10,
     marginVertical: 12,
@@ -25,6 +28,8 @@ const styles = StyleSheet.create({
   // ######################## Modal Css #####################
   modalContainer: {
     backgroundColor: 'white',
+    borderWidth: 1,
+    borderColor: 'white',
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -35,6 +40,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   modalText: {
+    color: 'black',
     textAlign: 'center',
     fontSize: 18,
   },

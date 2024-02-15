@@ -2,6 +2,12 @@ import {StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
+  darkModeContainer: {
+    borderColor: 'white',
+  },
+  darkModeSquare: {
+    backgroundColor: 'white',
+  },
   container: {
     borderWidth: 1,
     borderColor: colors.black,

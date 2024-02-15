@@ -1,8 +1,5 @@
 import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
-  darkModeContainer: {
-    backgroundColor: 'black',
-  },
   container: {
     flex: 1,
   },
@@ -22,7 +19,7 @@ const styles = StyleSheet.create({
   icon: {
     width: 100,
     height: 100,
-    tintColor: 'red',
+
     marginLeft: 16,
   },
 });

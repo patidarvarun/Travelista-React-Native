@@ -19,13 +19,8 @@ const Verification = ({navigation}) => {
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
   const theme = useTheme();
 
-  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
-
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
-  };
-  const iconStyle = {
-    tintColor: theme === 'dark' ? 'white' : 'black',
   };
 
   const handleBack = () => {
@@ -35,67 +30,58 @@ const Verification = ({navigation}) => {
     setIsContinueDisabled(otp.length !== CELL_COUNT);
   }, [otp]);
   return (
-    <SafeAreaView style={[{flex: 1}, mainContainerStyle]}>
-      <View style={styles.container}>
-        <View style={styles.backContainerStyle}>
-          <Pressable
-            hitSlop={8}
-            style={styles.backContainer}
-            onPress={handleBack}>
-            <BackIcon style={styles.backIcon} />
-          </Pressable>
-        </View>
-
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          style={styles.scrollContainer}>
-          <Title style={textStyle}>
-            We have sent you a code Please type it here
-          </Title>
-          <View style={[styles.codeContainer, textStyle]}>
-            <CodeField
-              value={otp}
-              onChangeText={setOtp}
-              cellCount={CELL_COUNT}
-              keyboardType="number-pad"
-              textContentType="oneTimeCode"
-              // rootStyle={{marginHorizontal: 10}}
-              rootStyle={[styles.inputStyle, textStyle]}
-              renderCell={({index, symbol, isFocused}) => (
-                <Text
-                  key={index}
-                  style={[
-                    styles.codeInput,
-                    textStyle,
-                    isFocused && {borderColor: 'blue'},
-                  ]}>
-                  {symbol || (isFocused ? <Cursor /> : null)}
-                </Text>
-              )}
-            />
-          </View>
-          {isContinueDisabled && isContinueDisabled ? (
-            <Text style={[styles.footerText, textStyle]}>
-              Did not get a code?
-              <Text
-                style={[styles.footerLink, textStyle]}
-                onPress={() => console.log('Hello')}>
-                {' '}
-                Resend it
-              </Text>
-            </Text>
-          ) : (
-            <Text>{''}</Text>
-          )}
-        </ScrollView>
-        <Button
-          style={styles.nextButton}
-          type={'green'}
-          disabled={isContinueDisabled}
-          onPress={() => navigation.navigate('CreatePassword')}>
-          Continue
-        </Button>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.backContainerStyle}>
+        <Pressable
+          hitSlop={8}
+          style={styles.backContainer}
+          onPress={handleBack}>
+          <BackIcon style={styles.backIcon} />
+        </Pressable>
       </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={styles.scrollContainer}>
+        <Title style={textStyle}>
+          We have sent you a code Please type it here
+        </Title>
+        <View style={styles.codeContainer}>
+          <CodeField
+            value={otp}
+            onChangeText={setOtp}
+            cellCount={CELL_COUNT}
+            keyboardType="number-pad"
+            textContentType="oneTimeCode"
+            rootStyle={[styles.inputStyle, textStyle]}
+            renderCell={({index, symbol, isFocused}) => (
+              <Text key={index} style={[styles.codeInput, textStyle]}>
+                {symbol || (isFocused ? <Cursor /> : null)}
+              </Text>
+            )}
+          />
+        </View>
+        {isContinueDisabled && isContinueDisabled ? (
+          <Text style={[styles.footerText, textStyle]}>
+            Did not get a code?
+            <Text
+              style={[styles.footerLink, textStyle]}
+              onPress={() => console.log('Hello')}>
+              {' '}
+              Resend it
+            </Text>
+          </Text>
+        ) : (
+          <Text>{''}</Text>
+        )}
+      </ScrollView>
+      <Button
+        style={styles.nextButton}
+        type={'green'}
+        disabled={isContinueDisabled}
+        onPress={() => navigation.navigate('CreatePassword')}>
+        Continue
+      </Button>
     </SafeAreaView>
   );
 };

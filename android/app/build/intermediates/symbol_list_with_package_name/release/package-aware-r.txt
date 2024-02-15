@@ -2931,7 +2931,10 @@ drawable assets_postimage_image2
 drawable assets_postimage_message
 drawable assets_postimage_profile
 drawable assets_spacingimage_imageback
+drawable assets_spacingimage_imageback1
+drawable assets_spacingimage_imageback2
 drawable assets_spacingimage_profile1
+drawable assets_spacingimage_profile2
 drawable assets_splash1
 drawable autofill_inline_suggestion_chip_background
 drawable avd_hide_password

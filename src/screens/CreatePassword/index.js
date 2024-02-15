@@ -16,20 +16,16 @@ import Button from '../../components/Button';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
 const CreatePassword = ({navigation}) => {
+  const theme = useTheme();
+
+ 
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
   const [agreed, setAgreed] = useState(false);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const theme = useTheme();
-
-  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
-
-  const textStyle = {
-    color: theme === 'dark' ? 'white' : 'black',
-  };
-  const iconStyle = {
-    tintColor: theme === 'dark' ? 'white' : 'black',
-  };
   const handleBack = () => {
     navigation.goBack();
   };
@@ -62,7 +58,7 @@ const CreatePassword = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
-        <Title>Create Password</Title>
+        <Title style={textStyle}>Create Password</Title>
         <View style={styles.passwordInput}>
           <Input
             autoFocus
@@ -89,10 +85,12 @@ const CreatePassword = ({navigation}) => {
             </Text>
           </View>
         </View>
+      </ScrollView>
+      <View>
         <Button style={styles.nextButton} type={'green'} onPress={onsubmit}>
           Continue
         </Button>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };

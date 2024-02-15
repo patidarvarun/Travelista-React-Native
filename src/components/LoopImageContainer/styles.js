@@ -1,29 +1,28 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
+
+const screenWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     flexDirection: 'row',
-    // justifyContent: 'space-between',s
-    // paddingHorizontal: 12,
-    paddingTop: 20,
+    justifyContent: 'space-between',
+    // paddingHorizontal: 20,
+    marginTop: 20,
   },
   leftColumn: {
-    // flex: 1,
-    alignItems: 'flex-end',
-    paddingRight: 10,
+    marginLeft: 10,
+    flex: 1,
     // marginRight: 10,
   },
-  rightColumn: {
-    // flex: 1,
-    alignItems: 'flex-start',
-    paddingLeft: 10,
-    // marginLeft: 10,
-  },
-  image: {
-    width: '100%',
-    // height: 150,
+  leftColumnSpace: {
     marginBottom: 10,
-    resizeMode: 'cover',
+  },
+  rightColumn: {
+    marginLeft: 10,
+    flex: 1,
+    
+  },
+  rightColumnSpace: {
+    marginBottom: 10,
   },
 });
 

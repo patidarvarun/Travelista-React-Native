@@ -2,6 +2,11 @@ import {StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
+  darkModeContainer: {
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#BCC7C1',
+  },
   titleText: {
     fontSize: 14,
     fontWeight: 'bold',

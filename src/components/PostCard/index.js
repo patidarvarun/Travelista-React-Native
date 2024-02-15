@@ -5,20 +5,22 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import SpacingCard from '../SpacingCard';
 import MoreIcon from '../../../assets/Icons/more.svg';
 import ArrowIcon from '../../../assets/Icons/arrow.svg';
+import ArrowIconWhite from '../../../assets/Icons/arrow_white.svg';
 import HeartIcon from '../../../assets/Icons/heart.svg';
+import HeartIconWhite from '../../../assets/Icons/heart_white.svg';
 import MessageIcon from '../../../assets/Icons/message.svg';
-const PostCard = ({Item, colorScheme}) => {
-  const imageStyle = {
-    tintColor: colorScheme === 'dark' ? 'white' : 'black',
-  };
+import MessageIconWhite from '../../../assets/Icons/message_white.svg';
+import {useTheme} from '../../Context/ThemeContext';
+const PostCard = ({Item}) => {
+  const theme = useTheme();
   const desStyle = {
-    color: colorScheme === 'dark' ? 'white' : 'black',
+    color: theme === 'dark' ? 'white' : 'black',
   };
   const {postDesc, postImage} = Item;
   return (
     <>
       <SafeAreaView style={styles.container}>
-        <Profile Item={Item} colorScheme={colorScheme} />
+        <Profile Item={Item} />
         <View style={styles.captionContainer}>
           <View style={styles.descContainer}>
             <Text style={[styles.descTitle, desStyle]}>{`"${postDesc}"`}</Text>
@@ -30,21 +32,21 @@ const PostCard = ({Item, colorScheme}) => {
             <View style={styles.commentNav}>
               <View style={styles.navContainer}>
                 <TouchableOpacity>
-                  <ArrowIcon style={[styles.commentIcon, imageStyle]} />
+                  {theme === 'dark' ? <ArrowIconWhite /> : <ArrowIcon />}
                 </TouchableOpacity>
                 <Text style={[styles.commentText, desStyle]}>2K</Text>
               </View>
 
               <View style={styles.navContainer}>
                 <TouchableOpacity>
-                  <HeartIcon style={[styles.commentIcon, imageStyle]} />
+                  {theme === 'dark' ? <HeartIconWhite /> : <HeartIcon />}
                 </TouchableOpacity>
 
                 <Text style={[styles.commentText, desStyle]}>2K</Text>
               </View>
               <View style={styles.navContainer}>
                 <TouchableOpacity>
-                  <MessageIcon style={[styles.commentIcon, imageStyle]} />
+                  {theme === 'dark' ? <MessageIconWhite /> : <MessageIcon />}
                 </TouchableOpacity>
                 <Text style={[styles.commentText, desStyle]}>2K</Text>
               </View>

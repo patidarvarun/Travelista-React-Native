@@ -9,9 +9,17 @@ import {
 } from 'react-native';
 import styles from './styles';
 import RightTickImage from '../../../assets/AddTripImage/check.png';
+import {useTheme} from '../../Context/ThemeContext';
 const DropDown = ({options, onSelect, selectedOption}) => {
+  const theme = useTheme();
+  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
+
   return (
-    <View style={styles.dropdownContainer}>
+    <View style={[styles.dropdownContainer, mainContainerStyle]}>
       <FlatList
         data={options}
         keyExtractor={item => item.toString()}
@@ -33,12 +41,7 @@ const DropDown = ({options, onSelect, selectedOption}) => {
                 ]}>
                 {item}
               </Text>
-              {item === selectedOption && (
-                <Image
-                  source={RightTickImage}
-                  //   style={{width: 100, height: 100}}
-                />
-              )}
+              {item === selectedOption && <Image source={RightTickImage} />}
             </View>
           </TouchableOpacity>
         )}

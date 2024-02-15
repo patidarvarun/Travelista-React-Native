@@ -1,13 +1,10 @@
 import React from 'react';
+import {StyleSheet, useColorScheme} from 'react-native';
 import {
-  Image,
-  Pressable,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import Signup from './src/screens/Signup';
 import Splash from './src/screens/Splash';
@@ -22,25 +19,37 @@ import Details from './src/screens/Details';
 import CreateNewPassword from './src/screens/CreateNewPassword';
 import Notifications from './src/screens/Notifications';
 import Profile from './src/screens/Profile';
-import {ThemeProvider} from './src/Context/ThemeContext';
+import {ThemeProvider, useTheme} from './src/Context/ThemeContext';
+import Home from './src/screens/BottomTab/Home';
 const Stack = createStackNavigator();
 
-const appTheme = {
-  ...DefaultTheme,
-  colors: {
-    ...DefaultTheme.colors,
-    background: '#FFFFFF',
-  },
-};
+// const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
 
 const App = () => {
+  const scheme = useColorScheme();
+
+  // const theme = useTheme();
+  const appTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: '#FFFFFF',
+    },
+  };
+  const forFade = ({current}) => ({
+    cardStyle: {
+      opacity: current.progress,
+    },
+  });
   return (
     <ThemeProvider>
-      <NavigationContainer theme={appTheme}>
-        {/* <Routes /> */}
+      <NavigationContainer theme={scheme === 'dark' ? DarkTheme : appTheme}>
         <Stack.Navigator
           initialRouteName="Splash"
-          screenOptions={{headerShown: false}}>
+          screenOptions={{
+            headerShown: false,
+            cardStyleInterpolator: forFade,
+          }}>
           <Stack.Screen name="Splash" component={Splash} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Login" component={Login} />
@@ -67,6 +76,9 @@ const styles = StyleSheet.create({
   back: {
     width: 36,
     height: 36,
+  },
+  darkModeContainer: {
+    backgroundColor: 'black',
   },
 });
 

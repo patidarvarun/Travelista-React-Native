@@ -11,37 +11,44 @@ import {
 } from 'react-native';
 import Title from '../../../components/Title';
 import styles from './styles';
-import Sms from '../../../../assets/Icons/sms.svg';
-import Notification from '../../../../assets/Icons/notification.svg';
+import Sms from '../../../../assets/Icons/sms_black.svg';
+import Smswhite from '../../../../assets/Icons/sms_white.svg';
+import Notification from '../../../../assets/Icons/notification_black.svg';
+import NotificationWhite from '../../../../assets/Icons/notification_white.svg';
 import {HomeImage, PostData} from '../../../data';
 import TravelCard from '../../../components/TravelCard';
 import PostCard from '../../../components/PostCard';
+import {useTheme} from '../../../Context/ThemeContext';
 
 const Home = ({navigation}) => {
-  const colorScheme = Appearance.getColorScheme();
+  const theme = useTheme();
 
-  const mainContainerStyle = [
-    styles.container,
-    colorScheme === 'dark' && styles.darkModeContainer,
-  ];
   const textStyle = {
-    color: colorScheme === 'dark' ? 'white' : 'black',
+    color: theme === 'dark' ? 'white' : 'black',
   };
 
   return (
-    <SafeAreaView style={mainContainerStyle}>
+    <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.titleContainer}>
           <View style={styles.titleRow}>
             <Title children="Travelista" style={textStyle} />
             <View style={styles.iconsContainer}>
               <TouchableOpacity>
-                <Sms fill={'white'} style={styles.icon} />
+                {theme === 'dark' ? (
+                  <Smswhite style={styles.icon} />
+                ) : (
+                  <Sms style={styles.icon} />
+                )}
               </TouchableOpacity>
               <TouchableOpacity
                 activeOpacity={0.7}
                 onPress={() => navigation.navigate('Notifications')}>
-                <Notification fill={'white'} style={styles.icon} />
+                {theme === 'dark' ? (
+                  <NotificationWhite style={styles.icon} />
+                ) : (
+                  <Notification style={styles.icon} />
+                )}
               </TouchableOpacity>
             </View>
           </View>
@@ -70,9 +77,7 @@ const Home = ({navigation}) => {
           style={{marginHorizontal: 10}}
           data={PostData}
           keyExtractor={item => String(item.id)}
-          renderItem={({item, index}) => (
-            <PostCard colorScheme={colorScheme} Item={item} />
-          )}
+          renderItem={({item, index}) => <PostCard Item={item} />}
         />
       </ScrollView>
     </SafeAreaView>

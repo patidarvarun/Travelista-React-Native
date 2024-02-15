@@ -10,7 +10,9 @@ import {
 import styles from './styles';
 import Title from '../../components/Title';
 import Close from '../../../assets/Icons/close_black.svg';
+import CloseWhite from '../../../assets/Icons/close_white.svg';
 import EditPen from '../../../assets/Icons/editpen.svg';
+import EditPenWhite from '../../../assets/Icons/editpen_white.svg';
 import ShareIcon from '../../../assets/Icons/share.svg';
 import ArchiveAdd from '../../../assets/Icons/archive_add.svg';
 import CheckImage from '../../../assets/Icons/check-verified.svg';
@@ -18,8 +20,17 @@ import {useState} from 'react';
 import DetailInput from '../../components/DetailInput/Index';
 import Button from '../../components/Button';
 import Modal from 'react-native-modal';
+import {useTheme} from '../../Context/ThemeContext';
 
 const Details = ({navigation}) => {
+  const theme = useTheme();
+
+  const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
+
+  const textStyle = {
+    color: theme === 'dark' ? 'white' : 'black',
+  };
+
   const [isEditing, setIsEditing] = useState(false);
   const [tripName, setTripName] = useState('Visiting Canada');
   const [fromDate, setFromDate] = useState('28 Dec 2023');
@@ -33,8 +44,6 @@ const Details = ({navigation}) => {
   const [adventures, setAdventures] = useState('cycling', 'Biking');
   const [activity, setActivity] = useState('cycling', 'Biking');
   const [isModalVisible, setIsModalVisible] = useState(false);
-  // const [adventures, setAdventures] = useState(['Option 1', 'Option 2']);
-  // const [activities, setActivities] = useState(['Option A', 'Option B']);
   const handleEditPress = () => {
     setIsEditing(!isEditing);
     console.log(isEditing);
@@ -48,17 +57,25 @@ const Details = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, mainContainerStyle]}>
       <View style={styles.titleContainer}>
         <View style={styles.titleRow}>
-          <Title children="View Details" />
+          <Title style={textStyle} children="View Details" />
           <View style={styles.iconsContainer}>
             <TouchableOpacity onPress={handleEditPress}>
-              <EditPen style={styles.icon} />
+              {/* <EditPen style={styles.icon} /> */}
+              {theme === 'dark' ? (
+                <EditPenWhite style={styles.icon} />
+              ) : (
+                <EditPen style={styles.icon} />
+              )}
             </TouchableOpacity>
             <TouchableOpacity onPress={handleBack}>
-              <Close style={styles.icon} />
-              {/* <Image source={Close} style={styles.icon} /> */}
+              {theme === 'dark' ? (
+                <CloseWhite style={styles.icon} />
+              ) : (
+                <Close style={styles.icon} />
+              )}
             </TouchableOpacity>
           </View>
         </View>
@@ -145,12 +162,12 @@ const Details = ({navigation}) => {
         animationInTiming={300}
         animationOutTiming={300}>
         <View style={{flex: 1, justifyContent: 'flex-end', margin: 0}}>
-          <View style={styles.modalContainer}>
+          <View style={[styles.modalContainer, mainContainerStyle]}>
             <View>
               <CheckImage style={styles.CheckIcon} />
             </View>
             <View style={styles.modalContent}>
-              <Text style={styles.modalText}>
+              <Text style={[styles.modalText, textStyle]}>
                 Hooray! You have successfully planned your trip
               </Text>
             </View>
