@@ -42,15 +42,12 @@ const Profile = ({navigation}) => {
             </View>
           </View>
         </View>
-        <View>
-          <ProfileImage />
-        </View>
-        <View>
-          <ImageContainer />
-        </View>
-        <View>
-          <LoopImageContainer />
-        </View>
+
+        <ProfileImage />
+
+        <ImageContainer />
+
+        <LoopImageContainer />
       </ScrollView>
     </SafeAreaView>
   );

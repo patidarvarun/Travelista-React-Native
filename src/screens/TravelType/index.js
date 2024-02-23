@@ -14,7 +14,6 @@ import More from '../../../assets/Icons/more.svg';
 import Close from '../../../assets/Icons/close_black.svg';
 import MoreWhite from '../../../assets/Icons/more_white.svg';
 import CloseWhite from '../../../assets/Icons/close_white.svg';
-import DownArrow from '../../../assets/AddTripImage/down.png';
 import {useState} from 'react';
 import DropDown from '../../components/DropDown';
 import Button from '../../components/Button';
@@ -107,7 +106,7 @@ const TravelType = ({navigation}) => {
                 children={item.label}
                 placeholder={item.placeholder}
                 value={selectedOptions[item.key]}
-                Image1={DownArrow}
+                Image3={true}
                 onPress={() => toggleDropdown(item.key)}
               />
               {dropdownVisible[item.key] && (

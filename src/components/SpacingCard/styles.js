@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../constants/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -30,31 +31,29 @@ const styles = StyleSheet.create({
     tintColor: 'black',
   },
   columnContainer: {
-    // flexDirection: 'column',
     marginLeft: 10,
     position: 'relative',
   },
   nameStyle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: 'black',
+    color: colors.black,
   },
   countryStyle: {
     fontSize: 12,
-    color: 'black',
+    color: colors.black,
     marginBottom: 5,
   },
   timeStyle: {
-    color: 'black',
+    color: colors.black,
     fontSize: 10,
   },
   spaceDesc: {
-    // marginVertical: 14,
     marginTop: 34,
   },
 
   spaceDescStyle: {
-    color: 'black',
+    color: colors.black,
     fontSize: 12,
     fontWeight: '500',
     fontFamily: 'Inter',

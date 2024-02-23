@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Appearance,
+  Dimensions,
 } from 'react-native';
 import Title from '../../../components/Title';
 import styles from './styles';
@@ -19,12 +20,23 @@ import {HomeImage, PostData} from '../../../data';
 import TravelCard from '../../../components/TravelCard';
 import PostCard from '../../../components/PostCard';
 import {useTheme} from '../../../Context/ThemeContext';
+import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+import {parallaxLayout} from 'react-native-reanimated-carousel/lib/typescript/layouts/parallax';
 
 const Home = ({navigation}) => {
+  const carouselRef = useRef(null);
+  const {width: screenWidth} = Dimensions.get('window');
   const theme = useTheme();
 
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
+  };
+  const borderColor = {
+    borderColor: theme === 'dark' ? 'white' : 'black',
+  };
+
+  const goForward = () => {
+    carouselRef.current.snapToNext();
   };
 
   return (
@@ -54,23 +66,37 @@ const Home = ({navigation}) => {
           </View>
         </View>
 
-        <FlatList
-          horizontal
-          style={{marginHorizontal: 10}}
-          data={HomeImage}
-          keyExtractor={item => String(item.id)}
-          showsHorizontalScrollIndicator={false}
-          renderItem={({item, index}) => (
-            <TravelCard
-              onPress={() => navigation.navigate('StoryView', {item})}
-              image={item?.url}
-              title={item?.title}
-              style={
-                index === 0 ? {height: 144, width: 117, borderRadius: 12} : {}
-              }
-            />
-          )}
-        />
+        <View style={{marginHorizontal: 10}}>
+          <Carousel
+            loop
+            ref={carouselRef}
+            sliderWidth={screenWidth - 20}
+            itemWidth={screenWidth * 0.7}
+            data={HomeImage}
+            renderItem={({item, index}, parallaxProps) => (
+              <TouchableOpacity
+                style={styles.container1}
+                activeOpacity={0.7}
+                onPress={() => navigation.navigate('StoryView', {item})}>
+                <View styles={styles.row}>
+                  <Image
+                    source={item?.url}
+                    containerStyle={styles.imageContainer}
+                    style={[styles.homeImage, borderColor]}
+                    parallaxFactor={0.6}
+                    {...parallaxProps}
+                  />
+                  <Text
+                    numberOfLines={1}
+                    style={[styles.title, styles.bottomLeftTitle]}>
+                    {item?.title.substring(0, 12)}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            )}
+            hasParallaxImages={true}
+          />
+        </View>
 
         <FlatList
           accessibilityElementsHidden

@@ -1,28 +1,36 @@
 import {Dimensions, StyleSheet} from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
+// const screenHeight = Dimensions.get('window').height;
+
+console.log('kjdhfgdhgkhtgh  : >>>>>>>>>>>>>>>>> ', screenWidth * 0.49);
+
 const styles = StyleSheet.create({
   container: {
+    width: screenWidth,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    // paddingHorizontal: 20,
-    marginTop: 20,
+    justifyContent: 'center',
   },
   leftColumn: {
-    marginLeft: 10,
-    flex: 1,
-    // marginRight: 10,
+    width: screenWidth * 0.46,
+    marginRight: 4,
   },
   leftColumnSpace: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
   rightColumn: {
-    marginLeft: 10,
-    flex: 1,
-    
+    width: screenWidth * 0.46,
+    marginLeft: 4,
   },
   rightColumnSpace: {
-    marginBottom: 10,
+    marginBottom: 8,
+  },
+  imageStyle: {
+    width: '100%',
+    borderRadius: 12,
+    borderColor: 'black',
+    borderWidth: 1,
   },
 });
 

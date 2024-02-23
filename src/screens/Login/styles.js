@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   backContainer: {
-    backgroundColor: '#F9FAFA',
+    backgroundColor: colors.lightGray,
     width: 30,
     height: 30,
     margin: 2,
@@ -47,14 +47,14 @@ const styles = StyleSheet.create({
   separatorLine: {
     flex: 1,
     height: 1,
-    backgroundColor: '#DDE3E0',
+    backgroundColor: colors.lightBlack,
   },
   separatorText: {
     textAlign: 'center',
     marginHorizontal: 10,
     fontWeight: '400',
     fontSize: 16,
-    color: '#7A9085',
+    color: colors.lightBlack2,
   },
 
   nextButton: {

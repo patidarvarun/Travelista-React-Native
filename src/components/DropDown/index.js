@@ -8,7 +8,8 @@ import {
   Image,
 } from 'react-native';
 import styles from './styles';
-import RightTickImage from '../../../assets/AddTripImage/check.png';
+// import RightTickImage from '../../../assets/AddTripImage/check.png';
+import RightTickImage from '../../../assets/Icons/check.svg';
 import {useTheme} from '../../Context/ThemeContext';
 const DropDown = ({options, onSelect, selectedOption}) => {
   const theme = useTheme();
@@ -41,7 +42,7 @@ const DropDown = ({options, onSelect, selectedOption}) => {
                 ]}>
                 {item}
               </Text>
-              {item === selectedOption && <Image source={RightTickImage} />}
+              {item === selectedOption && <RightTickImage />}
             </View>
           </TouchableOpacity>
         )}

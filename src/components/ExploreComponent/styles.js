@@ -1,16 +1,23 @@
 import {StyleSheet, Dimensions} from 'react-native';
+import colors from '../../constants/colors';
 
 const {width, height} = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
     marginVertical: 10,
     borderRadius: 12,
+    borderWidth: 2,
+    borderColor: colors.white,
     overflow: 'hidden',
   },
   backgroundWrapper: {
     // flex: 1,
+
     borderRadius: 12,
     overflow: 'hidden',
   },
@@ -47,25 +54,26 @@ const styles = StyleSheet.create({
   nameStyle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: 'black',
+    color: colors.white,
   },
   countryStyle: {
     fontSize: 12,
-    color: 'black',
+    color: colors.white,
     marginBottom: 5,
   },
   timeStyle: {
-    color: 'black',
+    color: colors.white,
     fontSize: 10,
   },
   spaceDesc: {
     marginTop: 34,
   },
   spaceDescStyle: {
-    color: 'black',
+    color: colors.white,
     fontSize: 12,
     fontWeight: '500',
     fontFamily: 'Inter',
+    opacity: 0.1,
   },
 });
 

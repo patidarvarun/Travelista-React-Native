@@ -1,12 +1,15 @@
-import {View, Text, SafeAreaView, Image} from 'react-native';
+import {View, Text, SafeAreaView, Image, Dimensions} from 'react-native';
 import styles from './styles';
 import Swiper from 'react-native-swiper';
 import CoverImage from '../../../assets/Icons/Cover.svg';
 import CoverImage1 from '../../../assets/Icons/Cover1.svg';
 import {useTheme} from '../../Context/ThemeContext';
+
+const {width} = Dimensions.get('window');
+const {height} = Dimensions.get('window');
 const ImageContainer = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.parentdiv}>
         <View style={styles.bioContainer}>
           <Text style={styles.bioText}>
@@ -28,15 +31,15 @@ const ImageContainer = () => {
             showsButtons={false}
             showsPagination={false}>
             <View style={styles.slide1}>
-              <CoverImage />
+              <CoverImage width={'100%'} height={'100%'} />
             </View>
             <View style={styles.slide1}>
-              <CoverImage1 />
+              <CoverImage1 width={'100%'} height={'100%'} />
             </View>
           </Swiper>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 export default ImageContainer;

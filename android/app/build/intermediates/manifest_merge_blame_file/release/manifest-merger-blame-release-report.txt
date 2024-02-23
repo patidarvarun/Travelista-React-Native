@@ -65,75 +65,35 @@
 38-->/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/src/main/AndroidManifest.xml:21:23-70
 39            </intent-filter>
 40        </activity>
-41        <activity
-41-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-42            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-42-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-43            android:excludeFromRecents="true"
-43-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-44            android:exported="false"
-44-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-45            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-45-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-46        <!--
-47            Service handling Google Sign-In user revocation. For apps that do not integrate with
-48            Google Sign-In, this service will never be started.
-49        -->
-50        <service
-50-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-51            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-51-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-52            android:exported="true"
-52-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-53            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-53-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-54            android:visibleToInstantApps="true" />
-54-->[com.google.android.gms:play-services-auth:20.7.0] /home/pooja/.gradle/caches/transforms-3/0f355983a543250e8e6ddcc9d2731a04/transformed/jetified-play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-55
-56        <activity
-56-->[com.google.android.gms:play-services-base:18.0.1] /home/pooja/.gradle/caches/transforms-3/5fd09da4e3ebb73eb4f507c78659d4b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
-57            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-57-->[com.google.android.gms:play-services-base:18.0.1] /home/pooja/.gradle/caches/transforms-3/5fd09da4e3ebb73eb4f507c78659d4b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
-58            android:exported="false"
-58-->[com.google.android.gms:play-services-base:18.0.1] /home/pooja/.gradle/caches/transforms-3/5fd09da4e3ebb73eb4f507c78659d4b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
-59            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-59-->[com.google.android.gms:play-services-base:18.0.1] /home/pooja/.gradle/caches/transforms-3/5fd09da4e3ebb73eb4f507c78659d4b6/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
-60
-61        <meta-data
-61-->[com.google.android.gms:play-services-basement:18.2.0] /home/pooja/.gradle/caches/transforms-3/68162890c105b1624553f01ae691581f/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:21:9-23:69
-62            android:name="com.google.android.gms.version"
-62-->[com.google.android.gms:play-services-basement:18.2.0] /home/pooja/.gradle/caches/transforms-3/68162890c105b1624553f01ae691581f/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:22:13-58
-63            android:value="@integer/google_play_services_version" />
-63-->[com.google.android.gms:play-services-basement:18.2.0] /home/pooja/.gradle/caches/transforms-3/68162890c105b1624553f01ae691581f/transformed/jetified-play-services-basement-18.2.0/AndroidManifest.xml:23:13-66
-64
-65        <provider
-65-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-66            android:name="androidx.startup.InitializationProvider"
-66-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
-67            android:authorities="com.travelista.androidx-startup"
-67-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
-68            android:exported="false" >
-68-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
-69            <meta-data
-69-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-70                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-70-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
-71                android:value="androidx.startup" />
-71-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
-72            <meta-data
-72-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/pooja/.gradle/caches/transforms-3/71b91ea8216105cda74b0317da307340/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
-73                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-73-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/pooja/.gradle/caches/transforms-3/71b91ea8216105cda74b0317da307340/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
-74                android:value="androidx.startup" />
-74-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/pooja/.gradle/caches/transforms-3/71b91ea8216105cda74b0317da307340/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
-75        </provider>
-76
-77        <meta-data
-77-->[com.facebook.soloader:soloader:0.10.5] /home/pooja/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
-78            android:name="com.facebook.soloader.enabled"
-78-->[com.facebook.soloader:soloader:0.10.5] /home/pooja/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
-79            android:value="false" />
-79-->[com.facebook.soloader:soloader:0.10.5] /home/pooja/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
-80    </application>
-81
-82</manifest>
+41
+42        <provider
+42-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+43            android:name="androidx.startup.InitializationProvider"
+43-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+44            android:authorities="com.travelista.androidx-startup"
+44-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+45            android:exported="false" >
+45-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+46            <meta-data
+46-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+47                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+47-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+48                android:value="androidx.startup" />
+48-->[androidx.emoji2:emoji2:1.2.0] /home/pooja/.gradle/caches/transforms-3/faa3592d2fc203d6c74b9a5f601058a1/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+49            <meta-data
+49-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/pooja/.gradle/caches/transforms-3/71b91ea8216105cda74b0317da307340/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+50                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+50-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/pooja/.gradle/caches/transforms-3/71b91ea8216105cda74b0317da307340/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+51                android:value="androidx.startup" />
+51-->[androidx.lifecycle:lifecycle-process:2.4.1] /home/pooja/.gradle/caches/transforms-3/71b91ea8216105cda74b0317da307340/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+52        </provider>
+53
+54        <meta-data
+54-->[com.facebook.soloader:soloader:0.10.5] /home/pooja/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:12:9-14:37
+55            android:name="com.facebook.soloader.enabled"
+55-->[com.facebook.soloader:soloader:0.10.5] /home/pooja/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:13:13-57
+56            android:value="false" />
+56-->[com.facebook.soloader:soloader:0.10.5] /home/pooja/.gradle/caches/transforms-3/03d018e18e7118763cc731de8f689ba0/transformed/jetified-soloader-0.10.5/AndroidManifest.xml:14:13-34
+57    </application>
+58
+59</manifest>

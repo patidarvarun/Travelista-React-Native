@@ -71,7 +71,7 @@ const Explore = ({navigation}) => {
         if (displayedCards.length < ExploreData.length) {
           setDisplayedCards(prevCards => [...prevCards, ...nextBatch]);
         }
-      }, 300);
+      }, 2000);
 
       return () => clearTimeout(timer);
     }
@@ -89,15 +89,6 @@ const Explore = ({navigation}) => {
   //     return updatedCards;
   //   });
   // };
-
-  const deleteCard = index => {
-    console.log('Index :>>> ', index);
-    setDisplayedCards(prevCards => {
-      const updatedCards = [...prevCards];
-      updatedCards.splice(index, 1);
-      return updatedCards;
-    });
-  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -212,62 +203,65 @@ const Explore = ({navigation}) => {
           </View>
         </View>
       </Modal>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <View
-          style={{display: 'flex', height: height - 100, position: 'relative'}}>
-          {displayedCards.map((item, index) => {
-            const randPosition = Math.random() >= 0.5 ? 'left' : 'right';
-            let randDuration =
-              Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000;
-            let transformMax = Math.floor(
-              Math.random() * (width / 2 - 1 + 1) + 1,
-            );
 
-            mooveLR(index, randDuration);
+      <View
+        style={{display: 'flex', height: height - 100, position: 'relative'}}>
+        {displayedCards.map((item, index) => {
+          const randPosition = Math.random() >= 0.5 ? 'left' : 'right';
+          let randDuration =
+            Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000;
 
-            return (
-              <Animated.View
-                key={index}
-                style={[
-                  {
-                    zIndex: parseInt(index),
-                    position: 'absolute',
-                    top:
-                      index == 0
-                        ? 0
-                        : parseInt(
-                            Math.floor(Math.random() * (540 - 1 + 1) + 1),
-                          ),
-                  },
-                  styles.animation_view,
-                  {
-                    transform: [
-                      {
-                        translateX: animations[index].interpolate({
-                          inputRange: [0, 1],
-                          outputRange: [
-                            randPosition === 'left' ? 0 : transformMax,
-                            randPosition === 'left'
-                              ? transformMax
-                              : -transformMax,
-                          ],
-                        }),
-                      },
-                    ],
-                  },
-                ]}>
-                <ExploreComponent
-                  Item={item}
-                  pan={pans[index]}
-                  deleteCard={() => deleteCard(index)}
-                  cardPosition={randPosition === 'left' ? '10' : '60'}
-                  cardAnimatePos={randPosition}
-                />
-              </Animated.View>
-            );
-          })}
-        </View>
-      </ScrollView>
+          // let transformMax = Math.floor(
+          //   Math.random() * (width / 2 - 1 + 1) + 1,
+          // );
+          let transformMax = 0;
+
+          mooveLR(index, randDuration);
+
+          return (
+            <Animated.View
+              key={index}
+              style={[
+                {
+                  zIndex: parseInt(index),
+                  position: 'absolute',
+                  top:
+                    index == 0
+                      ? 0
+                      : parseInt(Math.floor(Math.random() * (540 - 1 + 1) + 1)),
+                  left:
+                    randPosition === 'left'
+                      ? parseInt(Math.floor(Math.random() * (60 - 1 + 1) + 1))
+                      : -parseInt(Math.floor(Math.random() * (60 - 1 + 1) + 1)),
+                },
+                styles.animation_view,
+                {
+                  transform: [
+                    {
+                      translateX: animations[index].interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [
+                          randPosition === 'left' ? 0 : transformMax,
+                          randPosition === 'left'
+                            ? transformMax
+                            : -transformMax,
+                        ],
+                      }),
+                    },
+                  ],
+                },
+              ]}>
+              <ExploreComponent
+                Item={item}
+                pan={pans[index]}
+                deleteCard={() => deleteCard(index)}
+                cardPosition={randPosition === 'left' ? '10' : '60'}
+                cardAnimatePos={randPosition}
+              />
+            </Animated.View>
+          );
+        })}
+      </View>
     </SafeAreaView>
   );
 };

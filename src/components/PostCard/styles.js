@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
     marginVertical: 14,
   },
   descTitle: {
-    color: 'black',
+    color: colors.black,
     fontSize: 12,
     fontWeight: 'normal',
     fontFamily: 'Inter',
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
   commentText: {
     marginLeft: 2,
     fontSize: 16,
-    color: 'black',
+    color: colors.black,
     fontWeight: 'bold',
   },
 });

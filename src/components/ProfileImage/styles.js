@@ -1,11 +1,9 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // paddingTop: 20,
     paddingHorizontal: 10,
-    // alignItems: 'flex-start',
   },
   profileContainer: {
     flexDirection: 'row',
@@ -15,7 +13,6 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   statusContainer: {
-    // backgroundColor: 'red',
     flex: 1,
   },
   row: {
@@ -25,19 +22,17 @@ const styles = StyleSheet.create({
   },
   column: {
     flex: 1,
-    // backgroundColor: 'red',
-    // alignItems: 'center',
   },
   boldText: {
     fontSize: 16,
-    color: 'black',
+    color: colors.black,
     textAlign: 'center',
     fontWeight: 'bold',
   },
   normalText: {
     fontSize: 14,
     textAlign: 'center',
-    color: '#7A857A',
+    color: colors.normalColor,
   },
 });
 

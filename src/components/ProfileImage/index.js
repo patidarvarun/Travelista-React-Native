@@ -10,7 +10,7 @@ const ProfileImage = () => {
     color: theme === 'dark' ? 'white' : 'black',
   };
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.profileContainer}>
         <View style={styles.imageContainer}>
           <ProfileImg width={130} height={110} />
@@ -38,7 +38,7 @@ const ProfileImage = () => {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 export default ProfileImage;

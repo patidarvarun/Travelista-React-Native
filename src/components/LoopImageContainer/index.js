@@ -1,39 +1,48 @@
-import {View, Text, SafeAreaView, Dimensions} from 'react-native';
+import {View, Text, SafeAreaView, Dimensions, Image} from 'react-native';
 import styles from './styles';
-import Left1 from '../../../assets/Icons/leftImage/left_image.svg';
-import Left2 from '../../../assets/Icons/leftImage/left_image2.svg';
-import Left3 from '../../../assets/Icons/leftImage/left_image3.svg';
-import Right1 from '../../../assets/Icons/rightImage/right_image.svg';
-import Right2 from '../../../assets/Icons/rightImage/right_image2.svg';
-import Right3 from '../../../assets/Icons/rightImage/right_image3.svg';
+import Left1 from '../../../assets/leftRightImage/Rectangle_left1.png';
+import Left2 from '../../../assets/leftRightImage/Rectangle_left2.png';
+import Left3 from '../../../assets/leftRightImage/Rectangle_left3.png';
+
+import Right1 from '../../../assets/leftRightImage/Rectangle_right1.png';
+import Right2 from '../../../assets/leftRightImage/Rectangle_right2.png';
+import Right3 from '../../../assets/leftRightImage/Rectangle_right3.png';
+import {useTheme} from '../../Context/ThemeContext';
+
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
+
 const LoopImageContainer = () => {
-  const {width, height} = Dimensions.get('window');
-  const imageWidth = (width - 40) / 4;
+  const theme = useTheme();
+
+  const borderColor = {
+    borderColor: theme === 'dark' ? 'white' : 'black',
+  };
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <View style={styles.leftColumn}>
         <View style={styles.leftColumnSpace}>
-          <Left1 />
+          <Image style={[styles.imageStyle, borderColor]} source={Left1} />
         </View>
         <View style={styles.leftColumnSpace}>
-          <Left2 />
+          <Image style={[styles.imageStyle, borderColor]} source={Left2} />
         </View>
         <View style={styles.leftColumnSpace}>
-          <Left3 />
+          <Image style={[styles.imageStyle, borderColor]} source={Left3} />
         </View>
       </View>
       <View style={styles.rightColumn}>
         <View style={styles.rightColumnSpace}>
-          <Right1 />
+          <Image style={[styles.imageStyle, borderColor]} source={Right1} />
         </View>
         <View style={styles.rightColumnSpace}>
-          <Right2 />
+          <Image style={[styles.imageStyle, borderColor]} source={Right2} />
         </View>
         <View style={styles.rightColumnSpace}>
-          <Right3 />
+          <Image style={[styles.imageStyle, borderColor]} source={Right3} />
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 export default LoopImageContainer;

@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
   },
   disabledBg: {
-    backgroundColor: '#BEF4D9',
+    backgroundColor: colors.disableGreen,
     opacity: 0.5,
   },
   enableBg: {

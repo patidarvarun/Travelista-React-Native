@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../../constants/colors';
 const styles = StyleSheet.create({
   textStyle: {
     fontSize: 16,
@@ -21,10 +22,9 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   inputContainer: {
-    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'lightgray',
+    backgroundColor: 'lightgrey',
     borderRadius: 5,
     paddingHorizontal: 10,
     marginVertical: 10,
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flex: 1,
     height: 40,
-    color: 'black',
+    color: colors.black,
   },
 });
 export default styles;

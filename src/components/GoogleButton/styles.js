@@ -3,7 +3,7 @@ import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#DDE3E0',
+    backgroundColor: colors.lightBlack,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',

@@ -1,54 +1,43 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import colors from '../../constants/colors';
 
 const {width} = Dimensions.get('window');
 const {height} = Dimensions.get('window');
-console.log('########', width);
-console.log('########', height);
+
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    marginVertical: 15,
     paddingHorizontal: 10,
+    marginVertical: 10,
+  },
+  parentdiv: {
     flexDirection: 'row',
+    alignItems: 'center',
   },
 
   bioContainer: {
-    // flex: 1,
-    backgroundColor: '#E5E5E5',
+    backgroundColor: colors.bioColorLight,
     padding: 10,
     borderRadius: 10,
-    // marginRight: 10,
-    width: width * 0.4,
-    // height:150,
+    width: width * 0.44,
+    height: height * 0.19,
   },
   bioText: {
     color: 'black',
     fontSize: 10,
-    marginBottom: 5,
+    marginVertical: 2,
   },
-
   imageContainer: {
-    // flex: 1,
     width: width * 0.6,
     height: 150,
   },
   wrapper: {
     marginHorizontal: 5,
   },
-  image: {
-    // width: width,
-    // height: 149,
-  },
+  image: {},
   slide1: {
-    // width: width,
+    width: width * 0.5,
     height: 149,
-    // objectFit: 'cover',
     borderRadius: 20,
-    // objectPosition: 'center center',
-  },
-  parentdiv: {
-    width: '100%',
-    flexDirection: 'row',
   },
 });
 

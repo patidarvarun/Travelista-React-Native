@@ -17,6 +17,16 @@ export const HomeImage = [
     title: 'Imagine to live in this place',
     url: Image2,
   },
+  {
+    id: 4,
+    title: 'Imagine to live in this place',
+    url: Image1,
+  },
+  {
+    id: 5,
+    title: 'Imagine to live in this place',
+    url: Image2,
+  },
 ];
 
 import profileImage1 from '../assets/PostImage/profile.png';
@@ -85,5 +95,93 @@ export const TravelData = [
     label: 'Travel Privacy',
     placeholder: 'Who can see your travel?',
     options: ['Only me', 'Others'],
+  },
+];
+
+import CommentICon from '../assets/Icons/commenticon.svg';
+import TrendingIcon from '../assets/Icons/trending_icon.svg';
+import LikedIcon from '../assets/Icons/liked_icon.svg';
+import AdviceIcon from '../assets/Icons/advice_icon.svg';
+import NewFollowIcon from '../assets/Icons/newfollow_icon.svg';
+export const notifications = [
+  {
+    id: 1,
+    image: CommentICon,
+    title: 'Comment On Post',
+    des: 'canaking_dis and 87 others comment on your post',
+    time: '34m ago',
+    timeTitle: 'New',
+  },
+  {
+    id: 2,
+    image: TrendingIcon,
+    title: 'Trending Post',
+    des: 'Your post about Canada trip is on trend.',
+    time: '2 days ago',
+    timeTitle: 'New',
+  },
+  {
+    id: 3,
+    image: LikedIcon,
+    title: 'Liked Post',
+    des: 'canaking_dis and 87 others liked your post',
+    time: '1m ago',
+    timeTitle: 'New',
+  },
+  {
+    id: 4,
+    image: AdviceIcon,
+    title: 'Advice',
+    des: 'canaking_dis and 87 others gave an advice on your post',
+    time: '20 hours ago',
+    timeTitle: 'New',
+  },
+  {
+    id: 5,
+    image: NewFollowIcon,
+    title: 'New Follower',
+    des: 'canaking_dis and 87 others followed you',
+    time: '34m ago',
+    timeTitle: 'New',
+  },
+  {
+    id: 6,
+    image: CommentICon,
+    title: 'Comment On Post',
+    des: 'canaking_dis and 87 others comment on your post',
+    time: '34m ago',
+    timeTitle: 'Yesterday',
+  },
+  {
+    id: 7,
+    image: TrendingIcon,
+    title: 'Trending Post',
+    des: 'Your post about Canada trip is on trend.',
+    time: '2 days ago',
+    timeTitle: 'Yesterday',
+  },
+  {
+    id: 8,
+    image: LikedIcon,
+    title: 'Liked Post',
+    des: 'canaking_dis and 87 others liked your post',
+    time: '1m ago',
+    timeTitle: 'Yesterday',
+  },
+  {
+    id: 9,
+    image: AdviceIcon,
+    title: 'Advice',
+    des: 'canaking_dis and 87 others gave an advice on your post',
+    time: '20 hours ago',
+    timeTitle: 'Yesterday',
+  },
+  {
+    id: 10,
+    image: NewFollowIcon,
+    title: 'New Follower',
+    des: 'canaking_dis and 87 others followed you',
+    time: '34m ago',
+    timeTitle: 'Yesterday',
   },
 ];

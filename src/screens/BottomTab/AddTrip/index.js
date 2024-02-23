@@ -15,14 +15,14 @@ import Close from '../../../../assets/Icons/close_black.svg';
 import CloseWhite from '../../../../assets/Icons/close_white.svg';
 import styles from './styles';
 import Input from '../../../components/Input';
-import calendar from '../../../../assets/AddTripImage/calendar.png';
-import Location from '../../../../assets/AddTripImage/location.png';
+import calendar1 from '../../../../assets/Icons/calendar.svg';
 import Button from '../../../components/Button';
 import {useState} from 'react';
 import {Calendar} from 'react-native-calendars';
 import {useTheme} from '../../../Context/ThemeContext';
 
 const AddTrip = ({navigation}) => {
+  // console.log('jdhjfghdjghdf ', calendar);
   const theme = useTheme();
 
   const textStyle = {
@@ -108,7 +108,7 @@ const AddTrip = ({navigation}) => {
               children="From"
               placeholder="Pick a Date"
               isHalfWidth
-              Image1={calendar}
+              Image1={true}
               onPress={() => openCalendarFor('from')}
               value={selectedFromDate}
             />
@@ -117,7 +117,7 @@ const AddTrip = ({navigation}) => {
               children="To"
               placeholder="Pick a Date"
               isHalfWidth
-              Image1={calendar}
+              Image1={true}
               onPress={() => openCalendarFor('to')}
               value={selectedToDate}
             />
@@ -155,7 +155,7 @@ const AddTrip = ({navigation}) => {
           <Input
             children="Location"
             placeholder="choose a Location"
-            Image1={Location}
+            Image2={true}
             value={location}
             onChangeText={text => setLocation(text)}
           />
@@ -170,7 +170,7 @@ const AddTrip = ({navigation}) => {
       <Button
         type={'green'}
         onPress={onsubmit}
-        style={{marginHorizontal: 10, marginBottom: 0}}>
+        style={{marginHorizontal: 10, marginBottom: 12}}>
         Next
       </Button>
     </SafeAreaView>

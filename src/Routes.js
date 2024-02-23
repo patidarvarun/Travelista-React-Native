@@ -44,7 +44,7 @@ const Routes = () => {
         }}
       />
       <Tab.Screen
-        name="AddTripScreen"
+        name="AddTrip"
         component={AddTrip}
         options={{
           tabBarIcon: ({focused}) =>

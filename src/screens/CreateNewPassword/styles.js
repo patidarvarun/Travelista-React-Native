@@ -11,16 +11,7 @@ const styles = StyleSheet.create({
   scrollContainer: {
     paddingVertical: 20,
   },
-  // backContainer: {
-  //   backgroundColor: '#F9FAFA',
-  //   position: 'relative',
-  //   marginTop: 55,
-  //   left: 12,
-  //   width: 40,
-  //   padding: 10,
-  //   borderRadius: 20,
-  // },
-  // backIcon: {width: 20, height: 20},
+
   backContainerStyle: {
     marginVertical: 20,
 
@@ -29,7 +20,7 @@ const styles = StyleSheet.create({
     height: 35,
   },
   backContainer: {
-    backgroundColor: '#F9FAFA',
+    backgroundColor: colors.lightGray,
     width: 30,
     height: 30,
     margin: 2,

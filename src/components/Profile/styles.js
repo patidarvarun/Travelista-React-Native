@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../constants/colors';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -14,15 +15,15 @@ const styles = StyleSheet.create({
   nameStyle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: 'black',
+    color: colors.black,
   },
   countryStyle: {
-    color: 'black',
+    color: colors.black,
     fontSize: 12,
     marginBottom: 5,
   },
   timeStyle: {
-    color: 'black',
+    color: colors.black,
     fontSize: 10,
   },
   imageContainer: {
@@ -34,6 +35,11 @@ const styles = StyleSheet.create({
 
   secondImage: {
     marginLeft: 15,
+  },
+  image: {
+    height: 50,
+    width: 50,
+    borderRadius: 12,
   },
 });
 export default styles;

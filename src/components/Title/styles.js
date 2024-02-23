@@ -6,9 +6,7 @@ const styles = StyleSheet.create({
     color: colors.black,
     fontSize: 28,
     fontWeight: '700',
-    // lineHeight: 34,
     fontFamily: 'Inter',
-    // marginVertical: 10,
   },
 });
 

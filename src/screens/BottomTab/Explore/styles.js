@@ -1,4 +1,5 @@
 import {Dimensions, StyleSheet} from 'react-native';
+import colors from '../../../constants/colors';
 
 const {width, height} = Dimensions.get('window');
 const styles = StyleSheet.create({
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   inputContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'lightgray',
@@ -57,10 +58,10 @@ const styles = StyleSheet.create({
     marginVertical: 60,
   },
   inputContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'lightgray',
+    backgroundColor: 'lightgrey',
     borderRadius: 5,
     paddingHorizontal: 10,
     marginVertical: 5,
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flex: 1,
     height: 40,
-    color: 'black',
+    color: colors.black,
   },
 });
 export default styles;

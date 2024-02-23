@@ -1,22 +1,18 @@
 import React from 'react';
-import {
-  Image,
-  Pressable,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
-import colors from '../../constants/colors';
-import More from '../../../assets/more.png';
 import {useTheme} from '../../Context/ThemeContext';
+import Calendar from '../../../assets/Icons/calendar.svg';
+import Location from '../../../assets/Icons/location.svg';
+import DownArrow from '../../../assets/Icons/dropdown.svg';
 
 const Input = ({
   style,
   type,
   placeholder,
   Image1,
+  Image2,
+  Image3,
   children,
   onPress,
   isHalfWidth,
@@ -42,7 +38,9 @@ const Input = ({
             style={styles.textInput}
             {...props}
           />
-          {Image1 && <Image source={Image1} style={styles.icon} />}
+          {Image1 && <Calendar style={styles.icon} />}
+          {Image2 && <Location style={styles.icon} />}
+          {Image3 && <DownArrow style={styles.icon} />}
         </View>
       </TouchableOpacity>
     </View>
