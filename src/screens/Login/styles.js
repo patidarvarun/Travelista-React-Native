@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
   },
 
   nextButton: {
-    // marginTop: 80,
+  
     marginVertical: 20,
   },
 });

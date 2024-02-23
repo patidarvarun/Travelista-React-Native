@@ -28,7 +28,6 @@ const Explore = ({navigation}) => {
     color: theme === 'dark' ? 'white' : 'black',
   };
 
-  // const [pans] = useState(ExploreData.map(() => new Animated.ValueXY()));
   const [pans] = useState(
     Array.from({length: ExploreData.length}, () => new Animated.ValueXY()),
   );
@@ -81,15 +80,6 @@ const Explore = ({navigation}) => {
     setIsModalVisible(!isModalVisible);
   };
 
-  // const deleteCard = index => {
-  //   console.log('Index :>>> ', index);
-  //   setDisplayedCards(prevCards => {
-  //     const updatedCards = [...prevCards];
-  //     updatedCards.splice(index, 1);
-  //     return updatedCards;
-  //   });
-  // };
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.headerContainer}>
@@ -105,10 +95,10 @@ const Explore = ({navigation}) => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.inputContainer}>
+        <View style={styles.inputContainer1}>
           <SearchImage style={{width: 20, height: 20, marginRight: 10}} />
           <TextInput
-            style={[styles.textInputStyle, textStyle]}
+            style={[styles.textInputStyle1, textStyle]}
             placeholder="Search"
           />
         </View>

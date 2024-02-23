@@ -16,18 +16,14 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   backgroundWrapper: {
-    // flex: 1,
-
     borderRadius: 12,
     overflow: 'hidden',
   },
   spaceContainer: {
-    // flex: 1,
     padding: 12,
     justifyContent: 'space-between',
   },
   background: {
-    // flex: 1,
     resizeMode: 'cover',
     justifyContent: 'center',
   },

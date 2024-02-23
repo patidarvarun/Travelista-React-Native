@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   nameStyle: {
     fontSize: 14,
-    // fontWeight: 'bold',
+   
     color: 'white',
   },
   countryStyle: {

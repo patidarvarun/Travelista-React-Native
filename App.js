@@ -23,12 +23,9 @@ import {ThemeProvider, useTheme} from './src/Context/ThemeContext';
 import Home from './src/screens/BottomTab/Home';
 const Stack = createStackNavigator();
 
-// const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
-
 const App = () => {
   const scheme = useColorScheme();
 
-  // const theme = useTheme();
   const appTheme = {
     ...DefaultTheme,
     colors: {

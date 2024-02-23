@@ -31,16 +31,15 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
   },
   container1: {
-    // marginTop: 120,
+  
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
+   
   },
   buttonContent: {
     position: 'absolute',
     justifyContent: 'space-around',
     paddingHorizontal: 16,
-    // display: 'flex',
+    
     width: '100%',
     bottom: 30,
   },

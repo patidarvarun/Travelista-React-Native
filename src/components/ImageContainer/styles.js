@@ -7,7 +7,7 @@ const {height} = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
-    marginVertical: 10,
+    marginVertical: 20,
   },
   parentdiv: {
     flexDirection: 'row',

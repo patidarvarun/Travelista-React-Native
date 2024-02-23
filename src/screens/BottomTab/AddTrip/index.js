@@ -22,7 +22,6 @@ import {Calendar} from 'react-native-calendars';
 import {useTheme} from '../../../Context/ThemeContext';
 
 const AddTrip = ({navigation}) => {
-  // console.log('jdhjfghdjghdf ', calendar);
   const theme = useTheme();
 
   const textStyle = {

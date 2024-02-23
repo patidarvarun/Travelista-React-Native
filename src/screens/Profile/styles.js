@@ -2,12 +2,9 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // backgroundColor: 'red',
+    flex: 1,
   },
-  scrollContainer: {
-    // marginHorizontal: 8,
-  },
+  scrollContainer: {},
   titleContainer: {
     padding: 10,
     marginVertical: 12,
@@ -22,7 +19,6 @@ const styles = StyleSheet.create({
     marginLeft: 16,
   },
   icon: {
-    // marginBottom: 20,
     marginLeft: 16,
   },
   icon2: {

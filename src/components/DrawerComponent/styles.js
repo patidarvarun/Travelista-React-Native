@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     marginVertical: 60,
   },
   inputContainer: {
-    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'lightgray',

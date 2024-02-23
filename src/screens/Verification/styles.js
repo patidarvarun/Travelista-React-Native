@@ -10,12 +10,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   inputStyle: {
-    // flexDirection: 'row',
-    // justifyContent: 'space-between',
-
-    // borderRadius: 8,
-    // borderTopColor: 'black',
-    // color: 'red',
+    
     marginVertical: 12,
   },
   codeInput: {
@@ -24,7 +19,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     borderWidth: 1,
     borderColor: '#BCC7C1',
-    // textAlign: 'center',
+   
     fontSize: 18,
     marginTop: 30,
     marginRight: 10,

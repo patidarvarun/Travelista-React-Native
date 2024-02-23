@@ -15,30 +15,28 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 10,
-    // marginBottom: 10,
   },
   navContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 10,
-    // marginBottom: 10,
   },
   menuContainer: {
-    backgroundColor: 'lightgray',
+    backgroundColor: 'lightgrey',
     borderRadius: 5,
     padding: 10,
     marginRight: 10,
   },
-  inputContainer: {
-    // flex: 1,
+  inputContainer1: {
+    flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'lightgray',
+    backgroundColor: 'lightgrey',
     borderRadius: 5,
     paddingHorizontal: 10,
   },
-  textInputStyle: {
-    flex: 1,
+  textInputStyle1: {
+    // flex: 1,
     height: 40,
     color: 'black',
   },
@@ -58,7 +56,6 @@ const styles = StyleSheet.create({
     marginVertical: 60,
   },
   inputContainer: {
-    // flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: 'lightgrey',

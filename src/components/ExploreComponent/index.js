@@ -21,7 +21,6 @@ const ExploreComponent = ({Item, pan, deleteCard}) => {
     profileDesc,
   } = Item;
   const [swiping, setSwiping] = useState(false);
-  // const pan = useRef(new Animated.ValueXY()).current;
 
   const panResponder = PanResponder.create({
     onStartShouldSetPanResponder: () => true,
@@ -34,7 +33,6 @@ const ExploreComponent = ({Item, pan, deleteCard}) => {
     }),
     onPanResponderRelease: () => {
       if (pan.x._value > 120) {
-        console.log('right : >>>>>>>>>>> ');
         // Swiped right
         Animated.timing(pan, {
           toValue: {x: Dimensions.get('screen').width, y: 0},
@@ -42,7 +40,6 @@ const ExploreComponent = ({Item, pan, deleteCard}) => {
           useNativeDriver: false,
         }).start();
       } else if (pan.x._value < -120) {
-        console.log('left : >>>>>>>>>>> ');
         // Swiped left
         Animated.timing(pan, {
           toValue: {x: -Dimensions.get('screen').width, y: 0},
@@ -50,7 +47,6 @@ const ExploreComponent = ({Item, pan, deleteCard}) => {
           useNativeDriver: false,
         }).start();
       } else {
-        console.log('Both : >>>>>>>>>>> ');
         Animated.spring(pan, {
           toValue: {x: 0, y: 0},
           useNativeDriver: false,
