@@ -11,7 +11,7 @@ import styles from './styles';
 import MoreIcon from '../../../assets/Icons/more.svg';
 import React, {useRef, useState} from 'react';
 
-const ExploreComponent = ({Item, pan, deleteCard}) => {
+const ExploreComponent = ({Item, pan}) => {
   const {
     profBackground,
     profileImage,

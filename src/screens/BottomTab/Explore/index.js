@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -33,48 +33,30 @@ const Explore = ({navigation}) => {
   );
 
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [displayedCards, setDisplayedCards] = useState([]);
+  const [displayedCards, setDisplayedCards] = useState(ExploreData);
   const batchSize = 3;
   const {width, height} = Dimensions.get('screen');
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const [animations] = useState(ExploreData.map(() => new Animated.Value(0)));
-  const mooveLR = (index, randDuration) => {
-    Animated.timing(animations[index], {
-      toValue: 1,
-      duration: randDuration,
-      easing: Easing.out(Easing.sin),
-      useNativeDriver: true,
-    }).start(() => mooveRL(index, randDuration));
-  };
-
-  const mooveRL = (index, randDuration) => {
-    Animated.timing(animations[index], {
-      toValue: 0,
-      duration: randDuration,
-      easing: Easing.out(Easing.sin),
-      useNativeDriver: true,
-    }).start(() => mooveLR(index, randDuration));
-  };
-
+  const [imgOpecityArr] = useState(
+    Array.from({length: ExploreData.length}, () => new Animated.Value(0)),
+  );
   useEffect(() => {
-    if (ExploreData.length > 0) {
-      const timer = setTimeout(() => {
-        const nextBatch = ExploreData.slice(
-          displayedCards.length,
-          displayedCards.length + batchSize,
-        );
+    const viewsCount = displayedCards.length; // Number of views to animate
+    const animations = Array.from({length: viewsCount}, (_, index) =>
+      Animated.timing(imgOpecityArr[index], {
+        toValue: 1,
+        duration: index <= 2 ? 10 : 3000, // Duration for each animation
+        delay: index <= 2 ? 10 : (index - 2) * 3000, // Delay each animation by 1000ms
+        easing: Easing.out(Easing.sin),
+        useNativeDriver: true,
+      }),
+    );
 
-        if (displayedCards.length < ExploreData.length) {
-          setDisplayedCards(prevCards => [...prevCards, ...nextBatch]);
-        }
-      }, 2000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [displayedCards, ExploreData]);
+    Animated.parallel(animations).start(); // Start all animations in parallel
+  }, []);
 
   const toggleDrawer = () => {
     setIsModalVisible(!isModalVisible);
@@ -194,25 +176,18 @@ const Explore = ({navigation}) => {
         </View>
       </Modal>
 
-      <View
-        style={{display: 'flex', height: height - 100, position: 'relative'}}>
+      <View style={{display: 'flex', position: 'relative'}}>
         {displayedCards.map((item, index) => {
           const randPosition = Math.random() >= 0.5 ? 'left' : 'right';
           let randDuration =
             Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000;
-
-          // let transformMax = Math.floor(
-          //   Math.random() * (width / 2 - 1 + 1) + 1,
-          // );
-          let transformMax = 0;
-
-          mooveLR(index, randDuration);
 
           return (
             <Animated.View
               key={index}
               style={[
                 {
+                  opacity: imgOpecityArr[index],
                   zIndex: parseInt(index),
                   position: 'absolute',
                   top:
@@ -223,22 +198,6 @@ const Explore = ({navigation}) => {
                     randPosition === 'left'
                       ? parseInt(Math.floor(Math.random() * (60 - 1 + 1) + 1))
                       : -parseInt(Math.floor(Math.random() * (60 - 1 + 1) + 1)),
-                },
-                styles.animation_view,
-                {
-                  transform: [
-                    {
-                      translateX: animations[index].interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [
-                          randPosition === 'left' ? 0 : transformMax,
-                          randPosition === 'left'
-                            ? transformMax
-                            : -transformMax,
-                        ],
-                      }),
-                    },
-                  ],
                 },
               ]}>
               <ExploreComponent

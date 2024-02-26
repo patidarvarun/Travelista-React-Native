@@ -17,11 +17,9 @@ import Smswhite from '../../../../assets/Icons/sms_white.svg';
 import Notification from '../../../../assets/Icons/notification_black.svg';
 import NotificationWhite from '../../../../assets/Icons/notification_white.svg';
 import {HomeImage, PostData} from '../../../data';
-import TravelCard from '../../../components/TravelCard';
 import PostCard from '../../../components/PostCard';
 import {useTheme} from '../../../Context/ThemeContext';
 import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
-import {parallaxLayout} from 'react-native-reanimated-carousel/lib/typescript/layouts/parallax';
 
 const Home = ({navigation}) => {
   const carouselRef = useRef(null);
