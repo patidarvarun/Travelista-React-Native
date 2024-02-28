@@ -32,35 +32,64 @@ const Explore = ({navigation}) => {
     Array.from({length: ExploreData.length}, () => new Animated.ValueXY()),
   );
 
+  const [dragX] = useState(
+    Array.from({length: ExploreData.length}, () => new Animated.ValueXY()),
+  );
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [displayedCards, setDisplayedCards] = useState(ExploreData);
-  const batchSize = 3;
   const {width, height} = Dimensions.get('screen');
   const handleBack = () => {
     navigation.goBack();
   };
 
-  const [imgOpecityArr] = useState(
+  const [imgOpacityArr] = useState(
     Array.from({length: ExploreData.length}, () => new Animated.Value(0)),
   );
   useEffect(() => {
-    const viewsCount = displayedCards.length; // Number of views to animate
+    const viewsCount = displayedCards.length;
     const animations = Array.from({length: viewsCount}, (_, index) =>
-      Animated.timing(imgOpecityArr[index], {
+      Animated.timing(imgOpacityArr[index], {
         toValue: 1,
-        duration: index <= 2 ? 10 : 3000, // Duration for each animation
-        delay: index <= 2 ? 10 : (index - 2) * 3000, // Delay each animation by 1000ms
+        duration: index <= 2 ? 10 : 3000,
+        delay:
+          index > 2
+            ? index % 3 == 0
+              ? (index - 3) * 3000
+              : (index - (index % 3) - 3) * 3000
+            : 10,
         easing: Easing.out(Easing.sin),
         useNativeDriver: true,
       }),
     );
 
-    Animated.parallel(animations).start(); // Start all animations in parallel
+    Animated.parallel(animations).start();
   }, []);
 
   const toggleDrawer = () => {
     setIsModalVisible(!isModalVisible);
   };
+
+  const moveCard = index => {
+    const direction = Math.random() >= 0.5 ? 'left' : 'right';
+    const moveValue =
+      direction === 'left' ? -Math.abs(width / 4) : Math.abs(width / 4);
+
+    Animated.timing(pans[index].x, {
+      toValue: moveValue,
+      duration: 5000,
+      easing: Easing.linear,
+      useNativeDriver: true,
+    }).start(() => {
+      moveCard(index);
+    });
+  };
+
+  useEffect(() => {
+    displayedCards.forEach((item, index) => {
+      moveCard(index);
+    });
+  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -179,17 +208,16 @@ const Explore = ({navigation}) => {
       <View style={{display: 'flex', position: 'relative'}}>
         {displayedCards.map((item, index) => {
           const randPosition = Math.random() >= 0.5 ? 'left' : 'right';
-          let randDuration =
-            Math.floor(Math.random() * (4000 - 2000 + 1)) + 2000;
 
           return (
             <Animated.View
               key={index}
               style={[
                 {
-                  opacity: imgOpecityArr[index],
+                  opacity: imgOpacityArr[index],
                   zIndex: parseInt(index),
                   position: 'absolute',
+
                   top:
                     index == 0
                       ? 0
@@ -198,12 +226,16 @@ const Explore = ({navigation}) => {
                     randPosition === 'left'
                       ? parseInt(Math.floor(Math.random() * (60 - 1 + 1) + 1))
                       : -parseInt(Math.floor(Math.random() * (60 - 1 + 1) + 1)),
+                  transform: [
+                    {
+                      translateX: pans[index].x,
+                    },
+                  ],
                 },
               ]}>
               <ExploreComponent
                 Item={item}
-                pan={pans[index]}
-                deleteCard={() => deleteCard(index)}
+                drag={dragX[index]}
                 cardPosition={randPosition === 'left' ? '10' : '60'}
                 cardAnimatePos={randPosition}
               />

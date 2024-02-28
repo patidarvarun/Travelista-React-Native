@@ -11,7 +11,7 @@ import styles from './styles';
 import MoreIcon from '../../../assets/Icons/more.svg';
 import React, {useRef, useState} from 'react';
 
-const ExploreComponent = ({Item, pan}) => {
+const ExploreComponent = ({Item, drag}) => {
   const {
     profBackground,
     profileImage,
@@ -26,28 +26,23 @@ const ExploreComponent = ({Item, pan}) => {
     onStartShouldSetPanResponder: () => true,
     onMoveShouldSetPanResponder: () => true,
     onPanResponderGrant: () => {
-      setSwiping(true); // Set swiping to true when swipe starts
+      setSwiping(true);
     },
-    onPanResponderMove: Animated.event([null, {dx: pan.x, dy: pan.y}], {
+    onPanResponderMove: Animated.event([null, {dx: drag.x, dy: drag.y}], {
       useNativeDriver: false,
     }),
-    onPanResponderRelease: () => {
-      if (pan.x._value > 120) {
+    onPanResponderRelease: (_, gestureState) => {
+      if (Math.abs(gestureState.dx) > Dimensions.get('window').width / 4) {
+        const direction = gestureState.dx > 0 ? 1 : -1;
+
         // Swiped right
-        Animated.timing(pan, {
-          toValue: {x: Dimensions.get('screen').width, y: 0},
-          duration: 400,
-          useNativeDriver: false,
-        }).start();
-      } else if (pan.x._value < -120) {
-        // Swiped left
-        Animated.timing(pan, {
-          toValue: {x: -Dimensions.get('screen').width, y: 0},
+        Animated.timing(drag, {
+          toValue: {x: direction * Dimensions.get('window').width, y: 0},
           duration: 200,
           useNativeDriver: false,
         }).start();
       } else {
-        Animated.spring(pan, {
+        Animated.spring(drag, {
           toValue: {x: 0, y: 0},
           useNativeDriver: false,
         }).start(() => {
@@ -62,7 +57,7 @@ const ExploreComponent = ({Item, pan}) => {
       {...panResponder.panHandlers}
       style={[
         styles.container,
-        {transform: [{translateX: pan.x}, {translateY: pan.y}]},
+        {transform: [{translateX: drag.x}, {translateY: drag.y}]},
       ]}>
       <View style={styles.backgroundWrapper}>
         <ImageBackground source={profBackground} style={styles.background}>

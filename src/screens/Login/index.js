@@ -101,7 +101,7 @@ const Login = ({navigation}) => {
         <Button
           style={styles.nextButton}
           type={'green'}
-          // disabled={isContinueDisabled}
+          disabled={isContinueDisabled}
           onPress={onsubmit}>
           Login
         </Button>

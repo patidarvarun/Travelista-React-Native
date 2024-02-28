@@ -11,17 +11,17 @@ const styles = StyleSheet.create({
   },
   leftColumn: {
     width: screenWidth * 0.46,
-    marginRight: 6,
+    marginRight: 4,
   },
   leftColumnSpace: {
-    marginBottom: 10,
+    marginBottom: 6,
   },
   rightColumn: {
     width: screenWidth * 0.46,
-    marginLeft: 6,
+    marginLeft: 4,
   },
   rightColumnSpace: {
-    marginBottom: 10,
+    marginBottom: 6,
   },
   imageStyle: {
     width: '100%',

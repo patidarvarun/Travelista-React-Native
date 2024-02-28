@@ -1,4 +1,4 @@
-#Fri Feb 23 19:45:28 IST 2024
+#Wed Feb 28 16:38:58 IST 2024
 base.0=/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/dex/release/mergeDexRelease/classes.dex
 base.1=/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/dex/release/mergeDexRelease/classes2.dex
 path.0=classes.dex

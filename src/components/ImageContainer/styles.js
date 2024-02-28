@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     marginVertical: 20,
   },
   parentdiv: {
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
   },
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     width: width * 0.44,
-    height: height * 0.19,
+    height: height * 0.18,
   },
   bioText: {
     color: 'black',
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     width: width * 0.6,
-    height: 150,
+    height: height * 0.18,
   },
   wrapper: {
     marginHorizontal: 5,
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
   image: {},
   slide1: {
     width: width * 0.5,
-    height: 149,
+    height: height * 0.18,
     borderRadius: 20,
   },
 });
