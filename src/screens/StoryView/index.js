@@ -11,6 +11,7 @@ import ProfileImage from '../../../assets/HomeImage/storyProImage.png';
 import Profile from '../../components/Profile';
 import MoreIcon from '../../../assets/Icons/more_white.svg';
 import CloseIcon from '../../../assets/Icons/close_white.svg';
+import React from 'react';
 const StoryView = ({navigation}) => {
   const handleBack = () => {
     navigation.goBack();
@@ -43,4 +44,4 @@ const StoryView = ({navigation}) => {
     </ImageBackground>
   );
 };
-export default StoryView;
+export default React.memo(StoryView);

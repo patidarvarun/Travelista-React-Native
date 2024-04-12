@@ -1,7 +1,7 @@
 import {View, Text, ImageBackground, Image} from 'react-native';
 import styles from './styles';
 import React, {useEffect, useState} from 'react';
-import Button from '../../components/Button';
+import ButtonComponent from '../../components/Button';
 const Splash = ({navigation}) => {
   const [showButtons, setShowButtons] = useState(false);
   useEffect(() => {
@@ -31,14 +31,15 @@ const Splash = ({navigation}) => {
             </View>
 
             <View style={styles.buttonContent}>
-              <Button onPress={() => navigation.navigate('Login')}>
-                Login
-              </Button>
-              <Button
+              <ButtonComponent
+                children={'Login'}
+                onPress={() => navigation.navigate('Login')}
+              />
+              <ButtonComponent
+                children={'Sign Up'}
                 type={'green'}
-                onPress={() => navigation.navigate('Signup')}>
-                Sign Up
-              </Button>
+                onPress={() => navigation.navigate('Signup')}
+              />
             </View>
           </>
         )}

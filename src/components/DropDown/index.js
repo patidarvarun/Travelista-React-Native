@@ -10,6 +10,7 @@ import {
 import styles from './styles';
 import RightTickImage from '../../../assets/Icons/check.svg';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 const DropDown = ({options, onSelect, selectedOption}) => {
   const theme = useTheme();
   const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
@@ -49,4 +50,4 @@ const DropDown = ({options, onSelect, selectedOption}) => {
     </View>
   );
 };
-export default DropDown;
+export default React.memo(DropDown);

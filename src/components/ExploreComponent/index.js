@@ -82,4 +82,4 @@ const ExploreComponent = ({Item, drag}) => {
     </Animated.View>
   );
 };
-export default ExploreComponent;
+export default React.memo(ExploreComponent);

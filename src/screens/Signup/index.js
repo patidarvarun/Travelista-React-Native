@@ -11,8 +11,8 @@ import styles from './styles';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-import {useEffect, useState} from 'react';
-import Button from '../../components/Button';
+import React, {useEffect, useState} from 'react';
+import ButtonComponent from '../../components/Button';
 import GoogleButton from '../../components/GoogleButton';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {Svg} from 'react-native-svg';
@@ -120,11 +120,14 @@ const Signup = ({navigation}) => {
         <GoogleButton>Continue With Google</GoogleButton>
       </ScrollView>
       <View style={styles.buttonContent}>
-        <Button type={'green'} disabled={isContinueDisabled} onPress={onsubmit}>
+        <ButtonComponent
+          type={'green'}
+          disabled={isContinueDisabled}
+          onPress={onsubmit}>
           Continue
-        </Button>
+        </ButtonComponent>
       </View>
     </SafeAreaView>
   );
 };
-export default Signup;
+export default React.memo(Signup);

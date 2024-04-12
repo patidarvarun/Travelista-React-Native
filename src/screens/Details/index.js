@@ -16,7 +16,7 @@ import EditPenWhite from '../../../assets/Icons/editpen_white.svg';
 import ShareIcon from '../../../assets/Icons/share.svg';
 import ArchiveAdd from '../../../assets/Icons/archive_add.svg';
 import CheckImage from '../../../assets/Icons/check-verified.svg';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import DetailInput from '../../components/DetailInput/Index';
 import Button from '../../components/Button';
 import Modal from 'react-native-modal';
@@ -189,4 +189,4 @@ const Details = ({navigation}) => {
     </SafeAreaView>
   );
 };
-export default Details;
+export default React.memo(Details);

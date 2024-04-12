@@ -11,7 +11,7 @@ import {
 import styles from './styles';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
+import ButtonComponent from '../../components/Button';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
 
@@ -68,11 +68,14 @@ const CreateNewPassword = ({navigation}) => {
         </View>
       </ScrollView>
       <View>
-        <Button style={styles.nextButton} type={'green'} onPress={onsubmit}>
+        <ButtonComponent
+          style={styles.nextButton}
+          type={'green'}
+          onPress={onsubmit}>
           Continue
-        </Button>
+        </ButtonComponent>
       </View>
     </SafeAreaView>
   );
 };
-export default CreateNewPassword;
+export default React.memo(CreateNewPassword);

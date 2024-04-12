@@ -18,6 +18,7 @@ import SavedIcon from '../../../../assets/Icons/archive.svg';
 import TermsIcon from '../../../../assets/Icons/list-box.svg';
 import PaymentIcon from '../../../../assets/Icons/payment_icon.svg';
 import {useTheme} from '../../../Context/ThemeContext';
+import React from 'react';
 const Advice = ({navigation}) => {
   const theme = useTheme();
 
@@ -48,6 +49,23 @@ const Advice = ({navigation}) => {
                 editable={false}
                 style={styles.textInputStyle}
                 placeholder="Profile"
+                placeholderTextColor="black"
+              />
+              <RightLine />
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => navigation.push('CategoriesScreen')}>
+          <View style={styles.inputContainer}>
+            <PaymentIcon />
+            <View style={styles.inputStyle}>
+              <TextInput
+                editable={false}
+                style={styles.textInputStyle}
+                placeholder="Preferences"
                 placeholderTextColor="black"
               />
               <RightLine />
@@ -133,4 +151,4 @@ const Advice = ({navigation}) => {
     </SafeAreaView>
   );
 };
-export default Advice;
+export default React.memo(Advice);

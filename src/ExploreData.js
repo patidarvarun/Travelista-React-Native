@@ -3,7 +3,6 @@ import spaceImage2 from '../assets/SpacingImage/profile2.png';
 import spaceImage3 from '../assets/SpacingImage/profile3.png';
 import spaceImage4 from '../assets/SpacingImage/profile4.png';
 import spaceImage5 from '../assets/SpacingImage/profile5.png';
-
 import BackImage1 from '../assets/SpacingImage/imageBack1.png';
 import BackImage2 from '../assets/SpacingImage/imageBack2.png';
 import BackImage3 from '../assets/SpacingImage/imageBack3.png';

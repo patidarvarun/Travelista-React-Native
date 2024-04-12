@@ -14,7 +14,7 @@ import More from '../../../assets/Icons/more.svg';
 import Close from '../../../assets/Icons/close_black.svg';
 import MoreWhite from '../../../assets/Icons/more_white.svg';
 import CloseWhite from '../../../assets/Icons/close_white.svg';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import DropDown from '../../components/DropDown';
 import Button from '../../components/Button';
 import {useTheme} from '../../Context/ThemeContext';
@@ -131,4 +131,4 @@ const TravelType = ({navigation}) => {
     </SafeAreaView>
   );
 };
-export default TravelType;
+export default React.memo(TravelType);

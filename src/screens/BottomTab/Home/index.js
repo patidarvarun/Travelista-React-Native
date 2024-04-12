@@ -19,7 +19,7 @@ import NotificationWhite from '../../../../assets/Icons/notification_white.svg';
 import {HomeImage, PostData} from '../../../data';
 import PostCard from '../../../components/PostCard';
 import {useTheme} from '../../../Context/ThemeContext';
-import Carousel, {ParallaxImage} from 'react-native-snap-carousel';
+import Carousel from 'react-native-snap-carousel';
 
 const Home = ({navigation}) => {
   const carouselRef = useRef(null);
@@ -31,10 +31,6 @@ const Home = ({navigation}) => {
   };
   const borderColor = {
     borderColor: theme === 'dark' ? 'white' : 'black',
-  };
-
-  const goForward = () => {
-    carouselRef.current.snapToNext();
   };
 
   return (
@@ -107,4 +103,4 @@ const Home = ({navigation}) => {
     </SafeAreaView>
   );
 };
-export default Home;
+export default React.memo(Home);

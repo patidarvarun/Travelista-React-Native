@@ -15,6 +15,7 @@ import ProfileImage from '../../components/ProfileImage';
 import ImageContainer from '../../components/ImageContainer';
 import LoopImageContainer from '../../components/LoopImageContainer';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 const Profile = ({navigation}) => {
   const theme = useTheme();
 
@@ -52,4 +53,4 @@ const Profile = ({navigation}) => {
     </SafeAreaView>
   );
 };
-export default Profile;
+export default React.memo(Profile);

@@ -1,6 +1,7 @@
 import {View, Text, ImageBackground, SafeAreaView, Image} from 'react-native';
 import styles from './styles';
 import MoreIcon from '../../../assets/Icons/more.svg';
+import React from 'react';
 const SpacingCard = ({Item}) => {
   const {spaceBack, spaceImage, spaceTime, spaceCity, spaceName, spaceDesc} =
     Item;
@@ -28,4 +29,4 @@ const SpacingCard = ({Item}) => {
     </SafeAreaView>
   );
 };
-export default SpacingCard;
+export default React.memo(SpacingCard);

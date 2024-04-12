@@ -11,7 +11,7 @@ import {
 import styles from './styles';
 import Input from '../../components/Input';
 import Title from '../../components/Title';
-import Button from '../../components/Button';
+import ButtonComponent from '../../components/Button';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
 const ResetPassword = ({navigation}) => {
@@ -57,14 +57,14 @@ const ResetPassword = ({navigation}) => {
           />
         </View>
       </ScrollView>
-      <Button
+      <ButtonComponent
         type={'green'}
         disabled={isContinueDisabled}
         style={styles.nextButton}
         onPress={() => navigation.navigate('Verification')}>
         Reset
-      </Button>
+      </ButtonComponent>
     </SafeAreaView>
   );
 };
-export default ResetPassword;
+export default React.memo(ResetPassword);

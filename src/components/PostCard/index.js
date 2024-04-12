@@ -11,6 +11,7 @@ import HeartIconWhite from '../../../assets/Icons/heart_white.svg';
 import MessageIcon from '../../../assets/Icons/message.svg';
 import MessageIconWhite from '../../../assets/Icons/message_white.svg';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 const PostCard = ({Item}) => {
   const theme = useTheme();
   const desStyle = {
@@ -60,4 +61,4 @@ const PostCard = ({Item}) => {
     </>
   );
 };
-export default PostCard;
+export default React.memo(PostCard);

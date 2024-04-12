@@ -4,6 +4,7 @@ import Swiper from 'react-native-swiper';
 import CoverImage from '../../../assets/Icons/Cover.svg';
 import CoverImage1 from '../../../assets/Icons/Cover1.svg';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 
 const {width} = Dimensions.get('window');
 const {height} = Dimensions.get('window');
@@ -28,7 +29,13 @@ const ImageContainer = () => {
         <View style={styles.imageContainer}>
           <Swiper
             style={styles.wrapper}
-            showsButtons={false}
+            showsButtons={true}
+            buttonWrapperStyle={{
+              width: '85%',
+              backgroundColor: 'transparent',
+              position: 'absolute',
+              left: 1,
+            }}
             showsPagination={false}>
             <View style={styles.slide1}>
               <CoverImage width={'100%'} height={'100%'} />
@@ -42,4 +49,4 @@ const ImageContainer = () => {
     </View>
   );
 };
-export default ImageContainer;
+export default React.memo(ImageContainer);

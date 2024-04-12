@@ -185,3 +185,86 @@ export const notifications = [
     timeTitle: 'Yesterday',
   },
 ];
+
+export const categories = [
+  {
+    id: 1,
+    title: 'Spa',
+  },
+  {
+    id: 2,
+    title: 'Hiking',
+  },
+  {
+    id: 3,
+    title: 'Swimming',
+  },
+  {
+    id: 4,
+    title: 'Museums',
+  },
+  {
+    id: 5,
+    title: 'Restaurants',
+  },
+  {
+    id: 6,
+    title: 'Spa',
+  },
+  {
+    id: 7,
+    title: 'Hiking',
+  },
+  {
+    id: 8,
+    title: 'Swimming',
+  },
+  {
+    id: 9,
+    title: 'Museums',
+  },
+  {
+    id: 10,
+    title: 'Restaurants',
+  },
+  {
+    id: 11,
+    title: 'Spa',
+  },
+  {
+    id: 12,
+    title: 'Hiking',
+  },
+  {
+    id: 13,
+    title: 'Swimming',
+  },
+  {
+    id: 14,
+    title: 'Museums',
+  },
+  {
+    id: 15,
+    title: 'Hiking',
+  },
+  {
+    id: 16,
+    title: 'Spa',
+  },
+  {
+    id: 17,
+    title: 'Hiking',
+  },
+  {
+    id: 18,
+    title: 'Swimming',
+  },
+  {
+    id: 19,
+    title: 'Museums',
+  },
+  {
+    id: 20,
+    title: 'Spa',
+  },
+];

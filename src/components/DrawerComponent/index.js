@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import styles from './styles';
 import LocationImage from '../../../assets/Icons/location.svg';
+import React from 'react';
 const DrawerComponent = ({isVisible, onclose}) => {
   return (
     <Modal
@@ -104,4 +105,4 @@ const DrawerComponent = ({isVisible, onclose}) => {
     </Modal>
   );
 };
-export default DrawerComponent;
+export default React.memo(DrawerComponent);

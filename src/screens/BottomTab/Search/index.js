@@ -1,3 +1,4 @@
+import React from 'react';
 import {View, Text} from 'react-native';
 const Search = () => {
   return (
@@ -6,4 +7,4 @@ const Search = () => {
     </View>
   );
 };
-export default Search;
+export default React.memo(Search);

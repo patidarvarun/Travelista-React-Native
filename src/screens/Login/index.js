@@ -10,11 +10,12 @@ import {
 import styles from './styles';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
-import {useEffect, useState} from 'react';
+import ButtonComponent from '../../components/Button';
+import React, {useEffect, useState} from 'react';
 import GoogleButton from '../../components/GoogleButton';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Login = ({navigation}) => {
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
@@ -44,7 +45,7 @@ const Login = ({navigation}) => {
   }, [email, password]);
 
   const onsubmit = () => {
-    navigation.navigate('Routes');
+    navigation.navigate('CategoriesScreen');
   };
 
   return (
@@ -98,13 +99,13 @@ const Login = ({navigation}) => {
       </ScrollView>
 
       <View style={{marginBottom: 20}}>
-        <Button
+        <ButtonComponent
           style={styles.nextButton}
           type={'green'}
+          children={'Login'}
+          onPress={onsubmit}
           disabled={isContinueDisabled}
-          onPress={onsubmit}>
-          Login
-        </Button>
+        />
 
         <Text style={[styles.footerText, textStyle, {textAlign: 'center'}]}>
           Don't have an Account?
@@ -119,4 +120,4 @@ const Login = ({navigation}) => {
     </SafeAreaView>
   );
 };
-export default Login;
+export default React.memo(Login);

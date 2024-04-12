@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyleSheet, useColorScheme} from 'react-native';
 import {
   NavigationContainer,
@@ -19,8 +19,8 @@ import Details from './src/screens/Details';
 import CreateNewPassword from './src/screens/CreateNewPassword';
 import Notifications from './src/screens/Notifications';
 import Profile from './src/screens/Profile';
-import {ThemeProvider, useTheme} from './src/Context/ThemeContext';
-import Home from './src/screens/BottomTab/Home';
+import {ThemeProvider} from './src/Context/ThemeContext';
+import CategoriesScreen from './src/screens/CategoriesScreen';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -50,7 +50,7 @@ const App = () => {
           <Stack.Screen name="Splash" component={Splash} />
           <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Routes" component={Routes} />
+
           <Stack.Screen name="Verification" component={Verification} />
           <Stack.Screen name="CreatePassword" component={CreatePassword} />
           <Stack.Screen
@@ -63,6 +63,10 @@ const App = () => {
           <Stack.Screen name="Details" component={Details} />
           <Stack.Screen name="Notifications" component={Notifications} />
           <Stack.Screen name="Profile" component={Profile} />
+
+          <Stack.Screen name="CategoriesScreen" component={CategoriesScreen} />
+
+          <Stack.Screen name="Routes" component={Routes} />
         </Stack.Navigator>
       </NavigationContainer>
     </ThemeProvider>

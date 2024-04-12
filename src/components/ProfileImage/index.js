@@ -3,6 +3,7 @@ import {Image} from 'react-native-svg';
 import ProfileImg from '../../../assets/Icons/ProfileImage.svg';
 import styles from './styles';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 const ProfileImage = () => {
   const theme = useTheme();
 
@@ -41,4 +42,4 @@ const ProfileImage = () => {
     </View>
   );
 };
-export default ProfileImage;
+export default React.memo(ProfileImage);

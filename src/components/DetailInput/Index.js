@@ -1,6 +1,7 @@
 import {View, Text, TextInput} from 'react-native';
 import styles from './styles';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 const DetailInput = ({
   label,
   value,
@@ -31,4 +32,4 @@ const DetailInput = ({
     </View>
   );
 };
-export default DetailInput;
+export default React.memo(DetailInput);

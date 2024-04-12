@@ -1,5 +1,6 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from './styles';
+import React from 'react';
 const GoogleButton = ({onPress, style, children}) => {
   return (
     <TouchableOpacity
@@ -14,4 +15,4 @@ const GoogleButton = ({onPress, style, children}) => {
     </TouchableOpacity>
   );
 };
-export default GoogleButton;
+export default React.memo(GoogleButton);

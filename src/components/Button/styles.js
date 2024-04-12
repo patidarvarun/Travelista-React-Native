@@ -4,9 +4,9 @@ import colors from '../../constants/colors';
 const styles = StyleSheet.create({
   container: {
     backgroundColor: colors.white,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flexDirection: 'row',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     borderRadius: 8,
     padding: 14,
     marginVertical: 8,

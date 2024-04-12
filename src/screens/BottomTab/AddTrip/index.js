@@ -17,7 +17,7 @@ import styles from './styles';
 import Input from '../../../components/Input';
 import calendar1 from '../../../../assets/Icons/calendar.svg';
 import Button from '../../../components/Button';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import {Calendar} from 'react-native-calendars';
 import {useTheme} from '../../../Context/ThemeContext';
 
@@ -175,4 +175,4 @@ const AddTrip = ({navigation}) => {
     </SafeAreaView>
   );
 };
-export default AddTrip;
+export default React.memo(AddTrip);

@@ -12,6 +12,7 @@ import ShareIconWhite from '../../../assets/Icons/share_white.svg';
 import ArchiveIcon from '../../../assets/Icons/archive_add.svg';
 import ArchiveIconWhite from '../../../assets/Icons/archive_add_white.svg';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 const Profile = ({Item}) => {
   const theme = useTheme();
   const textStyle = {
@@ -53,4 +54,4 @@ const Profile = ({Item}) => {
     </SafeAreaView>
   );
 };
-export default Profile;
+export default React.memo(Profile);

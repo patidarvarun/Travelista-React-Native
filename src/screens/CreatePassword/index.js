@@ -11,14 +11,13 @@ import {
 import styles from './styles';
 import Title from '../../components/Title';
 import Input from '../../components/Input';
-import CheckBox from '../../components/CheckBox';
-import Button from '../../components/Button';
+import CheckBoxComponent from '../../components/CheckBox';
+import ButtonComponent from '../../components/Button';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
 const CreatePassword = ({navigation}) => {
   const theme = useTheme();
 
- 
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -74,7 +73,7 @@ const CreatePassword = ({navigation}) => {
         </View>
 
         <View style={styles.row}>
-          <CheckBox checked={agreed} onPress={onCheckboxPress} />
+          <CheckBoxComponent checked={agreed} onPress={onCheckboxPress} />
           <View style={{marginHorizontal: 10}}>
             <Text styles={styles.agreeText}>
               I accept to the
@@ -87,11 +86,14 @@ const CreatePassword = ({navigation}) => {
         </View>
       </ScrollView>
       <View>
-        <Button style={styles.nextButton} type={'green'} onPress={onsubmit}>
+        <ButtonComponent
+          style={styles.nextButton}
+          type={'green'}
+          onPress={onsubmit}>
           Continue
-        </Button>
+        </ButtonComponent>
       </View>
     </SafeAreaView>
   );
 };
-export default CreatePassword;
+export default React.memo(CreatePassword);

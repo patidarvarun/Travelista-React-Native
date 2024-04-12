@@ -1,5 +1,9 @@
-import {StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import colors from '../../constants/colors';
+
+const screenWidth = Dimensions.get('window').width;
+const screenHeight = Dimensions.get('window').height;
+const desiredWidth = 143;
 
 const styles = StyleSheet.create({
   imgContainer: {
@@ -10,7 +14,7 @@ const styles = StyleSheet.create({
     height: '100%',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
   container: {
     flex: 1,
@@ -31,15 +35,12 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter',
   },
   container1: {
-  
     flex: 1,
-   
   },
   buttonContent: {
     position: 'absolute',
     justifyContent: 'space-around',
     paddingHorizontal: 16,
-    
     width: '100%',
     bottom: 30,
   },

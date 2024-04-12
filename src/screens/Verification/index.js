@@ -11,7 +11,7 @@ import {CodeField, Cursor} from 'react-native-confirmation-code-field';
 import BackIcon from '../../../assets/Icons/back.svg';
 import styles from './styles';
 import Title from '../../components/Title';
-import Button from '../../components/Button';
+import ButtonComponent from '../../components/Button';
 import {useTheme} from '../../Context/ThemeContext';
 const CELL_COUNT = 6;
 const Verification = ({navigation}) => {
@@ -75,13 +75,13 @@ const Verification = ({navigation}) => {
           <Text>{''}</Text>
         )}
       </ScrollView>
-      <Button
+      <ButtonComponent
         style={styles.nextButton}
         type={'green'}
         disabled={isContinueDisabled}
         onPress={() => navigation.navigate('CreatePassword')}>
         Continue
-      </Button>
+      </ButtonComponent>
     </SafeAreaView>
   );
 };

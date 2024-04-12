@@ -1,22 +1,25 @@
 import React from 'react';
-import {Pressable, Text, TouchableOpacity} from 'react-native';
+import {Pressable, Text, TouchableOpacity, View} from 'react-native';
 import styles from './styles';
+import {Button} from '@rneui/themed';
 
-const Button = ({onPress, style, type, disabled, children}) => {
+const ButtonComponent = ({onPress, style, type, disabled, children, color}) => {
+  console.log('dkfghdghkjh : >>>>>>>>>> ', disabled);
   const buttonStyle = disabled
     ? styles.disabledBg
     : type === 'green'
     ? styles.greenBg
     : styles.enableBg;
+
   return (
-    <TouchableOpacity
-      activeOpacity={0.7}
+    <Button
+      title={children}
+      color={color}
+      buttonStyle={[styles.container, buttonStyle, style]}
+      titleStyle={styles.text}
       onPress={onPress}
-      disabled={disabled}
-      style={[styles.container, buttonStyle, style]}>
-      <Text style={styles.text}>{children}</Text>
-    </TouchableOpacity>
+    />
   );
 };
 
-export default React.memo(Button);
+export default React.memo(ButtonComponent);

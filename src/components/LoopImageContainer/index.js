@@ -3,11 +3,11 @@ import styles from './styles';
 import Left1 from '../../../assets/leftRightImage/Rectangle_left1.png';
 import Left2 from '../../../assets/leftRightImage/Rectangle_left2.png';
 import Left3 from '../../../assets/leftRightImage/Rectangle_left3.png';
-
 import Right1 from '../../../assets/leftRightImage/Rectangle_right1.png';
 import Right2 from '../../../assets/leftRightImage/Rectangle_right2.png';
 import Right3 from '../../../assets/leftRightImage/Rectangle_right3.png';
 import {useTheme} from '../../Context/ThemeContext';
+import React from 'react';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
@@ -45,4 +45,4 @@ const LoopImageContainer = () => {
     </View>
   );
 };
-export default LoopImageContainer;
+export default React.memo(LoopImageContainer);
