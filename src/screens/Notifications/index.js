@@ -10,11 +10,11 @@ import AdviceIcon from '../../../assets/Icons/advice_icon.svg';
 import NewFollowIcon from '../../../assets/Icons/newfollow_icon.svg';
 import {useTheme} from '../../Context/ThemeContext';
 import { notifications } from '../../data';
-
+import {useTranslation} from 'react-i18next';
  
 const Notifications = ({navigation}) => {
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -60,7 +60,7 @@ const Notifications = ({navigation}) => {
         <Pressable hitSlop={10} onPress={handlePress}>
           {theme === 'dark' ? <BackArrowWhite /> : <BackArrow />}
         </Pressable>
-        <Text style={[styles.textInputStyle, textStyle]}>Notification</Text>
+        <Text style={[styles.textInputStyle, textStyle]}>{t('Notification')}</Text>
       </View>
 
       <FlatList

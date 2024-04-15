@@ -13,12 +13,13 @@ import styles from './styles';
 import Title from '../../components/Title';
 import ButtonComponent from '../../components/Button';
 import {useTheme} from '../../Context/ThemeContext';
+import {useTranslation} from 'react-i18next';
 const CELL_COUNT = 6;
 const Verification = ({navigation}) => {
   const [otp, setOtp] = useState('');
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -44,7 +45,7 @@ const Verification = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
         <Title style={textStyle}>
-          We have sent you a code Please type it here
+          {t('We have sent you a code Please type it here')}
         </Title>
         <View style={styles.codeContainer}>
           <CodeField
@@ -63,12 +64,12 @@ const Verification = ({navigation}) => {
         </View>
         {isContinueDisabled && isContinueDisabled ? (
           <Text style={[styles.footerText, textStyle]}>
-            Did not get a code?
+            {t('Did not get a code?')}
             <Text
               style={[styles.footerLink, textStyle]}
               onPress={() => console.log('Hello')}>
               {' '}
-              Resend it
+              {t('Resend it')}
             </Text>
           </Text>
         ) : (
@@ -80,7 +81,7 @@ const Verification = ({navigation}) => {
         type={'green'}
         disabled={isContinueDisabled}
         onPress={() => navigation.navigate('CreatePassword')}>
-        Continue
+        {t('Continue')}
       </ButtonComponent>
     </SafeAreaView>
   );

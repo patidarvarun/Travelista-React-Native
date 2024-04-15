@@ -2,8 +2,11 @@ import {View, Text, ImageBackground, Image} from 'react-native';
 import styles from './styles';
 import React, {useEffect, useState} from 'react';
 import ButtonComponent from '../../components/Button';
+import {useTranslation} from 'react-i18next';
+
 const Splash = ({navigation}) => {
   const [showButtons, setShowButtons] = useState(false);
+  const {t, i18n} = useTranslation();
   useEffect(() => {
     const delayToShowButtons = setTimeout(() => {
       setShowButtons(true);
@@ -25,18 +28,18 @@ const Splash = ({navigation}) => {
         {showButtons && (
           <>
             <View style={styles.container1}>
-              <Text style={styles.subtitle}>All the Travel</Text>
-              <Text style={styles.subtitle}>Community at one</Text>
-              <Text style={styles.subtitle}>place by Travelista</Text>
+              <Text style={styles.subtitle}>{t('All the Travel')}</Text>
+              <Text style={styles.subtitle}>{t('Community at one')}</Text>
+              <Text style={styles.subtitle}>{t('place by Travelista')}</Text>
             </View>
 
             <View style={styles.buttonContent}>
               <ButtonComponent
-                children={'Login'}
+                children={t('Login')}
                 onPress={() => navigation.navigate('Login')}
               />
               <ButtonComponent
-                children={'Sign Up'}
+                children={t('Sign Up')}
                 type={'green'}
                 onPress={() => navigation.navigate('Signup')}
               />

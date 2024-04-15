@@ -6,6 +6,7 @@ import {
   Image,
   ScrollView,
   Alert,
+  I18nManager,
 } from 'react-native';
 import styles from './styles';
 import Title from '../../components/Title';
@@ -16,8 +17,11 @@ import GoogleButton from '../../components/GoogleButton';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {useTranslation} from 'react-i18next';
 
 const Login = ({navigation}) => {
+  const {t, i18n} = useTranslation();
+
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -48,6 +52,8 @@ const Login = ({navigation}) => {
     navigation.navigate('CategoriesScreen');
   };
 
+  console.log('i18ni18ni18n', i18n.language);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.backContainerStyle}>
@@ -62,17 +68,18 @@ const Login = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
-        <Title style={textStyle}>Welcome Back</Title>
+        <Title style={textStyle}>{t('Welcome Back')}</Title>
         <Title>Traveller</Title>
 
         <View style={styles.loginInput}>
           <Input
-            children="Email"
-            keyboardType="email-address"
+            children={t('Email')}
+            keyboardType={t('email-address')}
             onChangeText={text => setEmail(text)}
+            style={{textAlign: I18nManager.isRTL ? 'right' : 'left'}}
           />
           <Input
-            children="Password"
+            children={t('Password')}
             secureTextEntry
             onChangeText={text => setPassword(text)}
           />
@@ -80,40 +87,40 @@ const Login = ({navigation}) => {
 
         <View style={{marginVertical: 10}}>
           <Text style={[styles.footerText, textStyle]}>
-            Forget Password?{' '}
+            {t('Forget Password?')}{' '}
             <Text
               style={[styles.footerLink, textStyle]}
               onPress={() => navigation.navigate('ResetPassword')}>
-              Reset It
+              {t('Reset It')}
             </Text>
           </Text>
         </View>
 
         <View style={styles.separatorContainer}>
           <View style={styles.separatorLine}></View>
-          <Text style={styles.separatorText}>or</Text>
+          <Text style={styles.separatorText}>{t('or')}</Text>
           <View style={styles.separatorLine}></View>
         </View>
 
-        <GoogleButton>Login With Google</GoogleButton>
+        <GoogleButton>{t('Login With Google')}</GoogleButton>
       </ScrollView>
 
       <View style={{marginBottom: 20}}>
         <ButtonComponent
           style={styles.nextButton}
           type={'green'}
-          children={'Login'}
+          children={t('Login')}
           onPress={onsubmit}
           disabled={isContinueDisabled}
         />
 
         <Text style={[styles.footerText, textStyle, {textAlign: 'center'}]}>
-          Don't have an Account?
+          {t("Don't have an Account?")}
           <Text
             style={[styles.footerLink, textStyle]}
             onPress={() => navigation.navigate('Signup')}>
             {' '}
-            Sign up
+            {t('Sign up')}
           </Text>
         </Text>
       </View>

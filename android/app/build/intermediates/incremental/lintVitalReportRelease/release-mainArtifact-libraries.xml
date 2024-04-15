@@ -211,10 +211,36 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
+      name="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android@@:react-native-async-storage_async-storage::release"
+      jars="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/3f4b57ef21c08a74d3cee164f8111db4/transformed/out/jars/classes.jar:/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/3f4b57ef21c08a74d3cee164f8111db4/transformed/out/jars/libs/R.jar"
+      resolved="travelista:react-native-async-storage_async-storage:unspecified"
+      folder="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/@react-native-async-storage/async-storage/android/build/.transforms/3f4b57ef21c08a74d3cee164f8111db4/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
       name="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android@@:react-native-gesture-handler::release"
       jars="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-gesture-handler/android/build/.transforms/b30adf7b3e4084f38126e668a914fc29/transformed/out/jars/classes.jar:/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-gesture-handler/android/build/.transforms/b30adf7b3e4084f38126e668a914fc29/transformed/out/jars/libs/R.jar"
       resolved="travelista:react-native-gesture-handler:unspecified"
       folder="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-gesture-handler/android/build/.transforms/b30adf7b3e4084f38126e668a914fc29/transformed/out"
+      manifest="AndroidManifest.xml"
+      resFolder="res"
+      assetsFolder="assets"
+      lintJar="lint.jar"
+      publicResources="public.txt"
+      symbolFile="R.txt"
+      externalAnnotations="annotations.zip"
+      proguardRules="proguard.txt"/>
+  <library
+      name="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android@@:react-native-localize::release"
+      jars="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-localize/android/build/.transforms/b3624f9eb201aa6073b9f20e3943d523/transformed/out/jars/classes.jar:/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-localize/android/build/.transforms/b3624f9eb201aa6073b9f20e3943d523/transformed/out/jars/libs/R.jar"
+      resolved="travelista:react-native-localize:unspecified"
+      folder="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-localize/android/build/.transforms/b3624f9eb201aa6073b9f20e3943d523/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"

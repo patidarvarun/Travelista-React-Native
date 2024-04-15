@@ -1,7 +1,0 @@
-#Mon Feb 05 14:28:45 IST 2024
-base.0=/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
-base.1=/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/1/classes.dex
-path.0=0/classes.dex
-path.1=1/classes.dex
-renamed.0=classes.dex
-renamed.1=classes2.dex

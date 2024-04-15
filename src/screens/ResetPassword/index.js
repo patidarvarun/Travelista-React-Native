@@ -12,11 +12,12 @@ import styles from './styles';
 import Input from '../../components/Input';
 import Title from '../../components/Title';
 import ButtonComponent from '../../components/Button';
+import {useTranslation} from 'react-i18next';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
 const ResetPassword = ({navigation}) => {
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -47,11 +48,11 @@ const ResetPassword = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
-        <Title style={textStyle}>Reset Password</Title>
+        <Title style={textStyle}>{t('Reset Password')}</Title>
         <View style={styles.resetInput}>
           <Input
             autoFocus
-            children="Email"
+            children={t('Email')}
             keyboardType="email-address"
             onChangeText={text => setEmail(text)}
           />
@@ -62,7 +63,7 @@ const ResetPassword = ({navigation}) => {
         disabled={isContinueDisabled}
         style={styles.nextButton}
         onPress={() => navigation.navigate('Verification')}>
-        Reset
+        {t('Reset')}
       </ButtonComponent>
     </SafeAreaView>
   );

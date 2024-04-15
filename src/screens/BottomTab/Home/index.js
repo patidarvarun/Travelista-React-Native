@@ -20,12 +20,13 @@ import {HomeImage, PostData} from '../../../data';
 import PostCard from '../../../components/PostCard';
 import {useTheme} from '../../../Context/ThemeContext';
 import Carousel from 'react-native-snap-carousel';
+import {useTranslation} from 'react-i18next';
 
 const Home = ({navigation}) => {
   const carouselRef = useRef(null);
   const {width: screenWidth} = Dimensions.get('window');
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -38,7 +39,7 @@ const Home = ({navigation}) => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.titleContainer}>
           <View style={styles.titleRow}>
-            <Title children="Travelista" style={textStyle} />
+            <Title children={t('Travelista')} style={textStyle} />
             <View style={styles.iconsContainer}>
               <TouchableOpacity>
                 {theme === 'dark' ? (

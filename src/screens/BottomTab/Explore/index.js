@@ -21,13 +21,14 @@ import {useTheme} from '../../../Context/ThemeContext';
 import DrawerComponent from '../../../components/DrawerComponent';
 import Modal from 'react-native-modal';
 import LocationImage from '../../../../assets/Icons/location.svg';
+import {useTranslation} from 'react-i18next';
 
 const Explore = ({navigation}) => {
   const theme = useTheme();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
-
+  const {t, i18n} = useTranslation();
   const [pans] = useState(
     Array.from({length: ExploreData.length}, () => new Animated.ValueXY()),
   );
@@ -97,7 +98,7 @@ const Explore = ({navigation}) => {
         <TouchableOpacity onPress={handleBack}>
           {theme === 'dark' ? <BackArrowWhite /> : <BackArrow />}
         </TouchableOpacity>
-        <Text style={[styles.textStyle, textStyle]}>Home</Text>
+        <Text style={[styles.textStyle, textStyle]}>{t('Home')}</Text>
       </View>
       <View style={styles.navContainer}>
         <View style={styles.menuContainer}>
@@ -110,7 +111,7 @@ const Explore = ({navigation}) => {
           <SearchImage style={{width: 20, height: 20, marginRight: 10}} />
           <TextInput
             style={[styles.textInputStyle1, textStyle]}
-            placeholder="Search"
+            placeholder={t('Home')}
           />
         </View>
       </View>

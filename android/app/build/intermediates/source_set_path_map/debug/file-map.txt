@@ -37,9 +37,11 @@ com.travelista.app-packageDebugResources-35 /home/pooja/Desktop/MangoIT-Projects
 com.travelista.app-merged_res-36 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/build/intermediates/merged_res/debug
 com.travelista.app-debug-37 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/src/debug/res
 com.travelista.app-main-38 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app/src/main/res
-com.travelista.app-packaged_res-39 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-gesture-handler/android/build/intermediates/packaged_res/debug
-com.travelista.app-packaged_res-40 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-reanimated/android/build/intermediates/packaged_res/debug
-com.travelista.app-packaged_res-41 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
-com.travelista.app-packaged_res-42 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
-com.travelista.app-packaged_res-43 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
-com.travelista.app-packaged_res-44 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-39 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/@react-native-async-storage/async-storage/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-40 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-gesture-handler/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-41 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-localize/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-42 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-reanimated/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-43 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-44 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-45 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
+com.travelista.app-packaged_res-46 /home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug

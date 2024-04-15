@@ -17,9 +17,11 @@ import GoogleButton from '../../components/GoogleButton';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {Svg} from 'react-native-svg';
 import {useTheme} from '../../Context/ThemeContext';
+import {useTranslation} from 'react-i18next';
+
 const Signup = ({navigation}) => {
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -50,12 +52,12 @@ const Signup = ({navigation}) => {
 
   const onsubmit = () => {
     if (!values.first_name || !values.last_name) {
-      Alert.alert('Please enter the first name and last name');
+      Alert.alert(t('Please enter the first name and last name'));
       return;
     } else if (!values.email) {
-      Alert.alert('Please Enter email');
+      Alert.alert(t('Please Enter email'));
     } else if (!values.phone_number) {
-      Alert.alert('Please Enter Phone Number');
+      Alert.alert(t('Please Enter Phone Number'));
     } else {
       navigation.navigate('Verification');
     }
@@ -75,56 +77,56 @@ const Signup = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}
         contentContainerStyle={{flexGrow: 1}}>
-        <Title style={textStyle}>Sign up</Title>
+        <Title style={textStyle}>{t('Sign up')}</Title>
         <View style={styles.inputContainer}>
           <Input
-            children="First Name"
+            children={t('First Name')}
             onChangeText={val => onChange(val, 'first_name')}
             isHalfWidth
           />
           <Input
-            children="Last Name"
+            children={t('Last Name')}
             onChangeText={val => onChange(val, 'last_name')}
             isHalfWidth
           />
         </View>
 
         <Input
-          children="Email"
+          children={t('Email')}
           onChangeText={val => onChange(val, 'email')}
           keyboardType="email-address"
         />
         <Input
-          children="Phone Number"
+          children={t('Phone Number')}
           onChangeText={val => onChange(val, 'phone_number')}
           keyboardType="numeric"
         />
 
         <View style={{marginVertical: 10}}>
           <Text style={[styles.footerText, textStyle]}>
-            Already have an account?
+            {t('Already have an account?')}
             <Text
               style={[styles.footerLink, textStyle]}
               onPress={() => navigation.navigate('Login')}>
-              Login
+              {t('Login')}
             </Text>
           </Text>
         </View>
 
         <View style={styles.separatorContainer}>
           <View style={styles.separatorLine}></View>
-          <Text style={styles.separatorText}>or</Text>
+          <Text style={styles.separatorText}>{t('or')}</Text>
           <View style={styles.separatorLine}></View>
         </View>
 
-        <GoogleButton>Continue With Google</GoogleButton>
+        <GoogleButton>{t('Continue With Google')}</GoogleButton>
       </ScrollView>
       <View style={styles.buttonContent}>
         <ButtonComponent
           type={'green'}
           disabled={isContinueDisabled}
           onPress={onsubmit}>
-          Continue
+          {t('Continue')}
         </ButtonComponent>
       </View>
     </SafeAreaView>

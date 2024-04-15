@@ -18,11 +18,14 @@ import AdviceImageLight from '../assets/Icons/webcam_light.svg';
 import {useIsFocused} from '@react-navigation/native';
 import {useTheme} from './Context/ThemeContext';
 import {createStackNavigator} from '@react-navigation/stack';
+import {useTranslation} from 'react-i18next';
 
 const Tab = createBottomTabNavigator();
 
 const Routes = () => {
   const theme = useTheme();
+  const {t, i18n} = useTranslation();
+
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -36,7 +39,7 @@ const Routes = () => {
         },
       }}>
       <Tab.Screen
-        name="Home"
+        name={t('Home')}
         component={Home}
         options={{
           tabBarIcon: ({focused}) =>
@@ -44,7 +47,7 @@ const Routes = () => {
         }}
       />
       <Tab.Screen
-        name="AddTrip"
+        name={t('AddTrip')}
         component={AddTrip}
         options={{
           tabBarIcon: ({focused}) =>
@@ -52,7 +55,7 @@ const Routes = () => {
         }}
       />
       <Tab.Screen
-        name="Search"
+        name={t('Search')}
         component={Search}
         options={{
           tabBarIcon: ({focused}) =>
@@ -60,7 +63,7 @@ const Routes = () => {
         }}
       />
       <Tab.Screen
-        name="Explore"
+        name={t('Explore')}
         component={Explore}
         options={{
           tabBarIcon: ({focused}) =>
@@ -68,7 +71,7 @@ const Routes = () => {
         }}
       />
       <Tab.Screen
-        name="Advice"
+        name={t('Advice')}
         component={Advice}
         options={{
           tabBarIcon: ({focused}) =>

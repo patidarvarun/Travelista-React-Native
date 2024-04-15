@@ -15,9 +15,10 @@ import CheckBoxComponent from '../../components/CheckBox';
 import ButtonComponent from '../../components/Button';
 import BackIcon from '../../../assets/Icons/back.svg';
 import {useTheme} from '../../Context/ThemeContext';
+import {useTranslation} from 'react-i18next';
 const CreatePassword = ({navigation}) => {
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -34,11 +35,11 @@ const CreatePassword = ({navigation}) => {
   };
   const onsubmit = () => {
     if (!password || !confirmPassword) {
-      Alert.alert('Please enter Password.');
+      Alert.alert(t('Please enter Password.'));
     } else if (password !== confirmPassword) {
-      Alert.alert('Enter Password do not match.');
+      Alert.alert(t('Enter Password do not match.'));
     } else if (!agreed) {
-      Alert.alert('You should agreed to the terms');
+      Alert.alert(t('You should agreed to the terms'));
     } else {
       navigation.navigate('Login');
     }
@@ -57,16 +58,16 @@ const CreatePassword = ({navigation}) => {
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
-        <Title style={textStyle}>Create Password</Title>
+        <Title style={textStyle}>{t('Create Password')}</Title>
         <View style={styles.passwordInput}>
           <Input
             autoFocus
-            children="Password"
+            children={t('Password')}
             secureTextEntry={true}
             onChangeText={text => setPassword(text)}
           />
           <Input
-            children="Confirm Your Password"
+            children={t('Confirm Your Password')}
             secureTextEntry={true}
             onChangeText={text => setConfirmPassword(text)}
           />
@@ -76,11 +77,11 @@ const CreatePassword = ({navigation}) => {
           <CheckBoxComponent checked={agreed} onPress={onCheckboxPress} />
           <View style={{marginHorizontal: 10}}>
             <Text styles={styles.agreeText}>
-              I accept to the
-              <Text style={styles.link}> Inventra terms</Text> and
-              <Text style={styles.link}> Conditions </Text>
-              and the
-              <Text style={styles.link}> privacy policy. </Text>
+              {t('I accept to the')}
+              <Text style={styles.link}> {t('Inventra terms')}</Text> and
+              <Text style={styles.link}> {t('Conditions')} </Text>
+              {t('and the')}
+              <Text style={styles.link}> {t('privacy policy')}. </Text>
             </Text>
           </View>
         </View>
@@ -90,7 +91,7 @@ const CreatePassword = ({navigation}) => {
           style={styles.nextButton}
           type={'green'}
           onPress={onsubmit}>
-          Continue
+          {t('Continue')}
         </ButtonComponent>
       </View>
     </SafeAreaView>

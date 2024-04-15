@@ -5,10 +5,12 @@ import Title from '../../components/Title';
 import {useState} from 'react';
 import colors from '../../constants/colors';
 import {useTheme} from '../../Context/ThemeContext';
+import {useTranslation} from 'react-i18next';
 
 const CategoriesScreen = ({navigation}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const theme = useTheme();
+  const {t, i18n} = useTranslation();
 
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
@@ -34,7 +36,7 @@ const CategoriesScreen = ({navigation}) => {
   return (
     <SafeAreaView>
       <View style={styles.titleRow}>
-        <Title children="Preferences" style={textStyle} />
+        <Title children={t('Preferences')} style={textStyle} />
       </View>
 
       <View style={{paddingHorizontal: 10}}>
@@ -73,7 +75,7 @@ const CategoriesScreen = ({navigation}) => {
             console.log(selectedCategories);
             navigation.navigate('Routes');
           }}>
-          Next
+          {t('Next')}
         </Button>
       </View>
     </SafeAreaView>

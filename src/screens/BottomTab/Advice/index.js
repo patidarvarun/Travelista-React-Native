@@ -19,9 +19,11 @@ import TermsIcon from '../../../../assets/Icons/list-box.svg';
 import PaymentIcon from '../../../../assets/Icons/payment_icon.svg';
 import {useTheme} from '../../../Context/ThemeContext';
 import React from 'react';
+import {useTranslation} from 'react-i18next';
+
 const Advice = ({navigation}) => {
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textInputStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
@@ -35,7 +37,7 @@ const Advice = ({navigation}) => {
         <Pressable hitSlop={10} onPress={handlePress}>
           {theme === 'dark' ? <BackArrowWhite /> : <BackArrow />}
         </Pressable>
-        <Text style={[styles.textStyle, textInputStyle]}>Settings</Text>
+        <Text style={[styles.textStyle, textInputStyle]}>{t('Settings')}</Text>
       </View>
 
       <View style={styles.inputContent}>
@@ -48,7 +50,7 @@ const Advice = ({navigation}) => {
               <TextInput
                 editable={false}
                 style={styles.textInputStyle}
-                placeholder="Profile"
+                placeholder={t('Profile')}
                 placeholderTextColor="black"
               />
               <RightLine />
@@ -65,7 +67,7 @@ const Advice = ({navigation}) => {
               <TextInput
                 editable={false}
                 style={styles.textInputStyle}
-                placeholder="Preferences"
+                placeholder={t('Preferences')}
                 placeholderTextColor="black"
               />
               <RightLine />
@@ -80,7 +82,7 @@ const Advice = ({navigation}) => {
               <TextInput
                 editable={false}
                 style={styles.textInputStyle}
-                placeholder="Account Settings"
+                placeholder={t('Account Settings')}
                 placeholderTextColor="black"
               />
               <RightLine />
@@ -95,7 +97,7 @@ const Advice = ({navigation}) => {
               <TextInput
                 editable={false}
                 style={styles.textInputStyle}
-                placeholder="Privacy"
+                placeholder={t('Privacy')}
                 placeholderTextColor="black"
               />
               <RightLine />
@@ -110,7 +112,7 @@ const Advice = ({navigation}) => {
               <TextInput
                 editable={false}
                 style={styles.textInputStyle}
-                placeholder="Saved"
+                placeholder={t('Saved')}
                 placeholderTextColor="black"
               />
               <RightLine />
@@ -125,7 +127,7 @@ const Advice = ({navigation}) => {
               <TextInput
                 editable={false}
                 style={styles.textInputStyle}
-                placeholder="Terms"
+                placeholder={t('Terms')}
                 placeholderTextColor="black"
               />
               <RightLine />
@@ -140,7 +142,7 @@ const Advice = ({navigation}) => {
               <TextInput
                 editable={false}
                 style={styles.textInputStyle}
-                placeholder="Payment"
+                placeholder={t('Payment')}
                 placeholderTextColor="black"
               />
               <RightLine />

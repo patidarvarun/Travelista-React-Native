@@ -22,6 +22,7 @@ import Profile from './src/screens/Profile';
 import {ThemeProvider} from './src/Context/ThemeContext';
 import CategoriesScreen from './src/screens/CategoriesScreen';
 const Stack = createStackNavigator();
+import './src/i18n';
 
 const App = () => {
   const scheme = useColorScheme();
