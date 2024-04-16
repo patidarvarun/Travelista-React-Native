@@ -1,6 +1,10 @@
 import Image1 from '../assets/HomeImage/image1.png';
 import Image2 from '../assets/HomeImage/image2.png';
 import Image3 from '../assets/HomeImage/image3.png';
+import {useTranslation} from 'react-i18next';
+
+const {t, i18n} = useTranslation();
+
 export const HomeImage = [
   {
     id: 1,

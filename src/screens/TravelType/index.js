@@ -18,14 +18,46 @@ import React, {useState} from 'react';
 import DropDown from '../../components/DropDown';
 import Button from '../../components/Button';
 import {useTheme} from '../../Context/ThemeContext';
-import {TravelData} from '../../data';
-
+// import {TravelData} from '../../data';
+import {useTranslation} from 'react-i18next';
 const TravelType = ({navigation}) => {
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
   };
+  const TravelData = [
+    {
+      key: 'adventures',
+      label: t('Adventures'),
+      placeholder: t('Choose Adventures'),
+      options: [t('Cycling'), t('Canoe'), t('Biking'), t('Skiing')],
+    },
+    {
+      key: 'activities',
+      label: t('Activities'),
+      placeholder: t('Choose Activities'),
+      options: [
+        t('Activity 1'),
+        t('Activity 2'),
+        t('Activity 3'),
+        t('Activity 4'),
+      ],
+    },
+    {
+      key: 'typeOfTravel',
+      label: t('Type of Travel'),
+      placeholder: t('Choose Type of Travel'),
+      options: [t('Local'), t('Global')],
+    },
+    {
+      key: 'travelPrivacy',
+      label: t('Travel Privacy'),
+      placeholder: t('Who can see your travel?'),
+      options: [t('Only me'), t('Others')],
+    },
+  ];
+
   const [dropdownVisible, setDropdownVisible] = useState({
     adventures: false,
     activities: false,
@@ -72,7 +104,7 @@ const TravelType = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
         <View style={styles.titleRow}>
-          <Title style={textStyle} children="Choose" />
+          <Title style={textStyle} children={t('Choose')} />
           <View style={styles.iconsContainer}>
             <TouchableOpacity>
               {theme === 'dark' ? (
@@ -90,7 +122,7 @@ const TravelType = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
-        <Title style={textStyle} children="Travel Type" />
+        <Title style={textStyle} children={t('Travel Type')} />
       </View>
 
       <ScrollView
@@ -125,7 +157,7 @@ const TravelType = ({navigation}) => {
       </ScrollView>
       <View style={{marginHorizontal: 15, marginBottom: 10}}>
         <Button type={'green'} onPress={() => navigation.navigate('Details')}>
-          Next
+          {t('Next')}
         </Button>
       </View>
     </SafeAreaView>

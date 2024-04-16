@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, I18nManager} from 'react-native';
 import colors from '../../constants/colors';
 
 const styles = StyleSheet.create({
@@ -18,6 +18,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '700',
     padding: -30,
+    textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
   lineStyle: {
     borderBottomColor: colors.black,

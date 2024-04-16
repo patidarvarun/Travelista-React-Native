@@ -36,6 +36,7 @@ const Input = ({
             placeholder={placeholder}
             placeholderTextColor={'#7A857A'}
             style={styles.textInput}
+            
             {...props}
           />
           {Image1 && <Calendar style={styles.icon} />}

@@ -27,6 +27,7 @@ const DetailInput = ({
         onChangeText={onChangeText}
         editable={editable}
         multiline={true}
+        
       />
       <View style={[styles.lineStyle, mainContainerStyle]} />
     </View>

@@ -20,6 +20,7 @@ import Button from '../../../components/Button';
 import React, {useState} from 'react';
 import {Calendar} from 'react-native-calendars';
 import {useTheme} from '../../../Context/ThemeContext';
+import {useTranslation} from 'react-i18next';
 
 const AddTrip = ({navigation}) => {
   const theme = useTheme();
@@ -35,7 +36,7 @@ const AddTrip = ({navigation}) => {
   const [selectedToDate, setSelectedToDate] = useState('');
   const [location, setLocation] = useState('');
   const [description, setDescription] = useState('');
-
+  const {t, i18n} = useTranslation();
   const handleBack = () => {
     navigation.goBack();
   };
@@ -72,7 +73,7 @@ const AddTrip = ({navigation}) => {
     <SafeAreaView style={styles.container}>
       <View style={styles.titleContainer}>
         <View style={styles.titleRow}>
-          <Title children="New Trip" style={textStyle} />
+          <Title children={t('New Trip')} style={textStyle} />
           <View style={styles.iconsContainer}>
             <TouchableOpacity activeOpacity={0.7}>
               {theme === 'dark' ? (
@@ -96,16 +97,16 @@ const AddTrip = ({navigation}) => {
         style={styles.scrollContainer}>
         <View style={styles.inputContent}>
           <Input
-            children="Trip Name"
-            placeholder="Type your Trip Name"
+            children={t('Trip Name')}
+            placeholder={t('Type your Trip Name')}
             value={tripName}
             onChangeText={text => setTripName(text)}
           />
           <View style={styles.inputContainer}>
             <Input
               type={'true'}
-              children="From"
-              placeholder="Pick a Date"
+              children={t('From')}
+              placeholder={t('Pick a Date')}
               isHalfWidth
               Image1={true}
               onPress={() => openCalendarFor('from')}
@@ -113,8 +114,8 @@ const AddTrip = ({navigation}) => {
             />
             <Input
               type={'true'}
-              children="To"
-              placeholder="Pick a Date"
+              children={t('To')}
+              placeholder={t('Pick a Date')}
               isHalfWidth
               Image1={true}
               onPress={() => openCalendarFor('to')}
@@ -152,15 +153,15 @@ const AddTrip = ({navigation}) => {
           </Modal>
 
           <Input
-            children="Location"
-            placeholder="choose a Location"
+            children={t('Location')}
+            placeholder={t('choose a Location')}
             Image2={true}
             value={location}
             onChangeText={text => setLocation(text)}
           />
           <Input
-            children="Description"
-            placeholder="Type What you want"
+            children={t('Description')}
+            placeholder={t('Type What you want')}
             value={description}
             onChangeText={text => setDescription(text)}
           />
@@ -170,7 +171,7 @@ const AddTrip = ({navigation}) => {
         type={'green'}
         onPress={onsubmit}
         style={{marginHorizontal: 10, marginBottom: 12}}>
-        Next
+        {t('Next')}
       </Button>
     </SafeAreaView>
   );

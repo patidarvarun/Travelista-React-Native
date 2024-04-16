@@ -52,8 +52,6 @@ const Login = ({navigation}) => {
     navigation.navigate('CategoriesScreen');
   };
 
-  console.log('i18ni18ni18n', i18n.language);
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.backContainerStyle}>

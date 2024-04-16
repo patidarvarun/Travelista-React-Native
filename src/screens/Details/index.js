@@ -21,10 +21,11 @@ import DetailInput from '../../components/DetailInput/Index';
 import Button from '../../components/Button';
 import Modal from 'react-native-modal';
 import {useTheme} from '../../Context/ThemeContext';
+import {useTranslation} from 'react-i18next';
 
 const Details = ({navigation}) => {
   const theme = useTheme();
-
+  const {t, i18n} = useTranslation();
   const mainContainerStyle = [theme === 'dark' && styles.darkModeContainer];
 
   const textStyle = {
@@ -60,7 +61,7 @@ const Details = ({navigation}) => {
     <SafeAreaView style={[styles.container, mainContainerStyle]}>
       <View style={styles.titleContainer}>
         <View style={styles.titleRow}>
-          <Title style={textStyle} children="View Details" />
+          <Title style={textStyle} children={t('View Details')} />
           <View style={styles.iconsContainer}>
             <TouchableOpacity onPress={handleEditPress}>
               {/* <EditPen style={styles.icon} /> */}
@@ -85,7 +86,7 @@ const Details = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{marginHorizontal: 15}}>
         <DetailInput
-          label="Trip Name"
+          label={t('Trip Name')}
           value={tripName}
           onChangeText={text => setTripName(text)}
           editable={isEditing}
@@ -93,14 +94,14 @@ const Details = ({navigation}) => {
 
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <DetailInput
-            label="From"
+            label={t('From')}
             editable={isEditing}
             isHalfWidth
             value={fromDate}
             onChangeText={text => setFromDate(text)}
           />
           <DetailInput
-            label="To"
+            label={t('To')}
             editable={isEditing}
             isHalfWidth
             value={toDate}
@@ -108,38 +109,38 @@ const Details = ({navigation}) => {
           />
         </View>
         <DetailInput
-          label="Location"
+          label={t('Location')}
           editable={isEditing}
           value={location}
           onChangeText={text => setLocation(text)}
         />
         <DetailInput
-          label="Details"
+          label={t('Details')}
           editable={isEditing}
           value={details}
           onChangeText={text => setDetails(text)}
         />
         <DetailInput
-          label="Adventures"
+          label={t('Adventures')}
           editable={isEditing}
           value={adventures}
           onChangeText={text => setAdventures(text)}
         />
         <DetailInput
-          label="Activities"
+          label={t('Activities')}
           editable={isEditing}
           value={activity}
           onChangeText={text => setActivity(text)}
         />
 
         <DetailInput
-          label="Type of Travel"
+          label={t('Type of Travel')}
           editable={isEditing}
           value={typeOfTravel}
           onChangeText={text => setTypeOfTravel(text)}
         />
         <DetailInput
-          label="Travel Privacy"
+          label={t('Travel Privacy')}
           editable={isEditing}
           value={travelPrivacy}
           onChangeText={text => setTravelPrivacy(text)}
@@ -147,7 +148,7 @@ const Details = ({navigation}) => {
       </ScrollView>
       <View style={{marginHorizontal: 15, marginBottom: 10}}>
         <Button type={'green'} onPress={handleConfirm}>
-          Confirm
+          {t('Confirm')}
         </Button>
       </View>
 
@@ -168,7 +169,7 @@ const Details = ({navigation}) => {
             </View>
             <View style={styles.modalContent}>
               <Text style={[styles.modalText, textStyle]}>
-                Hooray! You have successfully planned your trip
+                {t('Hooray! You have successfully planned your trip')}
               </Text>
             </View>
             <View style={styles.modalIconsContainer}>
