@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CEA90E8F389DC9EF1F35DCF5DC5EA711"
-               BuildableName = "libreact-native-otp-verify.a"
-               BlueprintName = "react-native-otp-verify"
+               BlueprintIdentifier = "4C0DE1C47CE99F0D1B5D4618E9E61DA6"
+               BuildableName = "RNCAsyncStorage_resources.bundle"
+               BlueprintName = "RNCAsyncStorage-RNCAsyncStorage_resources"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

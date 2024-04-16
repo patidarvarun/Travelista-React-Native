@@ -52,6 +52,7 @@ const Login = ({navigation}) => {
     navigation.navigate('CategoriesScreen');
   };
 
+  console.log('!!!!!', t, '$$$$$$', i18n);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.backContainerStyle}>
@@ -67,7 +68,7 @@ const Login = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
         <Title style={textStyle}>{t('Welcome Back')}</Title>
-        <Title>Traveller</Title>
+        <Title>{t('Traveller')}</Title>
 
         <View style={styles.loginInput}>
           <Input
