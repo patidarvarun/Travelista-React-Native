@@ -67,7 +67,7 @@ const Login = ({navigation}) => {
         showsVerticalScrollIndicator={false}
         style={styles.scrollContainer}>
         <Title style={textStyle}>{t('Welcome Back')}</Title>
-        <Title>Traveller</Title>
+        <Title>{t('Traveller')}</Title>
 
         <View style={styles.loginInput}>
           <Input

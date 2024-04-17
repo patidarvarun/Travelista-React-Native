@@ -11,6 +11,7 @@ const resources = {
       Password: 'סיסמה',
       'email-address': 'כתובת דוא"ל',
       'Forget Password?': 'לשכוח סיסמא?',
+      Traveller: 'נוֹסֵעַ',
       'Reset It': 'אפס את זה',
       or: 'אוֹ',
       'Login With Google': 'התחבר עם גוגל ',
