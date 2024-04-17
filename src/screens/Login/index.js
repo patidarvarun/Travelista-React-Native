@@ -52,6 +52,7 @@ const Login = ({navigation}) => {
     navigation.navigate('CategoriesScreen');
   };
 
+  console.log('!!!!!', t, '$$$$$$', i18n);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.backContainerStyle}>

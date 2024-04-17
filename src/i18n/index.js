@@ -41,7 +41,7 @@ const resources = {
       Explore: 'לַחקוֹר',
       Advice: 'עֵצָה',
       //Exprore Component
-      Search: 'לחפש',
+      // Search: 'לחפש',
       //Advice Component
       Settings: 'הגדרות',
       Profile: 'פּרוֹפִיל',
@@ -126,6 +126,7 @@ const resources = {
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
+    compatibilityJSON: 'v3',
     resources,
     lng: I18nManager.isRTL ? 'he' : 'en',
 
