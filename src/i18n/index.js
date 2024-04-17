@@ -130,7 +130,6 @@ const resources = {
   },
 };
 
-// const isRTL = I18nManager.isRTL || Platform.OS === 'ios';
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
