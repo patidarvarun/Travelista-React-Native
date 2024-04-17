@@ -1,4 +1,4 @@
-import {Dimensions, StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet, I18nManager} from 'react-native';
 import colors from '../../../constants/colors';
 
 const {width, height} = Dimensions.get('window');
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 40,
     color: colors.black,
+    textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
 });
 export default styles;

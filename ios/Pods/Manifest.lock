@@ -1119,7 +1119,7 @@ PODS:
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
-  - RNLocalize (3.0.6):
+  - RNLocalize (3.1.0):
     - React-Core
   - RNReanimated (3.7.1):
     - glog
@@ -1416,7 +1416,7 @@ SPEC CHECKSUMS:
   ReactCommon: 45b5d4f784e869c44a6f5a8fad5b114ca8f78c53
   RNCAsyncStorage: 826b603ae9c0f88b5ac4e956801f755109fa4d5c
   RNGestureHandler: deda62b8339496ba721a45e0f3e2d7a319932cee
-  RNLocalize: 4222a3756cdbe2dc9a5bdf445765a4d2572107cb
+  RNLocalize: e8694475db034bf601e17bd3dfa8986565e769eb
   RNReanimated: beb07f7f900543928467da8107c175d1e57a1049
   RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f

@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   TextInput,
   Pressable,
+  I18nManager,
 } from 'react-native';
 import styles from './styles';
 import Login from '../../Login';

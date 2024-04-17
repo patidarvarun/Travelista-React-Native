@@ -4,7 +4,6 @@ import styles from './styles';
 import {Button} from '@rneui/themed';
 
 const ButtonComponent = ({onPress, style, type, disabled, children, color}) => {
-  console.log('dkfghdghkjh : >>>>>>>>>> ', disabled);
   const buttonStyle = disabled
     ? styles.disabledBg
     : type === 'green'

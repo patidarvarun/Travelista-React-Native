@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, I18nManager} from 'react-native';
 import colors from '../../../constants/colors';
 const styles = StyleSheet.create({
   textStyle: {
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 40,
     color: colors.black,
+    textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
 });
 export default styles;

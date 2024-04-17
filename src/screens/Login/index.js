@@ -7,6 +7,7 @@ import {
   ScrollView,
   Alert,
   I18nManager,
+  Platform,
 } from 'react-native';
 import styles from './styles';
 import Title from '../../components/Title';
@@ -40,6 +41,7 @@ const Login = ({navigation}) => {
   const handleBack = () => {
     navigation.goBack();
   };
+
   useEffect(() => {
     if (email.trim() !== '' && password.trim() !== '') {
       setIsContinueDisabled(false);
@@ -52,7 +54,6 @@ const Login = ({navigation}) => {
     navigation.navigate('CategoriesScreen');
   };
 
-  console.log('!!!!!', t, '$$$$$$', i18n);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.backContainerStyle}>
