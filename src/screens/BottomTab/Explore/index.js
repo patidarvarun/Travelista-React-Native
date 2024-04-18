@@ -130,6 +130,7 @@ const Explore = ({navigation}) => {
           style={{
             flex: 1,
             justifyContent: 'flex-start',
+            paddingTop: 10,
             margin: 0,
           }}>
           <View style={styles.inputContent}>

@@ -13,10 +13,10 @@
   self.initialProps = @{};
  
 [[RCTI18nUtil sharedInstance] allowRTL:YES];
-// [[RCTI18nUtil sharedInstance] forceRTL:YES];
-// [[RCTI18nUtil sharedInstance] swapLeftAndRightInRTL:YES];
-// [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"AppleLanguages"];
-// [[NSUserDefaults standardUserDefaults] synchronize];
+[[RCTI18nUtil sharedInstance] forceRTL:YES];
+[[RCTI18nUtil sharedInstance] swapLeftAndRightInRTL:YES];
+[[NSUserDefaults standardUserDefaults] removeObjectForKey:@"AppleLanguages"];
+[[NSUserDefaults standardUserDefaults] synchronize];
   
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
