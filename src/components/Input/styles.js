@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: colors.black,
     fontFamily: 'Inter',
+    textAlign: I18nManager.isRTL ? 'left' : 'left',
   },
   input: {
     height: 48,

@@ -1,7 +1,9 @@
 import i18n from 'i18next';
 import {initReactI18next} from 'react-i18next';
-import {I18nManager} from 'react-native';
+import {I18nManager, Platform} from 'react-native';
+import * as RNLocalize from 'react-native-localize';
 
+const currentLocale = RNLocalize.getLocales();
 const resources = {
   he: {
     translation: {
@@ -119,6 +121,11 @@ const resources = {
       Confirm: 'לְאַשֵׁר',
       'Hooray! You have successfully planned your trip':
         'הידד! תכננת בהצלחה את הטיול שלך',
+      //Explore
+      Activity: 'פעילות',
+      'Length of the trip': 'אורך הטיול',
+      Keywords: 'מילות מפתח',
+      'Random Sentences': 'משפטים אקראיים',
     },
   },
 };
@@ -128,7 +135,8 @@ i18n
   .init({
     compatibilityJSON: 'v3',
     resources,
-    lng: I18nManager.isRTL ? 'he' : 'en',
+    // lng: I18nManager.isRTL ? 'he' : 'en',
+    lng: currentLocale && currentLocale[0].languageCode === 'he' ? 'he' : 'en',
 
     keySeparator: false, // we do not use keys in form messages.welcome
 

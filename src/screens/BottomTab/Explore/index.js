@@ -130,6 +130,7 @@ const Explore = ({navigation}) => {
           style={{
             flex: 1,
             justifyContent: 'flex-start',
+            paddingTop: 10,
             margin: 0,
           }}>
           <View style={styles.inputContent}>
@@ -140,7 +141,7 @@ const Explore = ({navigation}) => {
                   <TextInput
                     editable={false}
                     style={styles.textInputStyle}
-                    placeholder="Terms"
+                    placeholder={t('Terms')}
                     placeholderTextColor="black"
                   />
                 </View>
@@ -154,7 +155,7 @@ const Explore = ({navigation}) => {
                   <TextInput
                     editable={false}
                     style={styles.textInputStyle}
-                    placeholder="Activity"
+                    placeholder={t('Activity')}
                     placeholderTextColor="black"
                   />
                 </View>
@@ -168,7 +169,7 @@ const Explore = ({navigation}) => {
                   <TextInput
                     editable={false}
                     style={styles.textInputStyle}
-                    placeholder="Length of the trip"
+                    placeholder={t('Length of the trip')}
                     placeholderTextColor="black"
                   />
                 </View>
@@ -182,7 +183,7 @@ const Explore = ({navigation}) => {
                   <TextInput
                     editable={false}
                     style={styles.textInputStyle}
-                    placeholder="Keywords"
+                    placeholder={t('Keywords')}
                     placeholderTextColor="black"
                   />
                 </View>
@@ -196,7 +197,7 @@ const Explore = ({navigation}) => {
                   <TextInput
                     editable={false}
                     style={styles.textInputStyle}
-                    placeholder="Random Sentences"
+                    placeholder={t('Random Sentences')}
                     placeholderTextColor="black"
                   />
                 </View>
