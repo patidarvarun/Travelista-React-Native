@@ -1,12 +1,12 @@
 <lint-module
     format="1"
-    dir="/Users/mangoit/Desktop/travelista/android/app"
+    dir="/home/pooja/Desktop/MangoIT-Projects/travelista-ashraf/travelista/android/app"
     name=":app"
     type="APP"
     maven="travelista:app:"
     agpVersion="8.1.1"
     buildFolder="build"
-    bootClassPath="/Users/mangoit/Library/Android/sdk/platforms/android-34/android.jar:/Users/mangoit/Library/Android/sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    bootClassPath="/home/pooja/Android/Sdk/platforms/android-34/android.jar:/home/pooja/Android/Sdk/build-tools/34.0.0/core-lambda-stubs.jar"
     javaSourceLevel="17"
     compileTarget="android-34"
     neverShrinking="true">

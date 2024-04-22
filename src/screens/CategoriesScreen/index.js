@@ -1,16 +1,98 @@
+import React, {useState} from 'react';
 import {View, SafeAreaView, FlatList, StyleSheet} from 'react-native';
-import {categories} from '../../data';
 import {Button} from 'react-native-paper';
 import Title from '../../components/Title';
-import {useState} from 'react';
 import colors from '../../constants/colors';
 import {useTheme} from '../../Context/ThemeContext';
 import {useTranslation} from 'react-i18next';
 
+const categories = [
+  {
+    id: 1,
+    title: 'Spa',
+  },
+  {
+    id: 2,
+    title: 'Hiking',
+  },
+  {
+    id: 3,
+    title: 'Swimming',
+  },
+  {
+    id: 4,
+    title: 'Museums',
+  },
+  {
+    id: 5,
+    title: 'Restaurants',
+  },
+  {
+    id: 6,
+    title: 'Spa',
+  },
+  {
+    id: 7,
+    title: 'Hiking',
+  },
+  {
+    id: 8,
+    title: 'Swimming',
+  },
+  {
+    id: 9,
+    title: 'Museums',
+  },
+  {
+    id: 10,
+    title: 'Restaurants',
+  },
+  {
+    id: 11,
+    title: 'Spa',
+  },
+  {
+    id: 12,
+    title: 'Hiking',
+  },
+  {
+    id: 13,
+    title: 'Swimming',
+  },
+  {
+    id: 14,
+    title: 'Museums',
+  },
+  {
+    id: 15,
+    title: 'Hiking',
+  },
+  {
+    id: 16,
+    title: 'Spa',
+  },
+  {
+    id: 17,
+    title: 'Hiking',
+  },
+  {
+    id: 18,
+    title: 'Swimming',
+  },
+  {
+    id: 19,
+    title: 'Museums',
+  },
+  {
+    id: 20,
+    title: 'Spa',
+  },
+];
+
 const CategoriesScreen = ({navigation}) => {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const theme = useTheme();
-  const {t, i18n} = useTranslation();
+  const {t} = useTranslation();
 
   const textStyle = {
     color: theme === 'dark' ? 'white' : 'black',
@@ -20,7 +102,6 @@ const CategoriesScreen = ({navigation}) => {
   };
 
   const handlePress = item => {
-    // Check if the item is already selected
     const index = selectedCategories.findIndex(
       category => category.id === item.id,
     );
@@ -44,7 +125,7 @@ const CategoriesScreen = ({navigation}) => {
           numColumns={3}
           data={categories}
           keyExtractor={item => item.id.toString()}
-          renderItem={({item, index}) => (
+          renderItem={({item}) => (
             <View
               style={[
                 styles.buttonContainer,
@@ -109,4 +190,5 @@ const styles = StyleSheet.create({
     marginVertical: 12,
   },
 });
+
 export default CategoriesScreen;
